@@ -230,7 +230,7 @@ const toggleItem = (itemId: number) => {
                         <div class="number">
                           <!-- <img src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
                           <!-- <img src="images/PIXEL__PIXEL_WIT.png" /> -->
-                          <img src="images/pixel__blue.png" />
+                          <img src="/images/pixel__blue.png" />
                           <!-- <img src="images/PIXEL__PIXEL_PAARS.png" /> -->
                           <!-- <img src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
                           <span class="number-text">{{ step.number }}</span>
