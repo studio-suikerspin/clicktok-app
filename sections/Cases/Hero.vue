@@ -60,7 +60,7 @@ const images = [
         <div class="hero__content container">
             <h1 class="hero__title">Cases</h1>
             <div class="hero__image-wrap border-radius">
-                <img class="hero__image" src="/images/cases/cases-overview-main.png" alt="ClickTok's cases" />
+                <NuxtImg class="hero__image" src="/images/cases/cases-overview-main.png" alt="ClickTok's cases" />
             </div>
         </div>
         <div class="container h-full hidden md:block">
@@ -71,7 +71,7 @@ const images = [
                     :class="`${image.class} floating-image__wrap border-radius`"
                     :style="`--top: ${image.top}; --right: ${image.right}; --bottom: ${image.bottom}; --left: ${image.left}; --scale: ${image.scale}`"
                 >
-                    <img class="floating-image" :src="image.src" alt="An image on the cases page" />
+                    <NuxtImg class="floating-image" :src="image.src" alt="An image on the cases page" />
                 </div>
             </div>
         </div>

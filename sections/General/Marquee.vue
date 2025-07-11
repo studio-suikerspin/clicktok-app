@@ -34,7 +34,7 @@ onMounted(() => {
                     <h2>We create formats that elevate your brand's voice.</h2>
                 </div>
                 <div class="marquee__slide_pixel">
-                    <img src="/images/PIXEL__PIXEL_WIT.png" alt="Pixel" />
+                    <NuxtImg src="/images/PIXEL__PIXEL_WIT.png" alt="Pixel" />
                 </div>
             </div>
         </div>

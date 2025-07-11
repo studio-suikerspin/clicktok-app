@@ -7,7 +7,7 @@ const { reference } = defineProps({
 <template>
     <div class="reference border-radius">
         <div class="reference__avatar">
-            <img :src="reference.avatar" :alt="reference.name" class="reference__avatar-img">
+            <NuxtImg :src="reference.avatar" :alt="reference.name" class="reference__avatar-img"/>
         </div>
 
         <div class="reference__content">

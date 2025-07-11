@@ -147,7 +147,7 @@ onMounted(() => {
             <div class="hero__content__inner">
                 <div :class="`hero__content__inner__image ${image.class}`" v-for="image in images" :key="image.src">
                     <div class="image-overlay"></div>
-                    <img :src="image.src" :class="image.class" alt="A floating image inside the hero content" loading="lazy" />
+                    <NuxtImg :src="image.src" :class="image.class" alt="A floating image inside the hero content" loading="lazy" />
                 </div>
                 <div class="hero__video-wrap">
                     <div class="video__inner">

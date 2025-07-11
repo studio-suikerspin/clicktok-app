@@ -45,7 +45,7 @@ const team = ref([
         <SwiperSlide v-for="member in team" :key="member.name">
           <div class="team__item">
             <div class="team__item_image">
-              <img :src="member.image" :alt="member.name">
+              <NuxtImg :src="member.image" :alt="member.name"/>
             </div>
             <div class="team__item_content">
               <div class="team__item_name">

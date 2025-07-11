@@ -28,7 +28,7 @@ const items = [
             <div class="footer__wrapper">
                 <div class="footer__content">
                     <div class="footer__logo">
-                        <img src="/images/clicktok-logo.svg" alt="ClickTok logo" class="footer__logo_img" />
+                        <NuxtImg src="/images/clicktok-logo.svg" alt="ClickTok logo" class="footer__logo_img" />
                     </div>
                     <div class="footer__socials">
                         <a href="https://www.tiktok.com/@clicktok" class="footer__social_link" title="ClickTok's TikTok profile" target="_blank">

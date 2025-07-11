@@ -115,7 +115,7 @@ const length = stayAheadSlides.length;
           <SwiperSlide v-for="(item, index) in stayAheadSlides" :key="index">
             <div class="stay__ahead_blocks_inner">
               <div class="stay__ahead_block border-radius">
-                <img src="/images/gradient-vierkant-mobile-min.webp" />
+                <NuxtImg src="/images/gradient-vierkant-mobile-min.webp" />
                 <div class="main__title title-font">Brand values</div>
                 <div class="text__content_title">
                   <div class="title title-font title-blue">{{ item.blocks[0].title }}</div>
@@ -136,7 +136,7 @@ const length = stayAheadSlides.length;
               </div>
 
               <div class="stay__ahead_block second border-radius">
-                <img src="/images/gradient-vierkant-mobile-min.webp" />
+                <NuxtImg src="/images/gradient-vierkant-mobile-min.webp" />
                 <div class="text__content_title">
                   <div class="title title-font title-blue">{{ item.blocks[1].title }}</div>
                   <!-- <div class="subtitle">{{ item.blocks[1].subtitle }}</div> -->

@@ -43,7 +43,7 @@ onMounted(() => {
                 <source :src="props.featured_video" type="video/webm" loading="lazy"/>
             </video>
 
-            <img v-else class="case-card__image" :src="props.featured_image" :alt="props.client" loading="lazy">
+            <NuxtImg v-else class="case-card__image" :src="props.featured_image" :alt="props.client" loading="lazy" />
         </div>
     </div>
 </template>

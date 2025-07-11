@@ -8,7 +8,7 @@ const { text } = defineProps({
 <template>
     <div class="pixel-label {{ classes }}">
         <span class="pixel-label__text">{{ text }}</span>
-         <img src="/images/PIXEL__PIXEL_WIT.png">
+         <NuxtImg src="/images/PIXEL__PIXEL_WIT.png" />
     </div>
 </template>
 

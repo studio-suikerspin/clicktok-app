@@ -57,11 +57,11 @@ onMounted(() => {
     <div class="stay-ahead-cards">
       <div class="stay-ahead-cards__card border-radius card-{{ card.number }}" v-for="card in cards" :key="card.number">
         <div class="stay-ahead-cards__card-number">
-          <!-- <img src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
-          <!-- <img src="images/PIXEL__PIXEL_WIT.png" /> -->
-          <img src="/images/pixel__blue.png" />
-          <!-- <img src="images/PIXEL__PIXEL_PAARS.png" /> -->
-          <!-- <img src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
+          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
+          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT.png" /> -->
+          <NuxtImg src="/images/pixel__blue.png" />
+          <!-- <NuxtImg src="images/PIXEL__PIXEL_PAARS.png" /> -->
+          <!-- <NuxtImg src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
           <span class="number-text">{{ card.number }}</span>
         </div>
         <div class="stay-ahead-cards__card-title">

@@ -90,40 +90,8 @@
                     </div>
                     <div class="stay__ahead__associaties">
                         <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                            <img :src="associatie.src" :alt="associatie.alt" >
+                            <NuxtImg :src="associatie.src" :alt="associatie.alt" />
                         </div>
-                        <!-- <Swiper
-                            :modules="[Autoplay]"
-                            :slides-per-view="swiperConfig.slidesPerView"
-                            :space-between="swiperConfig.spaceBetween"
-                            :loop="true"
-                            :autoplay="{
-                                delay: swiperConfig.autoplayDelay,
-                                disableOnInteraction: true,
-                            }"
-                            :speed="swiperConfig.speed"
-                            class="associaties-swiper"
-                            :breakpoints="{
-                                0:{
-                                    slidesPerView: 1,
-                                },
-                                992: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 16
-                                }
-                            }"
-                        >
-                            <SwiperSlide v-for="(associatie, index) in associaties" :key="index">
-                                <div class="stay__ahead__associaties_inner_item">
-                                    <img :src="associatie.src" :alt="associatie.alt" >
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide v-for="(associatie, index) in associaties" :key="`duplicate-${index}`">
-                                <div class="stay__ahead__associaties_inner_item">
-                                    <img :src="associatie.src" :alt="associatie.alt" >
-                                </div>
-                            </SwiperSlide>
-                        </Swiper> -->
                     </div>
                 </div>
             </div>

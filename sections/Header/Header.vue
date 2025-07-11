@@ -9,7 +9,6 @@ import MobileMenu from './MobileMenu.vue'
 import { mobileMenu } from '@/lib/mobileMenuStore.js'
 
 const route = useRoute()
-console.log(route)
 
 // Header scroll functionality
 const handleScroll = () => {
@@ -37,7 +36,7 @@ onUnmounted(() => {
     <header class="header">
         <div class="header__inner container">
             <a href="/">
-                <img class="header__logo" src="/images/clicktok-logo.svg" height="100" alt="ClickTok" />
+                <NuxtImg class="header__logo" src="/images/clicktok-logo.svg" height="100" alt="ClickTok" />
             </a>
 
             <nav class="header__nav">

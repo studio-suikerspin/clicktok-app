@@ -57,7 +57,7 @@ onMounted(() => {
                         <source :src="project.videos[0]" type="video/webm" loading="lazy"/>
                     </video>
 
-                    <img v-else :src="project.images[0]" :alt="project.title">
+                    <NuxtImg v-else :src="project.images[0]" :alt="project.title"/>
                 </div>
                 <div class="card border-radius card--gradient">
                     <div class="card__title">De vraag</div>
@@ -68,7 +68,7 @@ onMounted(() => {
                         <source :src="project.videos[2]" type="video/webm" loading="lazy"/>
                     </video>
 
-                    <img v-else :src="project.images[2]" :alt="project.title">
+                    <NuxtImg v-else :src="project.images[2]" :alt="project.title"/>
                 </div>
             </div>
 
@@ -91,7 +91,7 @@ onMounted(() => {
                         <source :src="project.videos[1]" type="video/webm" loading="lazy"/>
                     </video>
 
-                    <img :src="project.images[1]" :alt="project.title" v-else>
+                    <NuxtImg :src="project.images[1]" :alt="project.title" v-else/>
                 </div>
                 <div class="card border-radius card--gradient">
                     <div class="card__title">De oplossing</div>

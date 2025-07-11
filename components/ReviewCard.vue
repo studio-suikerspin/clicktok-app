@@ -16,7 +16,7 @@ const { review } = defineProps({
 <template>
     <div class="review-card" :style="{ backgroundImage: `url(/images/gradient-ruis-vierkant-min.webp)` }">
         <div class="review-card__avatar">
-            <img :src="review.avatar" :alt="review.name" class="review-card__avatar-img">
+            <NuxtImg :src="review.avatar" :alt="review.name" class="review-card__avatar-img" />
         </div>
 
         <div class="review-card__content">

@@ -211,7 +211,7 @@ onMounted(async () => {
 
                                     <div class="stats-grid">
                                         <div class="stat-item" v-for="stat in item.stats" :key="stat.title">
-                                            <img class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png">
+                                            <NuxtImg class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" />
                                             <div class="stat-item__title">{{ stat.title }}</div>
                                             <div class="stat-item__number">
                                                 <span data-number="{{ stat.stat }}">{{ stat.stat }}</span>

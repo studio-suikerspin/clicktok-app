@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  image: {
+    quality: 80,
+    format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    
+  },
   devServer: {
     port: 3000,
     host: '0.0.0.0'

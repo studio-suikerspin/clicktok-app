@@ -35,25 +35,25 @@ import { onMounted } from 'vue'
 
                  <!-- left images -->
                 <div class="hero__floating_image first border-radius">
-                    <!-- <img src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
+                    <!-- <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
                     <video src="/videos-nubikk/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
                 </div>
                 <div class="hero__floating_image second border-radius">
-                    <img src="/images/shoe-shoot-min.webp" alt="Hero floating image" loading="lazy">
+                    <NuxtImg src="/images/shoe-shoot-min.webp" alt="Hero floating image" loading="lazy" />
                 </div>
                 <div class="hero__floating_image third border-radius">
-                    <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy">
+                    <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
                 </div>
 
                 <!-- right images -->
                 <div class="hero__floating_image fourth border-radius">
-                    <img src="/images/camera-image.webp" alt="Hero floating image" loading="lazy">
+                    <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
                 </div>
                 <div class="hero__floating_image fifth border-radius">
-                    <img src="/images/barber-shoot.jpeg" alt="Hero floating image" loading="lazy">
+                    <NuxtImg src="/images/barber-shoot.jpeg" alt="Hero floating image" loading="lazy" />
                 </div>
                 <div class="hero__floating_image sixth border-radius">
-                    <!-- <img src="/images/london-shoot1-min.webp" alt="Hero floating image"> -->
+                    <!-- <NuxtImg src="/images/london-shoot1-min.webp" alt="Hero floating image"> -->
                     <video src="/videos-happn/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
                 </div>
 
@@ -298,7 +298,7 @@ import { onMounted } from 'vue'
     font-weight: 700;
     color: var(--off-white_50);
     text-align: center;
-    font-family: 'Syne', sans-serif;
+    font-family: Syne, sans-serif;
     line-height: 100%;
 }
 

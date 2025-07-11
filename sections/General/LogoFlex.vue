@@ -57,7 +57,7 @@ const logos = [
         <div v-if="title" class="logo__flex_title" v-html="title"></div>
         
         <div class="logo__wrapper">
-          <img v-for="logo in logos" :src="logo.image" :alt="logo.title" />
+          <NuxtImg v-for="logo in logos" :src="logo.image" :alt="logo.title" />
         </div>
       </div>
     </div>

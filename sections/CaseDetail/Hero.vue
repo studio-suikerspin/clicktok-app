@@ -47,7 +47,7 @@ onMounted(() => animateNumbers())
         <div class="hero__inner">
             <div class="hero__content">
                 <div v-if="project.client_logo">
-                    <img class="hero__logo" :src="project.client_logo" :alt="project.client">
+                    <NuxtImg class="hero__logo" :src="project.client_logo" :alt="project.client"/>
                 </div>
                 <h1 class="hero__title" v-else>{{ project.client }}</h1>
                 <div class="hero__subtitle">

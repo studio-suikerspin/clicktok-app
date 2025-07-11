@@ -228,11 +228,11 @@ const toggleItem = (itemId: number) => {
                     >
                       <div class="item_title">
                         <div class="number">
-                          <!-- <img src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
-                          <!-- <img src="images/PIXEL__PIXEL_WIT.png" /> -->
-                          <img src="/images/pixel__blue.png" />
-                          <!-- <img src="images/PIXEL__PIXEL_PAARS.png" /> -->
-                          <!-- <img src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
+                          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
+                          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT.png" /> -->
+                          <NuxtImg src="/images/pixel__blue.png" />
+                          <!-- <NuxtImg src="images/PIXEL__PIXEL_PAARS.png" /> -->
+                          <!-- <NuxtImg src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
                           <span class="number-text">{{ step.number }}</span>
                         </div>
                         <div class="title">{{ step.title }}</div>
@@ -250,7 +250,7 @@ const toggleItem = (itemId: number) => {
                       :key="logo.src"
                       class="logo_item"
                     >
-                      <img :src="logo.src" :alt="logo.alt">
+                      <NuxtImg :src="logo.src" :alt="logo.alt">
                     </div>
                   </div>
                 </div>

@@ -18,7 +18,6 @@
     padding-block: var(--button-padding-block);
     padding-inline: var(--button-padding-inline);
 
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 16px;
     font-style: italic;

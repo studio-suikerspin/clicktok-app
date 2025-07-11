@@ -46,7 +46,7 @@ const items = [
         <div class="container">
             <div class="hero__slider_carousel">
                 <div class="carousel__item" :class="item.class" v-for="(item, index) in items" :key="index">
-                    <img :src="item.image" alt="Logo" class="" />
+                    <NuxtImg :src="item.image" alt="Logo" class="" />
                 </div>
             </div>
         </div>

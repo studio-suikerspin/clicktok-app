@@ -29,7 +29,7 @@ const cases = [
                         <div class="cases-card__title">{{ item.title }}</div>
                         <Button variant="white" :href="item.url" :title="item.title"> Lees meer </Button>
                     </div>
-                    <img :src="item.image" :alt="item.title" />
+                    <NuxtImg :src="item.image" :alt="item.title" />
                 </div>
             </div>
         </div>

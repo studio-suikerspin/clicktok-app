@@ -13,18 +13,18 @@ import reviews from '@/lib/reviews'
                     <div class="reviews__column">
                         <div class="review border-radius" v-for="(review, key) in reviews.slice(0,2)" :key>
                             <div class="review__pixels">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
                             </div>
 
                             <div class="review__content" v-text="review.review"></div>
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
-                                    <img :src="review.avatar">
+                                    <NuxtImg :src="review.avatar" />
                                 </div>
 
                                 <div class="person__info">
@@ -37,18 +37,18 @@ import reviews from '@/lib/reviews'
                     <div class="reviews__column">
                         <div class="review border-radius" v-for="(review, key) in reviews.slice(2,4)" :key>
                             <div class="review__pixels">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
                             </div>
 
                             <div class="review__content" v-text="review.review"></div>
 
                             <div class="review__person">
                                 <div class="person__image">
-                                    <img :src="review.avatar">
+                                    <NuxtImg :src="review.avatar"/>
                                 </div>
 
                                 <div class="person__info">
@@ -61,18 +61,18 @@ import reviews from '@/lib/reviews'
                      <div class="reviews__column third-column">
                         <div class="review border-radius" v-for="(review, key) in reviews.slice(4,6)" :key>
                             <div class="review__pixels">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
-                                <img src="/images/pixel-outline-wit-icon.svg" class="review__pixel">
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
+                                <NuxtImg src="/images/pixel-outline-wit-icon.svg" class="review__pixel"/>
                             </div>
 
                             <div class="review__content" v-text="review.review"></div>
 
                             <div class="review__person">
                                 <div class="person__image border_radius">
-                                    <img :src="review.avatar">
+                                    <NuxtImg :src="review.avatar"/>
                                 </div>
 
                                 <div class="person__info">
@@ -83,7 +83,7 @@ import reviews from '@/lib/reviews'
                         </div>
                     </div>
 
-                    <img class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png">
+                    <NuxtImg class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png"/>
                 </div>
             </div>
         </div>

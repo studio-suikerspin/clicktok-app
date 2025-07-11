@@ -140,16 +140,16 @@ onUnmounted(() => {
                     </div>
                     <div class="contact__right">
                         <div class="image__wrapper active">
-                            <img src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <NuxtImg src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <img src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <NuxtImg src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <img src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <NuxtImg src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <img src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <NuxtImg src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                     </div>
                 </div>

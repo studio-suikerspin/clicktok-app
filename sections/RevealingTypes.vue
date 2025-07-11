@@ -11,7 +11,7 @@ import TypeRevealTitle from '@/components/TypeRevealTitle.vue';
                 <span class="max-w-4xl mx-auto">We create impact</span>
             </TypeRevealTitle>
 
-            <img class="absolute top-1/2 left-1/2 -translate-1/2 bottom-0" src="/images/pixel-outline.svg">
+            <NuxtImg class="absolute top-1/2 left-1/2 -translate-1/2 bottom-0" src="/images/pixel-outline.svg" />
         </div>
     </section>
 </template>
