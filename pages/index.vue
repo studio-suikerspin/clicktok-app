@@ -58,7 +58,6 @@ onMounted(() => {
 
         <template #smooth>
             <IntroAnimation />
-
             <Header />
             <Hero />
             <div class="logo-slider-mobile padding-top">
@@ -74,7 +73,7 @@ onMounted(() => {
                 </div>
             </section>
 
-            <Cases />
+            <Cases /> 
 
             <LetTheNumbersSpeak />
 
