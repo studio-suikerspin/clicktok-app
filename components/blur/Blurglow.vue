@@ -1,6 +1,8 @@
 <script setup>
 import { computed } from 'vue';
 
+const viewport = useViewport();
+
 const props = defineProps({
   top: {
     type: String,
@@ -40,11 +42,8 @@ const props = defineProps({
   },
 });
 
-// Reactieve style, aangepast voor mobiel via window.matchMedia
-const isMobile = window.matchMedia('(max-width: 992px)').matches;
-
 const styleObject = computed(() => {
-  if (isMobile && props.mobileNoBlur) {
+  if (viewport.isLessThan('tablet') && props.mobileNoBlur) {
     return {
       top: props.top,
       left: props.left,
