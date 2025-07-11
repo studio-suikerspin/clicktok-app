@@ -1,6 +1,8 @@
 <script setup>
 import { computed } from 'vue'
 
+const viewport = useViewport()
+
 const props = defineProps({
   width: [String, Number, Object],
   height: [String, Number, Object],
@@ -13,8 +15,7 @@ const props = defineProps({
 const getResponsiveProp = (val) => {
   if (typeof val === 'object' && val !== null) {
     // Simpel mediaquery op basis van screen width
-    const width = window.innerWidth
-    if (width <= 640 && 'sm' in val) return val.sm // mobiel (bijv. < 640px)
+    if (viewport.isLessThan('tablet') && 'sm' in val) return val.sm // mobiel (bijv. < 640px)
     return val.default
   }
   return val

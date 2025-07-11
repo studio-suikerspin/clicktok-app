@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TypeRevealTitle from '@/components/TypeRevealTitle.vue'
 import Button from '@/components/ui/Button.vue'
-// import BlurGlow from '@/components/blur/Blurglow.vue'
+import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
@@ -105,12 +105,12 @@ onMounted(async () => {
                     <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
                         started!</Button>
                 </div>
-<!-- 
+
                 <BlurGlow top="" left="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="false"
                     :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
 
                 <BlurGlow top="" right="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="true"
-                    :mobileNoBlurWidth="'200px'" :mobileNoBlurHeight="'200px'" /> -->
+                    :mobileNoBlurWidth="'200px'" :mobileNoBlurHeight="'200px'" />
             </div>
         </div>
     </section>
