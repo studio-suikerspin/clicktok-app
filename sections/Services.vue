@@ -31,28 +31,28 @@ const services = [
         title: 'Organic Campaign',
         description:
             'Met een organic campaign bouwen we aan duurzame zichtbaarheid zonder advertentiebudget.<br><br> We ontwikkelen formats vanuit jouw merkwaarden, om zo een herkenbaar merkgevoel over te brengen dat blijft hangen én tot actie aanzet. In dit proces doen we alles: van concepting en scripting tot shoot, edit en analyse.<br><br> Daarnaast zetten we TikTok’s zoekmachine slim in, niet alleen om je merk vindbaar te maken, maar juist om gebruikers in de overwegingsfase te overtuigen.<br><br> Het doel? Content maken die de juiste associaties oproept en daarmee herkenning en merkvoorkeur opbouwt bij je doelgroep.<br><br> Deze campagnes zijn vaak langlopend en consistent, zodat je merk top-of-mind blijft.',
-        video: '/videos-organic/BANNER_ORGANIC_V1.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_ORGANIC_V1.webm',
     },
     {
         number: '02',
         title: 'Paid Advertising',
         description:
             'Met paid advertising zetten we TikTok in als performance kanaal – slim, schaalbaar en gericht op resultaat.<br><br> Van conversiecampagnes voor e-com merken tot leadgen voor personeelswerving: wij zetten je doel om in een strategie die scoort.<br><br> We denken mee in targeting, funnelopbouw en boodschap, en runnen de campagnes van opzet tot optimalisatie.<br><br> De creatives? Die maken we samen met ons inhouse productieteam én een groot netwerk van UGC creators.',
-        video: '/videos/jumbo-video.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/jumbo-video.webm',
     },
     {
         number: '03',
         title: 'UGC Ad Creatie',
         description:
             'Met UGC ad creatives maken we advertenties die aanvoelen als native content, maar ingericht zijn op conversie.<br><br> UGC is geen hype, het werkt. Campagnes met user-generated content leveren gemiddeld tot 29% hogere conversie op.<br><br> We ontwikkelen creatives op basis van jouw merkwaarden gecombineerd met bewezen conversiegerichte elementen die presteren.<br><br> Daarbij nemen we het volledige proces uit handen:<br>van conceptontwikkeling en scripting tot creator matching, briefing, editing en oplevering.<br><br> Dit doen we voor e-com merken, apps en organisaties die leads willen genereren.',
-        video: '/videos/keukensale.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/keukensale.webm',
     },
     {
         number: '04',
         title: 'Creator Collaborations',
         description:
             'Met creator collaborations koppelen we jouw merk aan geloofwaardige creators, die culture-fit zijn en jouw merk het gesprek van de dag maken op TikTok.<br><br> Niet zomaar samenwerkingen, maar culture-first content die bouwt aan merkvoorkeur én beweging creëert.<br><br> We selecteren creators op basis van content stijl, merk fit en performance, en begeleiden het volledige traject: van conceptontwikkeling en briefing tot editing en publicatie.<br><br> En dat werkt: 82% van de consumenten vertrouwt aanbevelingen van micro-influencers meer dan die van celebrities.<br><br> Het mooie van deze campagnes is dat je ze op grote schaal kunt inzetten — en toch blijft elke samenwerking voelen als een persoonlijke, geloofwaardige merkuiting.',
-        video: '/videos-nubikk/BANNER_NUBIKK_V1.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_NUBIKK_V1.webm',
     },
 ]
 

@@ -41,7 +41,7 @@
         },
         videoSrc: {
             type: String,
-            default: "/videos-nubikk/BANNER_NUBIKK_V6.webm"
+            default: "https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_NUBIKK_V6.webm"
         },
         associaties: {
             type: Array,

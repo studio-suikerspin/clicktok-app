@@ -16,7 +16,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const cases = [
     {
-        video: '/videos-nubikk/BANNER_NUBIKK_V3.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_NUBIKK_V3.webm',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
@@ -38,7 +38,7 @@ const cases = [
         ],
     },
     {
-        video: '/videos-happn/BANNER_HAPPN_V2-min.webm',
+        video: 'https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_HAPPN_V3.webm',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
