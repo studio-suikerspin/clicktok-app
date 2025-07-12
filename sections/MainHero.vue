@@ -77,6 +77,12 @@ import { onMounted } from 'vue'
             <div class="hero__slider_wrapper">
                 <LogoSlider />
             </div>
+
+            <picture class="background-gradient">
+              <source media="(min-width: 768px)" srcset="/images/gradient-ruis-vierkant-min.webp">
+              <source media="(max-width: 767px)" srcset="/images/gradient-mobile-noise.webp">
+              <img src="/images/gradient-mobile-noise.webp" alt="Background gradient">
+            </picture>
         </div>
     <!-- </div> -->
 </template>
@@ -92,14 +98,18 @@ import { onMounted } from 'vue'
     z-index: 3;
     overflow-x: hidden; /* voorkomt scrollbars bij mask */
     padding: 200px 30px 70px;
-    background-image: url('/images/gradient-ruis-vierkant-min.webp');
-    /* background-image: url('/images/gradient-mobile-noise.webp'); */
 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.hero .background-gradient {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
 }
 
 .hero .text-container {
@@ -110,7 +120,6 @@ import { onMounted } from 'vue'
 @media(max-width: 767px){
     .hero {
         padding: 190px 0;
-        background-image: url('/images/gradient-mobile-noise.webp');
     }
 }
 
