@@ -36,7 +36,7 @@ import { onMounted } from 'vue'
                  <!-- left images -->
                 <div class="hero__floating_image first border-radius">
                     <!-- <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
-                    <video src="https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
                 </div>
                 <div class="hero__floating_image second border-radius">
                     <NuxtImg src="/images/shoe-shoot-min.webp" alt="Hero floating image" loading="lazy" />
@@ -54,7 +54,7 @@ import { onMounted } from 'vue'
                 </div>
                 <div class="hero__floating_image sixth border-radius">
                     <!-- <NuxtImg src="/images/london-shoot1-min.webp" alt="Hero floating image"> -->
-                    <video src="https://pub-d8384a6f14d54bfa9f0035eabc8860eb.r2.dev/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
                 </div>
 
                 <div class="hero__inner">
