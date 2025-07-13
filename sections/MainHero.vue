@@ -6,24 +6,24 @@ import { gsap } from 'gsap'
 import { onMounted } from 'vue'
 
 // Floating animation function
-// const animateFloatingImages = () => {
-//   const floatingImages = document.querySelectorAll('.hero__floating_image')
+const animateFloatingImages = () => {
+  const floatingImages = document.querySelectorAll('.hero__floating_image')
   
-//   floatingImages.forEach((image, index) => {
-//     gsap.to(image, {
-//       y: '4px',
-//       duration: 2 + (index * 0.3),
-//       ease: 'power1.inOut',
-//       yoyo: true,
-//       repeat: -1,
-//       delay: index * 0.2
-//     })
-//   })
-// }
+  floatingImages.forEach((image, index) => {
+    gsap.to(image, {
+      y: '4px',
+      duration: 2 + (index * 0.3),
+      ease: 'power1.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: index * 0.2
+    })
+  })
+}
 
-// onMounted(() => {
-//   animateFloatingImages()
-// })
+onMounted(() => {
+  animateFloatingImages()
+})
 </script>
 
 <template>
