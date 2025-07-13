@@ -39,7 +39,7 @@ const computedStyle = computed(() => {
 </script>
 
 <template>
-  <div class="gradient__blur" :style="computedStyle"></div>
+  <div class="gradient__blur" :style="computedStyle"/>
 </template>
 
 <style>

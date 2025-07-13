@@ -75,11 +75,11 @@ const faq = [
       </div>
     </div>
       <div class="faq__wrap">
-        <Filters :filters="filters" :selectedIndex="selectedCaseIndex" @filterChange="selectCase" />
+        <Filters :filters="filters" :selected-index="selectedCaseIndex" @filter-change="selectCase" />
         <div class="container">
           <div class="faq__content">
             <div class="faq__item-wrap">
-              <div class="faq__item" v-for="(item, index) in faq[selectedCaseIndex].questions" :key="item.question">
+              <div v-for="(item, index) in faq[selectedCaseIndex].questions" :key="item.question" class="faq__item">
                 <div 
                   class="faq__item-title-wrap" 
                   :class="{ 'faq__item-title-wrap--open': openQuestionIndex === index }"
@@ -89,7 +89,7 @@ const faq = [
                   <i 
                     class="bx bx-chevron-down"
                     :class="{ 'faq__item-icon--rotated': openQuestionIndex === index }"
-                  ></i>
+                  />
                 </div>
                 <div 
                   class="faq__item-answer-wrap"

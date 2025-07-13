@@ -102,7 +102,7 @@ const detailsCarousel = ref()
 const currentSlideIndex = ref(0)
 const sectionRef = ref<HTMLElement>()
 let videoObserver: IntersectionObserver | null = null
-let hasAnimatedInitial = ref(false)
+const hasAnimatedInitial = ref(false)
 
 const setupVideoObserver = () => {
     videoObserver = new IntersectionObserver(
@@ -232,9 +232,10 @@ onMounted(async () => {
     <section ref="sectionRef" class="cases">
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
-                <SectionTitle title="Cases" link="/cases" linkTitle="Bekijk meer" />
-                <BlurGlow top="" left="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="false"
-                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
+                <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />
+                <BlurGlow
+top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">
@@ -265,7 +266,7 @@ onMounted(async () => {
                                     </div>
 
                                     <div class="stats-grid">
-                                        <div class="stat-item" v-for="stat in item.stats" :key="stat.title">
+                                        <div v-for="stat in item.stats" :key="stat.title" class="stat-item">
                                             <!-- <NuxtImg class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
                                              <!-- <img class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
                                             <div class="stat-item__title">{{ stat.title }}</div>
@@ -280,7 +281,7 @@ onMounted(async () => {
                         </Carousel>
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
-                            <div class="case-card" v-for="(item, index) in cases" :key="index">
+                            <div v-for="(item, index) in cases" :key="index" class="case-card">
                                 <!-- <PixelLabel :text="item.label" /> -->
                                 <video
                                     :ref="(el) => { if (el) videoRefs[index] = el as HTMLVideoElement }"
@@ -293,7 +294,7 @@ onMounted(async () => {
                                     :autoplay="index === 0"
                                     :controls="index === 1"
                                 >
-                                    <source :src="item.video" type="video/webm" loading="lazy" />
+                                    <source :src="item.video" type="video/webm" loading="lazy" >
                                 </video>
                             </div>
                         </Carousel>

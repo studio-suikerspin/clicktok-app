@@ -42,9 +42,10 @@ onMounted(() => {
 
         <template #smooth>
             <div class="gradient-wrap">
-                <div class="hero__background-fade"></div>
+                <div class="hero__background-fade"/>
                 <Header />
-                <HeroContent title="Cases"
+                <HeroContent
+title="Cases"
                 video="/videos-homepage/BANNER_HOMEPAGE_V1.webm" />
             </div>
 

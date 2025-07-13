@@ -53,29 +53,29 @@ watch(
 
                 <div class="mobile-menu__header">
                     <a href="javascript:;" title="Close mobile menu" class="mobile-menu__close" @click="mobileMenu.toggle()">
-                        <i class="bx bx-x"></i>
+                        <i class="bx bx-x"/>
                     </a>
                 </div>
 
                 <nav class="mobile-menu__menu">
-                    <a as="button" @click="mobileMenu.navigate('/')" :class="`mobile-menu__item`">
-                        <div class="dot"></div>
+                    <a as="button" :class="`mobile-menu__item`" @click="mobileMenu.navigate('/')">
+                        <div class="dot"/>
                         Home
                     </a>
-                    <a  @click="mobileMenu.navigate('/services')" :class="`mobile-menu__item`">
-                        <div class="dot"></div>
+                    <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/services')">
+                        <div class="dot"/>
                         Diensten
                     </a>
-                    <a  @click="mobileMenu.navigate('/cases')" :class="`mobile-menu__item`">
-                        <div class="dot"></div>
+                    <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/cases')">
+                        <div class="dot"/>
                         Cases
                     </a>
-                    <a  @click="mobileMenu.navigate('/about')" :class="`mobile-menu__item`">
-                        <div class="dot"></div>
+                    <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/about')">
+                        <div class="dot"/>
                         Over ons
                     </a>
-                    <a  @click="mobileMenu.navigate('/contact')" :class="`mobile-menu__item`">
-                        <div class="dot"></div>
+                    <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/contact')">
+                        <div class="dot"/>
                         Contact
                     </a>
                 </nav>

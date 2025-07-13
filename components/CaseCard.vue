@@ -39,8 +39,8 @@ onMounted(() => {
                 <Button v-if="props.handle" :href="`/cases/${props.handle}`" variant="outline">Bekijk case</Button>
             </div>
 
-            <video class="case-card__video" v-if="props.featured_video !== undefined" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;">
-                <source :src="props.featured_video" type="video/webm" loading="lazy"/>
+            <video v-if="props.featured_video !== undefined" class="case-card__video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;">
+                <source :src="props.featured_video" type="video/webm" loading="lazy">
             </video>
 
             <NuxtImg v-else class="case-card__image" :src="props.featured_image" :alt="props.client" loading="lazy" />

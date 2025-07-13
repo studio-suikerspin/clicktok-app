@@ -29,7 +29,7 @@ const animateCards = () => {
 }
 
 onMounted(() => {
-    let tl = gsap.timeline({
+    const tl = gsap.timeline({
         scrollTrigger: {
             trigger: '.steps',
             start: 'top top',
@@ -53,8 +53,8 @@ onMounted(() => {
 
             <div class="steps__card-wrap">
                 <div class="card border-radius">
-                    <video autoplay playsinline muted loop v-if="project.videos && project.videos[0]">
-                        <source :src="project.videos[0]" type="video/webm" loading="lazy"/>
+                    <video v-if="project.videos && project.videos[0]" autoplay playsinline muted loop>
+                        <source :src="project.videos[0]" type="video/webm" loading="lazy">
                     </video>
 
                     <NuxtImg v-else :src="project.images[0]" :alt="project.title"/>
@@ -64,21 +64,21 @@ onMounted(() => {
                     <div class="card__content">{{ project.problem }}</div>
                 </div>
                 <div class="card border-radius">
-                    <video autoplay playsinline muted loop v-if="project.videos && project.videos[2]">
-                        <source :src="project.videos[2]" type="video/webm" loading="lazy"/>
+                    <video v-if="project.videos && project.videos[2]" autoplay playsinline muted loop>
+                        <source :src="project.videos[2]" type="video/webm" loading="lazy">
                     </video>
 
                     <NuxtImg v-else :src="project.images[2]" :alt="project.title"/>
                 </div>
             </div>
 
-            <div class="timeline" ref="timeline">
+            <div ref="timeline" class="timeline">
                 <div class="timeline__active">
-                    <div class="timeline__line"></div>
-                    <div class="timeline__thumb"></div>
+                    <div class="timeline__line"/>
+                    <div class="timeline__thumb"/>
                 </div>
 
-                <div class="timeline__background"></div>
+                <div class="timeline__background"/>
             </div>
 
             <div class="steps__card-wrap">
@@ -87,11 +87,11 @@ onMounted(() => {
                     <div class="card__content">{{ project.about }}</div>
                 </div>
                 <div class="card border-radius">
-                    <video autoplay playsinline muted loop v-if="project.videos && project.videos[1]">
-                        <source :src="project.videos[1]" type="video/webm" loading="lazy"/>
+                    <video v-if="project.videos && project.videos[1]" autoplay playsinline muted loop>
+                        <source :src="project.videos[1]" type="video/webm" loading="lazy">
                     </video>
 
-                    <NuxtImg :src="project.images[1]" :alt="project.title" v-else/>
+                    <NuxtImg v-else :src="project.images[1]" :alt="project.title"/>
                 </div>
                 <div class="card border-radius card--gradient">
                     <div class="card__title">De oplossing</div>

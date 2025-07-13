@@ -11,62 +11,62 @@ import reviews from '@/lib/reviews'
 
                 <div class="reviews__grid">
                     <div class="reviews__column">
-                        <div class="review border-radius" v-for="(review, key) in reviews.slice(0,2)" :key>
+                        <div v-for="(review, key) in reviews.slice(0,2)" :key class="review border-radius">
 
-                            <div class="review__content" v-text="review.review"></div>
+                            <div class="review__content" v-text="review.review"/>
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
                                     <!-- <NuxtImg :src="review.avatar" /> -->
-                                    <img :src="review.avatar" />
+                                    <img :src="review.avatar" >
                                 </div>
 
                                 <div class="person__info">
-                                    <div class="person__name" v-text="review.name"></div>
-                                    <div class="person__company" v-text="review.company"></div>
+                                    <div class="person__name" v-text="review.name"/>
+                                    <div class="person__company" v-text="review.company"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="reviews__column">
-                        <div class="review border-radius" v-for="(review, key) in reviews.slice(2,4)" :key>
+                        <div v-for="(review, key) in reviews.slice(2,4)" :key class="review border-radius">
 
-                            <div class="review__content" v-text="review.review"></div>
+                            <div class="review__content" v-text="review.review"/>
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
                                     <!-- <NuxtImg :src="review.avatar"/> -->
-                                    <img :src="review.avatar"/>
+                                    <img :src="review.avatar">
                                 </div>
 
                                 <div class="person__info">
-                                    <div class="person__name" v-text="review.name"></div>
-                                    <div class="person__company" v-text="review.company"></div>
+                                    <div class="person__name" v-text="review.name"/>
+                                    <div class="person__company" v-text="review.company"/>
                                 </div>
                             </div>
                         </div>
                     </div>
                      <div class="reviews__column third-column">
-                        <div class="review border-radius" v-for="(review, key) in reviews.slice(4,6)" :key>
+                        <div v-for="(review, key) in reviews.slice(4,6)" :key class="review border-radius">
                             
-                            <div class="review__content" v-text="review.review"></div>
+                            <div class="review__content" v-text="review.review"/>
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
                                     <!-- <NuxtImg :src="review.avatar"/> -->
-                                    <img :src="review.avatar"/>
+                                    <img :src="review.avatar">
                                 </div>
 
                                 <div class="person__info">
-                                    <div class="person__name" v-text="review.name"></div>
-                                    <div class="person__company" v-text="review.company"></div>
+                                    <div class="person__name" v-text="review.name"/>
+                                    <div class="person__company" v-text="review.company"/>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- <NuxtImg class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png"/> -->
-                    <img class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png"/>
+                    <img class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png">
                 </div>
             </div>
         </div>

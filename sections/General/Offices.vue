@@ -21,12 +21,12 @@ const offices = ref([
     <div class="container gradient-blur-wrapper">
       <GradientBlur :width="{ default: '50vw', sm: '60vw' }" :height="{ default: '50vh', sm: '80vh' }" :top="{ default: '20%', sm: '40%' }" :left="{ default: '20%', sm: '20%' }"/>
       <div class="offices__inner">
-        <div class="offices__item" v-for="office in offices" :key="office.title">
+        <div v-for="office in offices" :key="office.title" class="offices__item">
           <div class="offices__item_content">
             <div class="offices__item_title">
               <h2>{{ office.title }}</h2>
             </div>
-            <div class="offices__item_text" v-html="office.text"></div>
+            <div class="offices__item_text" v-html="office.text"/>
           </div>
           <div class="offices__item_image">
             <NuxtImg :src="office.image" :alt="office.title" />

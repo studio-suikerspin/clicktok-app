@@ -12,35 +12,35 @@ const { index, number, subtitleOnly } = defineProps({
 
 <template>
     <div class="numbers__item border-radius" :class="`numbers__item-${index + 1}`">
-        <div class="numbers__item-inner" v-if="subtitleOnly && number.number">
+        <div v-if="subtitleOnly && number.number" class="numbers__item-inner">
             <div v-if="number.number">
                 <span class="numbers__item-title-number">{{ number.number }}</span>
-                <span class="numbers__number-suffix" v-if="number.suffix">
+                <span v-if="number.suffix" class="numbers__number-suffix">
                    {{ number.suffix }}
                 </span>
-                <span class="numbers__number-type" v-else>
+                <span v-else class="numbers__number-type">
                     {{ number.type === 'score' ? ' / 5' : number.type === 'percentage'
                     ? '%' : '' }}
                 </span>
             </div>
-            <div class="numbers__item-title-title" v-html="number.subtitle"></div>
+            <div class="numbers__item-title-title" v-html="number.subtitle"/>
         </div>
 
-        <div class="numbers__item-inner" v-else-if="subtitleOnly && number.text && !number.number">
+        <div v-else-if="subtitleOnly && number.text && !number.number" class="numbers__item-inner">
             <!-- <div> -->
                 <span class="numbers__item--fun-fact">{{ number.text }}</span>
             <!-- </div> -->
             <div class="numbers__item-title-title">{{ number.title }}</div>
         </div>
 
-        <div class="numbers__item-inner" v-else>
+        <div v-else class="numbers__item-inner">
             <div :class="['numbers__item-title-title', number.title && number.title.includes('Fun fact') ? 'fun-fact' : '']">{{ number.title }}</div>
             <div v-if="number.number">
                 <span class="numbers__item-title-number">{{ number.number }}</span>
                 <span class="numbers__number-suffix">{{ number.type === 'score' ? ' / 5' : number.type === 'percentage'
                     ? '%' : '' }}</span>
             </div>
-            <div :class="['numbers__item-title-text', number.number ? 'has-number' : '']" v-html="number.text"></div>
+            <div :class="['numbers__item-title-text', number.number ? 'has-number' : '']" v-html="number.text"/>
         </div>
     </div>
 </template>

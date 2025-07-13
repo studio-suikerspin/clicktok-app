@@ -55,7 +55,7 @@ onUnmounted(() => {
             <Button href="/contact" title="Start een project"  variant="blue" classes="header__cta">Start een project</Button>
 
             <a class="header__menu-trigger" href="javascript:;" title="Open menu" @click="mobileMenu.toggle()">
-                <i class="bx bx-menu"></i>
+                <i class="bx bx-menu"/>
             </a>
         </div>
     </header>

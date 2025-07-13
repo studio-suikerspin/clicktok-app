@@ -51,7 +51,7 @@ import { onMounted } from 'vue';
   <GradientBlur :width="{ default: '485px', sm: '70vw' }" :height="{ default: '40%', sm: '50vh' }" :left="{ default: '5%', sm: '10%' }" :top="{ default: '5%', sm: '20%' }" class="big__text_blur second"  />
   <div class="container">
     <div class="about__title">
-      <SectionTitle title="About us" link="/about" linkTitle="Lees meer" />
+      <SectionTitle title="About us" link="/about" link-title="Lees meer" />
     </div>
   </div>
    <swiper
@@ -98,8 +98,8 @@ import { onMounted } from 'vue';
     <SwiperSlide v-for="(slide, index) in slides" :key="slide.image">
       <div class="about__slide-container" :class="[{ 'active': index === 0 }, `item-${index}`]">
         <!-- <NuxtImg :src="slide.image" :alt="slide.title" loading="lazy" /> -->
-        <img :src="slide.image" :alt="slide.title" loading="lazy" />
-        <div class="overlay"></div>
+        <img :src="slide.image" :alt="slide.title" loading="lazy" >
+        <div class="overlay"/>
         <div class="about__text">
           <div class="title" :class="{ 'active': index === 0 }">{{ slide.title }}</div>
           <div class="subtitle" :class="{ 'active': index === 0 }">{{ slide.subtitle }}</div>

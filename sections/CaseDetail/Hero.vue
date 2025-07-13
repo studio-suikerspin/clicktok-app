@@ -10,7 +10,7 @@ const { project } = defineProps({
 })
 
 const animateNumbers = (slideIndex = null) => {
-    let selector = '[data-number]'
+    const selector = '[data-number]'
 
     const numberElements = document.querySelectorAll(selector)
 
@@ -49,7 +49,7 @@ onMounted(() => animateNumbers())
                 <div v-if="project.client_logo">
                     <NuxtImg class="hero__logo" :src="project.client_logo" :alt="project.client"/>
                 </div>
-                <h1 class="hero__title" v-else>{{ project.client }}</h1>
+                <h1 v-else class="hero__title">{{ project.client }}</h1>
                 <div class="hero__subtitle">
                     {{ project.subtitle }}
                 </div>
@@ -73,7 +73,7 @@ onMounted(() => animateNumbers())
                     </div>
 
                     <div class="details stats">
-                        <div class="detail-wrap" v-for="(stat, key) in project.stats" :key="key">
+                        <div v-for="(stat, key) in project.stats" :key="key" class="detail-wrap">
                             <div class="label">{{ stat.title }}</div>
                             <div class="value" :data-number="stat.stat">{{ stat.stat }}</div>
                         </div>
@@ -88,7 +88,7 @@ onMounted(() => animateNumbers())
                 tags_position="right"
                 :aspect_ratio="460/680"
                 :autoplay="true"
-                :isDetailPage="isDetailPage"
+                :is-detail-page="isDetailPage"
             />
         </div>
     </section>

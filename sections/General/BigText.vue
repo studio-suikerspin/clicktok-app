@@ -39,8 +39,8 @@ onMounted(() => {
 
 <template>
   <div class="big__text">
-      <div class="big__text_title" ref="titleRef">
-        <h2 v-html="title"></h2>
+      <div ref="titleRef" class="big__text_title">
+        <h2 v-html="title"/>
       </div>
   </div>
 </template>

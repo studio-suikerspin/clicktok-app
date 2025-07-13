@@ -37,16 +37,16 @@ onMounted(() => {
                 <div class="hero__floating_image with-hover first border-radius">
                     <!-- <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
                     <div class="hero__floating_image_wrapper">
-                        <img src="/images/nubikk-shoot-min.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                        <img src="/images/nubikk-shoot-min.webp" alt="Hero floating image" loading="lazy" >
+                        <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
               
                 <div class="hero__floating_image with-hover third border-radius">
                     <!-- <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" /> -->
                     <div class="hero__floating_image_wrapper">
-                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/jumbo-video.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" >
+                        <video src="https://r2.suikerspin.studio/jumbo-video.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
 
@@ -54,16 +54,16 @@ onMounted(() => {
                 <div class="hero__floating_image with-hover fourth border-radius">
                     <!-- <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" /> -->
                     <div class="hero__floating_image_wrapper">
-                        <img src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/keukensale.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                        <img src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" >
+                        <video src="https://r2.suikerspin.studio/keukensale.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius">
                     <!-- <NuxtImg src="/images/london-shoot1-min.webp" alt="Hero floating image"> -->
                     <div class="hero__floating_image_wrapper">
-                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" >
+                        <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
 

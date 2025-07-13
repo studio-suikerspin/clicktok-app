@@ -32,10 +32,10 @@ const items = [
                     </div>
                     <div class="footer__socials">
                         <a href="https://www.tiktok.com/@clicktok.nl" class="footer__social_link" title="ClickTok's TikTok profile" target="_blank">
-                            <i class="bx bxl-tiktok"></i>
+                            <i class="bx bxl-tiktok"/>
                         </a>
                         <a href="https://www.instagram.com/clicktok.nl" class="footer__social_link" title="ClickTok's Instagram profile" target="_blank">
-                            <i class="bx bxl-instagram"></i>
+                            <i class="bx bxl-instagram"/>
                         </a>
                         <a
                             href="https://www.linkedin.com/company/clicktok/?originalSubdomain=nl"
@@ -43,7 +43,7 @@ const items = [
                             class="footer__social_link"
                             title="ClickTok's LinkedIn profile"
                         >
-                            <i class="bx bxl-linkedin"></i>
+                            <i class="bx bxl-linkedin"/>
                         </a>
                     </div>
                 </div>
@@ -75,7 +75,7 @@ const items = [
                         <span class="title">{{ item.title }}</span>
                         <span class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17 16V7H8v2h5.59l-6.3 6.29 1.42 1.42 6.29-6.3V16z"></path>
+                                <path d="M17 16V7H8v2h5.59l-6.3 6.29 1.42 1.42 6.29-6.3V16z"/>
                             </svg>
                         </span>
                     </a>

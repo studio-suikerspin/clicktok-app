@@ -1,9 +1,9 @@
 <template>
     <div class="carousel-controls">
-        <button @click="prevSlide" :disabled="currentIndex === 0">
+        <button :disabled="currentIndex === 0" @click="prevSlide">
             ←
         </button>
-        <button @click="nextSlide" :disabled="currentIndex === slideCount - 1">
+        <button :disabled="currentIndex === slideCount - 1" @click="nextSlide">
             →
         </button>
     </div>

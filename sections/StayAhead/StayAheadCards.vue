@@ -55,7 +55,7 @@ onMounted(() => {
       <h2 class="title-font">(Y)our way to <span class="highlight">stay ahead</span></h2>
     </div>
     <div class="stay-ahead-cards">
-      <div class="stay-ahead-cards__card border-radius card-{{ card.number }}" v-for="card in cards" :key="card.number">
+      <div v-for="card in cards" :key="card.number" class="stay-ahead-cards__card border-radius card-{{ card.number }}">
         <div class="stay-ahead-cards__card-number">
           <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
           <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT.png" /> -->
@@ -68,7 +68,7 @@ onMounted(() => {
           <h3 class="title-font">{{ card.title }}</h3>
         </div>
         <div class="stay-ahead-cards__card-content">
-          <div v-html="card.content"></div>
+          <div v-html="card.content"/>
         </div>
         <div class="stay-ahead-cards__card-button">
           <Button v-if="card.number === '03'" variant="blue" href="/contact">Let's get started!</Button>

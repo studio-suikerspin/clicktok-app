@@ -28,7 +28,7 @@ const props = defineProps({
 });
 
 const numberRef = ref(null);
-let hasAnimatedInitial = ref(false);
+const hasAnimatedInitial = ref(false);
 
 // Parse the number, handling both string and number inputs
 const parsedNumber = computed(() => {
@@ -106,7 +106,7 @@ defineExpose({
     <div class="numbers__result_title">{{ title }}</div>
     <div class="numbers__result_number-wrapper">
       <div ref="numberRef" class="numbers__result_number" :data-number="parsedNumber">0</div>
-      <span class="plus" v-if="plus">+</span>
+      <span v-if="plus" class="plus">+</span>
     </div>
     <div class="numbers__result_text">{{ text }}</div>
   </div>

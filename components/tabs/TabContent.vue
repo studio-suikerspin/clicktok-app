@@ -10,7 +10,7 @@ const { handleFilter, isActive } = inject('tabMethods')
 
 <template>
     <div :class="['tab-content', isActive(index) ? 'active' : '']">
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 

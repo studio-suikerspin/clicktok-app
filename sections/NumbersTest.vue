@@ -53,7 +53,7 @@ onMounted(async () => {
 
 
 <template>
-    <section class="numbers__speak" ref="numbersSectionRef">
+    <section ref="numbersSectionRef" class="numbers__speak">
         <div class="container">
             <div class="numbers__speak-inner">
                 <div class="numbers__speak-title">
@@ -106,11 +106,13 @@ onMounted(async () => {
                         started!</Button>
                 </div>
 
-                <BlurGlow top="" left="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="false"
-                    :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
+                <BlurGlow
+top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
+                    :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
 
-                <BlurGlow top="" right="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="true"
-                    :mobileNoBlurWidth="'200px'" :mobileNoBlurHeight="'200px'" />
+                <BlurGlow
+top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
+                    :mobile-no-blur-width="'200px'" :mobile-no-blur-height="'200px'" />
             </div>
         </div>
     </section>

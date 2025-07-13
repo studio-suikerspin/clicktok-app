@@ -45,9 +45,9 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="intro" ref="intro">
+    <div ref="intro" class="intro">
         <div class="container">
-            <div class="intro__text title-font" ref="introText">
+            <div ref="introText" class="intro__text title-font">
                 <div class="intro__text-line-first">Full service</div>
                 <div class="intro__text-line-second">TikTok Agency</div>
             </div>

@@ -184,9 +184,9 @@ const toggleItem = (itemId: number) => {
       <div class="services__accordion">
         <div
           v-for="service in servicesData"
+          :id="`service-${service.id}`"
           :key="service.id"
           class="services__accordion-item"
-          :id="`service-${service.id}`"
         >
           <div class="service__accordion-item_title">
             <!-- <div class="service__accordion-subtitle">{{ service.subtitle }}</div> -->
@@ -204,7 +204,7 @@ const toggleItem = (itemId: number) => {
                 <i
                   class="bx"
                   :class="openItem === service.id ? 'bx-chevron-up' : 'bx-chevron-down'"
-                ></i>
+                />
               </div>
             </div>
           </div>
@@ -216,7 +216,7 @@ const toggleItem = (itemId: number) => {
               <div class="service__content_first">
                 <div class="first_text">
                   <div class="title">{{ service.whyTitle }}</div>
-                  <div class="text" v-html="service.whyText"></div>
+                  <div class="text" v-html="service.whyText"/>
                 </div>
                 <div class="second_text">
                   <div class="title">{{ service.whatTitle }}</div>
@@ -250,14 +250,14 @@ const toggleItem = (itemId: number) => {
                       :key="logo.src"
                       class="logo_item"
                     >
-                      <NuxtImg :src="logo.src" :alt="logo.alt">
+                      <NuxtImg :src="logo.src" :alt="logo.alt" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="service__content_second">
                 <div class="service__content_video">
-                  <video :src="service.video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;"></video>
+                  <video :src="service.video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;"/>
                 </div>
                 <div class="service__content_cta">
                   <Button variant="blue" :href="service.ctaHref" :title="service.ctaText">

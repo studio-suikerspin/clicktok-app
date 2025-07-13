@@ -65,9 +65,10 @@ onMounted(() => {
 
       <template #smooth>
         <div class="hero__wrapper">
-          <div class="hero__background-fade"></div>
+          <div class="hero__background-fade"/>
           <Header />
-          <HeroContent title="Services"
+          <HeroContent
+title="Services"
           video="/videos-homepage/BANNER_HOMEPAGE_V1.webm" />
         </div>
 

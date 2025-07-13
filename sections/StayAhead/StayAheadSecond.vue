@@ -85,17 +85,19 @@ const length = stayAheadSlides.length;
         <div class="stay__ahead_header">
           <SectionTitle :title="title" :subtitle="subtitle" />
 
-          <div class="swiper-navigation" v-if="navigation == 'side' && length > 1">
+          <div v-if="navigation == 'side' && length > 1" class="swiper-navigation">
             <div class="swiper-button-prev">
-              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              <svg
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
               fill="currentColor" viewBox="0 0 24 24" >
-              <path d="M11.79 6.29 6.09 12l5.7 5.71 1.42-1.42L9.91 13H18v-2H9.91l3.3-3.29z"></path>
+              <path d="M11.79 6.29 6.09 12l5.7 5.71 1.42-1.42L9.91 13H18v-2H9.91l3.3-3.29z"/>
               </svg>
             </div>
             <div class="swiper-button-next">
-              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              <svg
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 fill="currentColor" viewBox="0 0 24 24" >
-                <path d="M6 13h8.09l-3.3 3.29 1.42 1.42 5.7-5.71-5.7-5.71-1.42 1.42 3.3 3.29H6z"></path>
+                <path d="M6 13h8.09l-3.3 3.29 1.42 1.42 5.7-5.71-5.7-5.71-1.42 1.42 3.3 3.29H6z"/>
                 </svg>
             </div>
           </div>
@@ -121,7 +123,7 @@ const length = stayAheadSlides.length;
                   <div class="title title-font title-blue">{{ item.blocks[0].title }}</div>
                   <div class="subtitle">{{ item.blocks[0].subtitle }}</div>
                 </div>
-                <div class="stay__ahead_general-content" v-html="item.blocks[0].content"></div>
+                <div class="stay__ahead_general-content" v-html="item.blocks[0].content"/>
                 <Button variant="blue" href="/contact" class="blue-btn">Let's get started!</Button>
                 <!-- <div class="values">
                   <div class="value" v-for="value in item.blocks[0].values" :key="value">{{ value }}</div>
@@ -131,7 +133,7 @@ const length = stayAheadSlides.length;
               <div class="stay__ahead_video border-radius">
                 <!-- <TikTokVideo :videoId="item.videoId" /> -->
                 <video class="stay__ahead_video_inner border-radius" autoplay muted playsinline loop webkit-playsinline style="pointer-events: none;">
-                    <source :src="item.video" type="video/webm" width="100%" height="978" />
+                    <source :src="item.video" type="video/webm" width="100%" height="978" >
                 </video>
               </div>
 
@@ -144,7 +146,7 @@ const length = stayAheadSlides.length;
                 <!-- <div class="values">
                   <div class="value" v-for="value in item.blocks[1].values" :key="value">{{ value }}</div>
                 </div> -->
-                <div class="stay__ahead_general-content" v-html="item.blocks[1].content"></div>
+                <div class="stay__ahead_general-content" v-html="item.blocks[1].content"/>
                 <div class="stay__ahead_reviews">
                     <ReviewCard v-for="review in item.blocks[1].reviews" :key="review.name" :review="review" />
                 </div>
@@ -155,17 +157,19 @@ const length = stayAheadSlides.length;
 
       </div>
 
-      <div class="swiper-navigation bottom" v-if="navigation == 'bottom' && length > 1">
+      <div v-if="navigation == 'bottom' && length > 1" class="swiper-navigation bottom">
         <div class="swiper-button-prev">
-          <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          <svg
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             fill="currentColor" viewBox="0 0 24 24" >
-            <path d="M11.79 6.29 6.09 12l5.7 5.71 1.42-1.42L9.91 13H18v-2H9.91l3.3-3.29z"></path>
+            <path d="M11.79 6.29 6.09 12l5.7 5.71 1.42-1.42L9.91 13H18v-2H9.91l3.3-3.29z"/>
           </svg>
         </div>
         <div class="swiper-button-next">
-          <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+          <svg
+xmlns="http://www.w3.org/2000/svg" width="24" height="24"
             fill="currentColor" viewBox="0 0 24 24" >
-            <path d="M6 13h8.09l-3.3 3.29 1.42 1.42 5.7-5.71-5.7-5.71-1.42 1.42 3.3 3.29H6z"></path>
+            <path d="M6 13h8.09l-3.3 3.29 1.42 1.42 5.7-5.71-5.7-5.71-1.42 1.42 3.3 3.29H6z"/>
           </svg>
         </div>
       </div>

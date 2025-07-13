@@ -1,6 +1,6 @@
 <template>
     <div class="carousel-container">
-        <div :class="['carousel-wrapper', wrapperClasses]" ref="carouselWrapper">
+        <div ref="carouselWrapper" :class="['carousel-wrapper', wrapperClasses]">
         <slot />
         </div>
     </div>

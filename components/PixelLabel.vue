@@ -9,7 +9,7 @@ const { text } = defineProps({
     <div class="pixel-label {{ classes }}">
         <span class="pixel-label__text">{{ text }}</span>
          <!-- <NuxtImg src="/images/PIXEL__PIXEL_WIT.png" /> -->
-         <img src="/images/PIXEL__PIXEL_WIT.png" />
+         <img src="/images/PIXEL__PIXEL_WIT.png" >
     </div>
 </template>
 

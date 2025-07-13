@@ -72,16 +72,16 @@ onMounted(() => {
 
         <template #smooth>
             <div class="hero__wrapper">
-                <div class="hero__background-fade"></div>
+                <div class="hero__background-fade"/>
                 <div class="hero__content_cases">
                     <Header />
-                    <Hero :project="item" isDetailPage="true" />
+                    <Hero :project="item" is-detail-page="true" />
                 </div>
             </div>
 
             <CaseSteps :project="item" />
 
-            <section class="tabbed-content" v-if="item.brand_value?.title || item.brand_values?.length">
+            <section v-if="item.brand_value?.title || item.brand_values?.length" class="tabbed-content">
                 <div class="container">
                     <TabbedContent v-if="item.brand_values" :default-index="0">
                         <Tabs>
@@ -93,8 +93,8 @@ onMounted(() => {
                                 <StayAhead
                                     :title="brand_value.title"
                                     variant="center-title"
-                                    :animateOnScroll="false"
-                                    :showVideoControls="true"
+                                    :animate-on-scroll="false"
+                                    :show-video-controls="true"
                                     :slides="[
                                         {
                                             videoId: '7457929797402922262',
@@ -133,8 +133,8 @@ onMounted(() => {
                         title="What led to these <span>formats</span>"
                         :subtitle="item.hasOwnProperty('excerpt') ? item.excerpt : ''"
                         variant="center-title"
-                        :animateOnScroll="false"
-                        :showVideoControls="true"
+                        :animate-on-scroll="false"
+                        :show-video-controls="true"
                         :slides="[
                             {
                                 videoId: '7457929797402922262',
@@ -169,7 +169,7 @@ onMounted(() => {
                 </div>
             </section>
 
-            <ClientReference :reference="item.reference" v-if="item.reference.content" />
+            <ClientReference v-if="item.reference.content" :reference="item.reference" />
 
             <div class="logo-flex-wrapper padding-bottom">
                 <LogoFlex title="We've also <span>worked</span> for" />

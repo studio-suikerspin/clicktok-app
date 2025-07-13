@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <div class="stay__ahead__content_video">
-                            <video :src="videoSrc" autoplay muted loop playsinline webkit-playsinline class="border-radius"></video>
+                            <video :src="videoSrc" autoplay muted loop playsinline webkit-playsinline class="border-radius"/>
                         </div>
                     </div>
                     <div class="stay__ahead__associaties-wrapper border-radius">
@@ -97,7 +97,7 @@
                         </div>
                         <div class="stay__ahead__associaties">
                             <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                                <img :src="associatie.src" :alt="associatie.alt" />
+                                <img :src="associatie.src" :alt="associatie.alt" >
                             </div>
                         </div>
                     </div>

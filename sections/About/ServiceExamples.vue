@@ -259,8 +259,8 @@ onMounted(() => {
           <div class="service__button">
             <Button variant="outline" classes="w-fit"> Bekijk case </Button>
           </div>
-          <div class="stats-grid" v-if="selectedCase.stats && selectedCase.stats.length > 0">
-              <div class="stats-grid__stat" v-for="stat in selectedCase.stats" :key="stat.title">
+          <div v-if="selectedCase.stats && selectedCase.stats.length > 0" class="stats-grid">
+              <div v-for="stat in selectedCase.stats" :key="stat.title" class="stats-grid__stat">
                   <div class="stats-grid__stat-title">{{ stat.title }}</div>
                   <div class="stats-grid__stat-block" style="background-image: url('/images/label-gradient.svg')">
                       <span data-number="{{ stat.stat }}">{{ stat.stat }}</span>
@@ -270,7 +270,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="service__examples__video border-radius">
-            <video :src="selectedCase.video" autoplay muted loop class="border-radius" playsinline webkit-playsinline style="pointer-events: none;"></video>
+            <video :src="selectedCase.video" autoplay muted loop class="border-radius" playsinline webkit-playsinline style="pointer-events: none;"/>
         </div>
       </div>
     </div>

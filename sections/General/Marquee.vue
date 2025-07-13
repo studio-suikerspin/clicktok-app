@@ -29,8 +29,9 @@ onMounted(() => {
 
 <template>
     <section class="marquee section-padding">
-        <BlurGlow top="" left="40%" :width="'400px'" :height="'55%'" :mobileNoBlur="true"
-                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
+        <BlurGlow
+top="" left="40%" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
         <div v-for="n in 5" :key="n" class="marquee__slide">
             <div class="marquee__slide_content">
                 <div class="marquee__slide_text">

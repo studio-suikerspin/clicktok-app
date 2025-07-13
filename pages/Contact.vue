@@ -62,22 +62,22 @@ const contactForms = [
 
       <template #smooth>
         <div class="hero__wrapper">
-          <div class="hero__background-fade"></div>
+          <div class="hero__background-fade"/>
           <Header />
           <div class="contactpage__wrapper">
             <div>
             <Filters
                 :filters="filters"
-                :selectedIndex="selectedCaseIndex"
-                @filterChange="selectCase"
+                :selected-index="selectedCaseIndex"
+                @filter-change="selectCase"
             />
             <Contact
                 :title="contactForms[selectedCaseIndex].title"
                 :subtitle="contactForms[selectedCaseIndex].subtitle"
-                :ctaText="contactForms[selectedCaseIndex].ctaText"
-                :isSollicitation="selectedCaseIndex === 2"
-                :isCreator="selectedCaseIndex === 1"
-                :formType="contactForms[selectedCaseIndex].type"
+                :cta-text="contactForms[selectedCaseIndex].ctaText"
+                :is-sollicitation="selectedCaseIndex === 2"
+                :is-creator="selectedCaseIndex === 1"
+                :form-type="contactForms[selectedCaseIndex].type"
               />
             </div>
             <div class="logo-flex-wrapper">

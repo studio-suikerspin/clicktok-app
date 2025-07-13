@@ -24,7 +24,7 @@ const cases = [
     <section class="featured-cases">
         <div class="container">
             <div class="featured-cases__inner">
-                <div class="cases-card border-radius" v-for="(item, index) in cases" :key="index">
+                <div v-for="(item, index) in cases" :key="index" class="cases-card border-radius">
                     <div class="cases-card__content">
                         <div class="cases-card__title">{{ item.title }}</div>
                         <Button variant="white" :href="item.url" :title="item.title"> Lees meer </Button>

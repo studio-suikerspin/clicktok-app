@@ -95,7 +95,7 @@ onUnmounted(() => {
                 <div class="contact__inner">
                     <div class="contact__left border-radius">
                         <div class="contact__left_text">
-                            <h2 class="contact__title" v-html="title"></h2>
+                            <h2 class="contact__title" v-html="title"/>
                             <div class="contact__subtitle">
                                 {{ subtitle }}
                             </div>
@@ -103,62 +103,62 @@ onUnmounted(() => {
                         <div class="contact__left_form">
                             <form class="contact__form">
                                 <div class="contact__form_row">
-                                    <input type="text" name="name" placeholder="Naam" v-model="form.name" class="border-radius" />
-                                    <input type="text" placeholder="Bedrijfsnaam" v-model="form.company" v-if="!isCreator && !isSollicitation" class="border-radius" />
-                                    <input type="text" placeholder="Username" v-model="form.username" v-if="isCreator" class="border-radius" />
+                                    <input v-model="form.name" type="text" name="name" placeholder="Naam" class="border-radius" >
+                                    <input v-if="!isCreator && !isSollicitation" v-model="form.company" type="text" placeholder="Bedrijfsnaam" class="border-radius" >
+                                    <input v-if="isCreator" v-model="form.username" type="text" placeholder="Username" class="border-radius" >
                                 </div>
                                 <div class="contact__form_row">
-                                    <input type="email" name="email" v-model="form.email" placeholder="Email" class="border-radius" />
-                                    <input type="tel" name="tel" v-model="form.phone" placeholder="Telefoon" class="border-radius" />
+                                    <input v-model="form.email" type="email" name="email" placeholder="Email" class="border-radius" >
+                                    <input v-model="form.phone" type="tel" name="tel" placeholder="Telefoon" class="border-radius" >
                                 </div>
-                                <div class="contact__form_row"  v-if="isSollicitation">
-                                    <textarea placeholder="Motivatie" v-model="form.message" class="border-radius"></textarea>
+                                <div v-if="isSollicitation"  class="contact__form_row">
+                                    <textarea v-model="form.message" placeholder="Motivatie" class="border-radius"/>
                                 </div>
-                                <div class="contact__form_row" v-if="isSollicitation">
+                                <div v-if="isSollicitation" class="contact__form_row">
                                     <label class="upload-label" for="portfolio">
                                         Upload Portfolio
                                     </label>
                                     <input
-                                        type="file"
                                         id="portfolio"
-                                        @input="form.portfolio = $event.target.files[0]"
+                                        type="file"
                                         class="file-upload border-radius"
                                         style="display: none"
-                                    />
+                                        @input="form.portfolio = $event.target.files[0]"
+                                    >
                                     <label class="upload-label" for="cv">
                                         Upload CV
                                     </label>
-                                    <input type="file" id="cv" @input="form.cv = $event.target.files[0]" class="file-upload border-radius" style="display: none" />
+                                    <input id="cv" type="file" class="file-upload border-radius" style="display: none" @input="form.cv = $event.target.files[0]" >
                                     <progress v-if="form.progress" :value="form.progress.percentage" max="100">
                                         {{ form.progress.percentage }}%
                                     </progress>
                                 </div>
-                                <textarea placeholder="Schrijf hier je bericht" v-model="form.message" v-if="!isSollicitation" class="border-radius"></textarea>
+                                <textarea v-if="!isSollicitation" v-model="form.message" placeholder="Schrijf hier je bericht" class="border-radius"/>
 
                                 <div class="contact__form_gdpr">
-                                    <input type="checkbox" name="gdpr" id="gdpr" class="border-radius" />
+                                    <input id="gdpr" type="checkbox" name="gdpr" class="border-radius" >
                                     <label for="gdpr">Ik ga akkoord met de <a href="/privacy-policy">privacyverklaring</a></label>
                                 </div>
-                                <Button @click.prevent="() => submitForm()" variant="blue" href="" class="contact__form_button">{{ ctaText }}</Button>
+                                <Button variant="blue" href="" class="contact__form_button" @click.prevent="() => submitForm()">{{ ctaText }}</Button>
                             </form>
                         </div>
                     </div>
                     <div class="contact__right">
                         <div class="image__wrapper active">
                             <!-- <NuxtImg src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
-                            <img src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" >
                         </div>
                         <div class="image__wrapper">
                             <!-- <NuxtImg src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
-                            <img src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" >
                         </div>
                         <div class="image__wrapper">
                             <!-- <NuxtImg src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
-                            <img src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" >
                         </div>
                         <div class="image__wrapper">
                             <!-- <NuxtImg src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
-                            <img src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" >
                         </div>
                     </div>
                 </div>

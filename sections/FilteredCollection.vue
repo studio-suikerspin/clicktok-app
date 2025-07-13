@@ -110,8 +110,8 @@ onMounted(() => {
                 </li>
             </ul>
 
-            <div class="collection" ref="collection">
-                <template v-for="(item, key) in filteredCases" :key="key" v-if="filteredCases.length">
+            <div ref="collection" class="collection">
+                <template v-for="(item, key) in filteredCases" v-if="filteredCases.length" :key="key">
                     <CaseCard :client="item.client" :tags="item.tags" :featured_video="item.featured_video" :handle="item.handle" :autoplay="true" />
                 </template>
 

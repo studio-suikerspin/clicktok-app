@@ -69,8 +69,8 @@ onMounted(async () => {
 
 <template>
     <div class="section-title_wrapper">
-        <div class="section-title__title title-font" ref="titleRef" v-html="title"></div>
-        <div v-if="subtitle" class="section-title__subtitle subtitle-font" ref="subtitleRef" v-html="subtitle"></div>
+        <div ref="titleRef" class="section-title__title title-font" v-html="title"/>
+        <div v-if="subtitle" ref="subtitleRef" class="section-title__subtitle subtitle-font" v-html="subtitle"/>
     </div>
 </template>
 

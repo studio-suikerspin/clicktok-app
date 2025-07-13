@@ -145,16 +145,16 @@ onMounted(() => {
     <div class="hero__content">
         <div class="container">
             <div class="hero__content__inner">
-                <div :class="`hero__content__inner__image ${image.class}`" v-for="image in images" :key="image.src">
-                    <div class="image-overlay"></div>
+                <div v-for="image in images" :key="image.src" :class="`hero__content__inner__image ${image.class}`">
+                    <div class="image-overlay"/>
                     <NuxtImg :src="image.src" :class="image.class" alt="A floating image inside the hero content" loading="lazy" />
                 </div>
                 <div class="hero__video-wrap">
                     <div class="video__inner">
                         <video class="hero__video border-radius" autoplay muted playsinline loop webkit-playsinline style="pointer-events: none">
-                            <source :src="video" type="video/webm" width="100%" height="978" loading="lazy" />
+                            <source :src="video" type="video/webm" width="100%" height="978" loading="lazy" >
                         </video>
-                        <div class="video__overlay border-radius"></div>
+                        <div class="video__overlay border-radius"/>
                     </div>
                 </div>
                 <div class="hero__content__inner__text">

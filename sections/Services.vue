@@ -94,14 +94,14 @@ onUnmounted(() => {
         <div class="container">
             <div class="services__container">
                 <div class="services__wrapper">
-                    <SectionTitle title="Services" link="/services" linkTitle="Lees meer" />
+                    <SectionTitle title="Services" link="/services" link-title="Lees meer" />
                     <div class="services__inner">
                         <div class="services__left border-radius">
                             <div class="services__left-items">
                                 <div
-                                    class="services__left-item"
                                     v-for="(service, index) in services"
                                     :key="service.number"
+                                    class="services__left-item"
                                     @click="selectedService = index"
                                 >
                                     <div class="services__left-item-title">
@@ -112,15 +112,15 @@ onUnmounted(() => {
                                             </div>
                                         </div>
                                         <div class="services__left-item-icon">
-                                            <i class="bx bx-chevron-down" :class="{ rotate: selectedService === index }"></i>
+                                            <i class="bx bx-chevron-down" :class="{ rotate: selectedService === index }"/>
                                         </div>
                                     </div>
                                     <div class="services__left-item-content" :class="{ hidden: selectedService !== index }">
-                                        <div class="services__left-item-content-text" v-html="service.description"></div>
+                                        <div class="services__left-item-content-text" v-html="service.description"/>
                                         <div class="services__left-item-content-link">
                                             <a href="/services">
                                                 Meer informatie
-                                                <i class="bx bx-arrow-back icon"></i>
+                                                <i class="bx bx-arrow-back icon"/>
                                             </a>
                                         </div>
                                         <div class="services__left-item_mobile-video">
@@ -138,7 +138,7 @@ onUnmounted(() => {
                                                 muted
                                                 loop
                                                 class="border-radius desktop-video"
-                                                ></video>
+                                                />
                                                 <video
                                                 :ref="
                                                     (el) => {
@@ -151,7 +151,7 @@ onUnmounted(() => {
                                                 playsinline
                                                 muted
                                                 class="border-radius mobile-video"
-                                                ></video>
+                                                />
                                             </div>
                                         </div>
 
@@ -160,7 +160,7 @@ onUnmounted(() => {
                             </div>
                         </div>
                         <div class="services__right border-radius">
-                            <div class="services__video_wrapper" v-if="services[selectedService].video">
+                            <div v-if="services[selectedService].video" class="services__video_wrapper">
                                 <video
                                     :ref="
                                         (el) => {
@@ -175,7 +175,7 @@ onUnmounted(() => {
                                     controls="true"
                                     webkit-playsinline
                                     class="border-radius"
-                                ></video>
+                                />
                             </div>
                         </div>
                     </div>

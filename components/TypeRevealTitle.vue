@@ -38,7 +38,7 @@ onMounted(async () => {
 
 <template>
     <div :class="`reveal-type ${classes}`">
-        <slot></slot>
+        <slot/>
     </div>
 </template>
 

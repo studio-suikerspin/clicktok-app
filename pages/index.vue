@@ -68,18 +68,20 @@ onMounted(() => {
 
             <section class="padding-top">
                 <div class="container relative-container">
-                    <BlurGlow top="0" left="10px" :width="'400px'" :height="'280px'" :mobileNoBlur="true"
-                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
+                    <BlurGlow
+top="0" left="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
                     <TypeRevealTitle>
-                        We help brands stay ahead through <br/>viral short-form content
+                        We help brands stay ahead through <br>viral short-form content
                     </TypeRevealTitle>
-                    <BlurGlow top="0" right="10px" :width="'400px'" :height="'280px'" :mobileNoBlur="true"
-                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
+                    <BlurGlow
+top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
                 </div>
             </section>
 
             <div class="section-padding">
-                <Cases :showFirstTwo="true" :showLastTwo="false" /> 
+                <Cases :show-first-two="true" :show-last-two="false" /> 
             </div>
 
             <LetTheNumbersSpeak />
@@ -91,7 +93,7 @@ onMounted(() => {
             <Marquee />
             <Services />
             <div class="padding-top">
-                <Cases :showFirstTwo="false" :showLastTwo="true" /> 
+                <Cases :show-first-two="false" :show-last-two="true" /> 
             </div>
             <Reviews />
             <AboutCarousel />
@@ -101,8 +103,7 @@ onMounted(() => {
             <Footer />
         </template>
 
-        <template #static>
-        </template>
+        <template #static/>
     </BaseLayout>
 </template>
 
