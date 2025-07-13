@@ -3,6 +3,7 @@ import { horizontalLoop } from '@/composables/useHorizontalLoop';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted } from 'vue'
+import BlurGlow from '@/components/blur/Blurglow.vue'
 
 onMounted(() => {
     const slides = gsap.utils.toArray('.marquee__slide'),
@@ -28,14 +29,16 @@ onMounted(() => {
 
 <template>
     <section class="marquee section-padding">
+        <BlurGlow top="" left="40%" :width="'400px'" :height="'55%'" :mobileNoBlur="true"
+                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
         <div v-for="n in 5" :key="n" class="marquee__slide">
             <div class="marquee__slide_content">
                 <div class="marquee__slide_text">
                     <h2>We create formats that elevate your brand's voice.</h2>
                 </div>
-                <div class="marquee__slide_pixel">
-                    <NuxtImg src="/images/PIXEL__PIXEL_WIT.png" alt="Pixel" />
-                </div>
+                <!-- <div class="marquee__slide_pixel">
+                    <img src="/images/PIXEL__PIXEL_WIT.png" alt="Pixel" />
+                </div> -->
             </div>
         </div>
     </section>
@@ -67,6 +70,8 @@ onMounted(() => {
     align-items: center;
     justify-content: center;
     gap: 40px;
+    z-index: 9;
+    position: relative;
 }
 
 .marquee__slide_text h2 {

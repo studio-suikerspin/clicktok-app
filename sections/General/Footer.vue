@@ -5,7 +5,7 @@ const items = [
         href: '/',
     },
     {
-        title: 'Diensten',
+        title: 'Services',
         href: '/services',
     },
     {
@@ -31,10 +31,10 @@ const items = [
                         <NuxtImg src="/images/clicktok-logo.svg" alt="ClickTok logo" class="footer__logo_img" />
                     </div>
                     <div class="footer__socials">
-                        <a href="https://www.tiktok.com/@clicktok" class="footer__social_link" title="ClickTok's TikTok profile" target="_blank">
+                        <a href="https://www.tiktok.com/@clicktok.nl" class="footer__social_link" title="ClickTok's TikTok profile" target="_blank">
                             <i class="bx bxl-tiktok"></i>
                         </a>
-                        <a href="https://www.instagram.com/clicktok" class="footer__social_link" title="ClickTok's Instagram profile" target="_blank">
+                        <a href="https://www.instagram.com/clicktok.nl" class="footer__social_link" title="ClickTok's Instagram profile" target="_blank">
                             <i class="bx bxl-instagram"></i>
                         </a>
                         <a

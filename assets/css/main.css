@@ -36,6 +36,14 @@
     --space-xxl: 48px;
 }
 
+html {
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .title-font {
     font-family: 'Syne', sans-serif;
     font-weight: 700;

@@ -21,6 +21,7 @@ import TypeRevealTitle from '@/components/TypeRevealTitle.vue';
 import RevealingTypes from '@/sections/RevealingTypes.vue';
 import LogoSlider from '@/sections/General/LogoSlider.vue';
 import IntroAnimation from '@/components/IntroAnimation.vue';
+import BlurGlow from '@/components/blur/Blurglow.vue'
 
 function initAutoplayVideos(selector = 'video[autoplay]') {
   const enableAutoplay = () => {
@@ -66,14 +67,20 @@ onMounted(() => {
             </div>
 
             <section class="padding-top">
-                <div class="container">
+                <div class="container relative-container">
+                    <BlurGlow top="0" left="10px" :width="'400px'" :height="'280px'" :mobileNoBlur="true"
+                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
                     <TypeRevealTitle>
-                        We help brands stay ahead through viral short-form content
+                        We help brands stay ahead through <br/>viral short-form content
                     </TypeRevealTitle>
+                    <BlurGlow top="0" right="10px" :width="'400px'" :height="'280px'" :mobileNoBlur="true"
+                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
                 </div>
             </section>
 
-            <Cases /> 
+            <div class="section-padding">
+                <Cases :showFirstTwo="true" :showLastTwo="false" /> 
+            </div>
 
             <LetTheNumbersSpeak />
 
@@ -83,6 +90,9 @@ onMounted(() => {
 
             <Marquee />
             <Services />
+            <div class="padding-top">
+                <Cases :showFirstTwo="false" :showLastTwo="true" /> 
+            </div>
             <Reviews />
             <AboutCarousel />
 
@@ -99,6 +109,10 @@ onMounted(() => {
 <style>
 .logo-slider-mobile{
     display: none;
+}
+
+.relative-container{
+    position: relative;
 }
 
 @media(max-width: 992px){

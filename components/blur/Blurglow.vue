@@ -78,7 +78,7 @@ const styleObject = computed(() => {
   background: linear-gradient(180deg, rgba(30, 25, 58, 0.6), rgba(178, 156, 198, 0.6));
   filter: blur(75px);
   opacity: 0.7;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
 }
 </style>

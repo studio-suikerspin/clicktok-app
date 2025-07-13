@@ -10,9 +10,23 @@ import GradientBlur from '@/components/GradientBlur.vue'
 import PixelLabel from '@/components/PixelLabel.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
+import BlurGlow from '@/components/blur/Blurglow.vue'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
+
+const props = defineProps({
+    showFirstTwo: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
+    showLastTwo: {
+        type: Boolean,
+        required: false,
+        default: false,
+    },
+})
 
 const cases = [
     {
@@ -44,6 +58,40 @@ const cases = [
         label: 'UGC Ad Creatie',
         content: 'Voor Happn ontwikkelden we native UGC ad creatives die aanvoelen als echte TikToks, maar gebouwd zijn voor conversie.',
         caseLink: '/cases/happn',
+        stats: [],
+    }
+]
+
+const casesSecond = [
+    {
+        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3.webm',
+        title: 'Dogman Video Game',
+        label: 'Creator collaborations',
+        subtitle: 'Direct Activation',
+        content: 'Voor Dogman Impawsible zetten we samen met een creator een format neer dat aanslag bij de doelgroep en zorgde voor duizenden directe activaties binnen de doelgroep',
+        caseLink: '/cases/nubikk',
+        stats: [
+            {
+                title: 'views',
+                stat: 234000,
+            },
+            {
+                title: 'likes',
+                stat: 15700,
+            },
+            {
+                title: 'Bookmarks',
+                stat: 2600,
+            },
+        ],
+    },
+    {
+        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3.webm',
+        title: 'mobiel.nl',
+        label: 'UGC Ad Creatie',
+        subtitle: 'Built on Association',
+        content: 'Met deze UGC ad creatives brachten we de boodschap krachtig over: sim only los is vaak voordeliger. Om zo de juiste associaties te creëren bij de doelgroep.',
+        caseLink: '/cases/nubikk',
         stats: [],
     },
 ]
@@ -113,14 +161,18 @@ const playActiveVideo = (slideIndex: number) => {
 const animateNumbers = (slideIndex: number | null = null) => {
     let selector = '[data-number]'
     if (slideIndex !== null) {
-        selector = `.details-carousel .case-detail.active [data-number]`
+        selector = `.case-detail.active [data-number]`
     }
 
-    const numberElements = document.querySelectorAll(selector)
+    // Use the current section's ref to scope the search to this component only
+    const numberElements = sectionRef.value?.querySelectorAll(selector) || []
 
     numberElements.forEach((element, index) => {
         const dataNumber = element.getAttribute('data-number')
-        const targetValue = slideIndex !== null ? cases[slideIndex].stats[index]?.stat || 0 : parseInt(dataNumber || '0')
+        
+        // Determine which array to use based on the current carousel content
+        const currentCases = props.showFirstTwo ? cases : casesSecond
+        const targetValue = slideIndex !== null ? currentCases[slideIndex].stats[index]?.stat || 0 : parseInt(dataNumber || '0')
 
         gsap.fromTo(
             element,
@@ -177,10 +229,12 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section ref="sectionRef" class="cases section-padding">
+    <section ref="sectionRef" class="cases">
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" linkTitle="Bekijk meer" />
+                <BlurGlow top="" left="10px" :width="'400px'" :height="'55%'" :mobileNoBlur="false"
+                :mobileNoBlurWidth="'400px'" :mobileNoBlurHeight="'50%'" />
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">
@@ -192,11 +246,12 @@ onMounted(async () => {
                             class="details-carousel"
                             @slide-change="handleSlideChange"
                         >
-                            <div v-for="(item, index) in cases" :key="index" class="case-detail h-full">
+                            <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-detail h-full">
                                 <div class="case-detail__inner">
                                     <div class="case-detail__top">
                                         <div class="case-detail__details">
                                             <div class="title-wrap">
+                                                <div class="case-detail__label">{{ item.label }}</div>
                                                 <div class="case-detail__title">{{ item.title }}</div>
                                                 <div class="case-detail__subtitle">{{ item.subtitle }}</div>
                                             </div>
@@ -211,10 +266,11 @@ onMounted(async () => {
 
                                     <div class="stats-grid">
                                         <div class="stat-item" v-for="stat in item.stats" :key="stat.title">
-                                            <NuxtImg class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" />
+                                            <!-- <NuxtImg class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
+                                             <!-- <img class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
                                             <div class="stat-item__title">{{ stat.title }}</div>
                                             <div class="stat-item__number">
-                                                <span data-number="{{ stat.stat }}">{{ stat.stat }}</span>
+                                                <span :data-number="stat.stat">{{ stat.stat }}</span>
                                                 +
                                             </div>
                                         </div>
@@ -225,7 +281,7 @@ onMounted(async () => {
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
                             <div class="case-card" v-for="(item, index) in cases" :key="index">
-                                <PixelLabel :text="item.label" />
+                                <!-- <PixelLabel :text="item.label" /> -->
                                 <video
                                     :ref="(el) => { if (el) videoRefs[index] = el as HTMLVideoElement }"
                                     class="case-card__video border-radius"
@@ -263,6 +319,10 @@ onMounted(async () => {
     position: relative;
 }
 
+.cases__inner{
+    position: relative;
+}
+
 .cases .container {
     max-width: 1250px;
 }
@@ -277,6 +337,8 @@ onMounted(async () => {
     gap: 40px;
 
     padding-top: 40px;
+    z-index: 9;
+    position: relative;
 }
 
 .cases-controls {
@@ -316,6 +378,7 @@ onMounted(async () => {
     transition: all 300ms ease;
 
     max-width: 480px;
+    z-index: 9;
 }
 
 .cases-slider__details-wrap {

@@ -34,7 +34,7 @@ import { onMounted } from 'vue';
     },
     {
       image: '/images/london-shoot1-min.webp',
-      title: 'Álles onder 1 dak',
+      title: 'Alles onder één dak',
       subtitle: 'Alles wat we doen is gericht op TikTok en dát doen we volledig in-house. Van strategie tot scripting, productie en analyse: één team, één focus, één kanaal. Daardoor schakelen we snel, houden we de kwaliteit hoog en kunnen we zorgen voor het best mogelijke resultaat.',
     },
     {
@@ -97,7 +97,8 @@ import { onMounted } from 'vue';
   >
     <SwiperSlide v-for="(slide, index) in slides" :key="slide.image">
       <div class="about__slide-container" :class="[{ 'active': index === 0 }, `item-${index}`]">
-        <NuxtImg :src="slide.image" :alt="slide.title" loading="lazy" />
+        <!-- <NuxtImg :src="slide.image" :alt="slide.title" loading="lazy" /> -->
+        <img :src="slide.image" :alt="slide.title" loading="lazy" />
         <div class="overlay"></div>
         <div class="about__text">
           <div class="title" :class="{ 'active': index === 0 }">{{ slide.title }}</div>
@@ -248,7 +249,7 @@ import { onMounted } from 'vue';
 }
 
 .about__swiper :deep(.swiper-scrollbar-drag) {
-    background: var(--accent_blue, #43bbc4);
+    background: var(--white-off, #fff);
     border-radius: 10px;
     height: 100%;
 }

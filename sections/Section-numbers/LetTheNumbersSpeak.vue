@@ -57,19 +57,9 @@ onMounted(async () => {
         <div class="container">
             <div class="numbers__speak-inner">
                 <div class="numbers__speak-title">
-                    <TypeRevealTitle>Let the numbers speak for themselves</TypeRevealTitle>
+                    <TypeRevealTitle>The numbers speak for themselves</TypeRevealTitle>
                 </div>
                 <div class="numbers__speak-results">
-                    <div class="numbers__speak-results-item">
-                        <div class="numbers__result">
-                            <div class="numbers__result_title">Views</div>
-                            <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">67400000</span>
-                                +
-                            </div>
-                            <div class="numbers__result_text">Totaal bereik</div>
-                        </div>
-                    </div>
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
                             <div class="numbers__result_title">Creators</div>
@@ -82,15 +72,25 @@ onMounted(async () => {
                     </div>
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
+                            <div class="numbers__result_title">Views</div>
+                            <div class="numbers__result_number-wrapper">
+                                <span class="numbers__result_number">88200000</span>
+                                +
+                            </div>
+                            <div class="numbers__result_text">Totaal bereik</div>
+                        </div>
+                    </div>
+                    <div class="numbers__speak-results-item">
+                        <div class="numbers__result">
                             <div class="numbers__result_title">Campagnes</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">43</span>
+                                <span class="numbers__result_number">23</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Aantal campagnes</div>
                         </div>
                     </div>
-                    <div class="numbers__speak-results-item">
+                    <!-- <div class="numbers__speak-results-item">
                         <div class="numbers__result">
                             <div class="numbers__result_title">Klantenscore</div>
                             <div class="numbers__result_number-wrapper">
@@ -99,7 +99,7 @@ onMounted(async () => {
                             </div>
                             <div class="numbers__result_text">Klantenscore</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="numbers__speak-cta">
                     <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
@@ -168,7 +168,8 @@ onMounted(async () => {
     justify-content: center;
     gap: 8px;
     color: var(--off-white);
-    z-index: 2;
+    z-index: 9;
+    position: relative;
 }
 
 .numbers__speak-results {

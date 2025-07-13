@@ -29,8 +29,8 @@ onMounted(async () => {
                 markers: dev,
             },
             opacity: 1,
-            stagger: 0.1,
-            duration: 0.5
+            stagger: 0.8,
+            duration: 1.1
         })
     })
 })
@@ -51,6 +51,8 @@ onMounted(async () => {
     text-align: center;
     color: var(--off-white);
     line-height: 73px;
+    z-index: 9;
+    position: relative;
 }
 
 @media screen and (max-width: 992px) {

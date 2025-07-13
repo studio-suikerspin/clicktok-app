@@ -120,7 +120,8 @@ defineExpose({
   justify-content: center;
   gap: 16px;
   color: var(--off-white);
-  z-index: 2;
+  z-index: 9;
+  position: relative;
 }
 
 .numbers__result_title{

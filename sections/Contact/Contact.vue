@@ -91,7 +91,7 @@ onUnmounted(() => {
     <div class="contact__wrapper padding-bottom">
         <div class="container">
             <div class="contact__container">
-                <SectionTitle title="Contact" />
+                <!-- <SectionTitle title="Contact" /> -->
                 <div class="contact__inner">
                     <div class="contact__left border-radius">
                         <div class="contact__left_text">
@@ -134,22 +134,31 @@ onUnmounted(() => {
                                     </progress>
                                 </div>
                                 <textarea placeholder="Schrijf hier je bericht" v-model="form.message" v-if="!isSollicitation" class="border-radius"></textarea>
+
+                                <div class="contact__form_gdpr">
+                                    <input type="checkbox" name="gdpr" id="gdpr" class="border-radius" />
+                                    <label for="gdpr">Ik ga akkoord met de <a href="/privacy-policy">privacyverklaring</a></label>
+                                </div>
                                 <Button @click.prevent="() => submitForm()" variant="blue" href="" class="contact__form_button">{{ ctaText }}</Button>
                             </form>
                         </div>
                     </div>
                     <div class="contact__right">
                         <div class="image__wrapper active">
-                            <NuxtImg src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <!-- <NuxtImg src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
+                            <img src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <!-- <NuxtImg src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
+                            <img src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <!-- <NuxtImg src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
+                            <img src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <!-- <NuxtImg src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" /> -->
+                            <img src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                     </div>
                 </div>
@@ -243,6 +252,19 @@ onUnmounted(() => {
     font-family: 'syne', sans-serif;
 }
 
+.contact__form_gdpr {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact__form_gdpr label a {
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: underline;
+    font-style: italic;
+}
+
 .contact__form_row .upload-label {
     cursor: pointer;
 }
@@ -319,7 +341,7 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 40px;
+    padding: 0 40px;
 }
 
 .image__wrapper{
@@ -327,8 +349,9 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
 
-    max-height: 600px;
+    /* max-height: 600px; */
     width: 100%;
+    height: 100%;
     overflow: hidden;
     aspect-ratio: 9/16;
 }

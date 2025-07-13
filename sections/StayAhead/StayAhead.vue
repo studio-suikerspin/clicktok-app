@@ -9,7 +9,7 @@
     const props = defineProps({
         title: {
             type: String,
-            default: "Our way to stay ahead"
+            default: "(Y)our way to stay ahead"
         },
         subtitle: {
             type: String,
@@ -29,7 +29,7 @@
         },
         description: {
             type: String,
-            default: "Merkwaarden zijn het fundament van je verhaal. Ze bepalen niet alleen waar je als merk voor staat, maar ook hoe je communiceert, welke keuzes je maakt en hoe je publiek je ervaart. In contentcreatie zorgen merkwaarden voor richting en herkenbaarheid — ze maken het verschil tussen 'gewoon een video' en content die voelt als jóuw merk. Bij ClickTok bouwen we formats en verhalen altijd vanuit deze kern, zodat elke video niet alleen scoort, maar ook versterkt wie je bent."
+            default: "Je merkwaarden zijn geen bijzaak – ze vormen de basis van wat je doet, wat je uitstraalt en hoe mensen je onthouden. Bij grote campagnes op andere platformen snapt iedereen dat. Maar op TikTok lijken merken het te vergeten. Ze jagen op trends en views, zonder te bouwen aan herkenning of gevoel. Wij doen het anders. Ook op TikTok beginnen we bij je merkwaarden. We bouwen formats die kloppen met wie je bent én hoe het platform beweegt – vanuit cultuur, context en creativiteit. Zo maak je content die scoort én versterkt wie je bent. Herkenbaar. Shareable. On-brand."
         },
         buttonText: {
             type: String,
@@ -46,10 +46,10 @@
         associaties: {
             type: Array,
             default: () => [
-                { src: "/images/nubikk/associatie-nubikk-1.jpeg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/associatie-nubikk-2.jpeg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/associatie-nubikk-3.jpeg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/associatie-nubikk-4.jpeg", alt: "Nubikk associaties" },
+                { src: "/images/nubikk/nubikkassociatie.jpg", alt: "Nubikk associaties" },
+                { src: "/images/nubikk/nubikkassociatie2.jpg", alt: "Nubikk associaties" },
+                { src: "/images/nubikk/nubikkassociatie3.jpg", alt: "Nubikk associaties" },
+                { src: "/images/nubikk/nubikkassociatie4.jpg", alt: "Nubikk associaties" },
             ]
         },
         swiperConfig: {
@@ -88,12 +88,34 @@
                             <video :src="videoSrc" autoplay muted loop playsinline webkit-playsinline class="border-radius"></video>
                         </div>
                     </div>
-                    <div class="stay__ahead__associaties">
-                        <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                            <NuxtImg :src="associatie.src" :alt="associatie.alt" />
+                    <div class="stay__ahead__associaties-wrapper border-radius">
+                        <div class="stay__ahead__associaties-wrapper-title">
+                            <div class="title">Associaties</div>
+                            <div class="text">
+                                Content met de juiste associaties doet meer dan opvallen; het bouwt herkenning, vertrouwen en voorkeur op.
+                            </div>
+                        </div>
+                        <div class="stay__ahead__associaties">
+                            <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
+                                <img :src="associatie.src" :alt="associatie.alt" />
+                            </div>
                         </div>
                     </div>
+                    
                 </div>
+                <!-- <div class="stay__ahead__associaties-wrapper border-radius">
+                    <div class="stay__ahead__associaties-wrapper-title">
+                        <div class="title">Associaties</div>
+                        <div class="text">
+                            Content met de juiste associaties doet meer dan opvallen; het bouwt herkenning, vertrouwen en voorkeur op.
+                        </div>
+                    </div>
+                    <div class="stay__ahead__associaties">
+                        <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
+                            <img :src="associatie.src" :alt="associatie.alt" />
+                        </div>
+                    </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -151,7 +173,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 0 40px;
     gap: 80px;
     width: 100%;
 }
@@ -221,7 +243,7 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--off-white);
-    line-height: 22px;
+    line-height: 130%;
     max-width: 500px;
 }
 
@@ -255,9 +277,47 @@
 }
 
 /* Associaties styling */
-.stay__ahead__associaties{
+.stay__ahead__associaties-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1080px;
     width: 100%;
     padding: 0 40px;
+    /* background-image: url('/images/gradient-ruis-vierkant-min.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 24px 80px; */
+
+}
+
+.stay__ahead__associaties-wrapper-title{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--off-white);
+}
+
+.stay__ahead__associaties-wrapper-title .title{
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--off-white);
+    line-height: 100%;
+    font-style: italic;
+}
+
+.stay__ahead__associaties-wrapper-title .text{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--off-white);
+    line-height: 130%;
+}
+
+
+
+.stay__ahead__associaties{
+    width: 100%;
     display: flex;
     gap: 24px;
 }
