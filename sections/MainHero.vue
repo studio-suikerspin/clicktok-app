@@ -34,27 +34,37 @@ import { onMounted } from 'vue'
             <div class="container relative text-container">
 
                  <!-- left images -->
-                <div class="hero__floating_image first border-radius">
+                <div class="hero__floating_image with-hover first border-radius">
                     <!-- <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
-                    <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    <div class="hero__floating_image_wrapper">
+                        <img src="/images/nubikk-shoot-min.webp" alt="Hero floating image" loading="lazy" />
+                        <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    </div>
                 </div>
-                <div class="hero__floating_image second border-radius">
-                    <NuxtImg src="/images/shoe-shoot-min.webp" alt="Hero floating image" loading="lazy" />
-                </div>
-                <div class="hero__floating_image third border-radius">
-                    <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+              
+                <div class="hero__floating_image with-hover third border-radius">
+                    <!-- <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" /> -->
+                    <div class="hero__floating_image_wrapper">
+                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <video src="https://r2.suikerspin.studio/jumbo-video.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    </div>
                 </div>
 
                 <!-- right images -->
-                <div class="hero__floating_image fourth border-radius">
-                    <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
+                <div class="hero__floating_image with-hover fourth border-radius">
+                    <!-- <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" /> -->
+                    <div class="hero__floating_image_wrapper">
+                        <img src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
+                        <video src="https://r2.suikerspin.studio/keukensale.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    </div>
                 </div>
-                <div class="hero__floating_image fifth border-radius">
-                    <NuxtImg src="/images/barber-shoot.jpeg" alt="Hero floating image" loading="lazy" />
-                </div>
-                <div class="hero__floating_image sixth border-radius">
+               
+                <div class="hero__floating_image with-hover sixth border-radius">
                     <!-- <NuxtImg src="/images/london-shoot1-min.webp" alt="Hero floating image"> -->
-                    <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    <div class="hero__floating_image_wrapper">
+                        <img src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"></video>
+                    </div>
                 </div>
 
                 <div class="hero__inner">
@@ -62,11 +72,14 @@ import { onMounted } from 'vue'
                         <div class="hero__title_wrapper-top">Full Service</div>
                         <h1 class="hero__title">TikTok Agency</h1>
                         <div class="hero__subtitle">
-                            Van merkwaarden naar virale formats – wij maken short-form content die past binnen de cultuur, je zichtbaarheid vergroot en impact maakt op TikTok.
+                            <span class="first-span">Gefocust op merkbeleving die blijft
+                            hangen.</span> We bouwen formats vanuit <span class="thick-span">merkwaarden</span> om het juiste gevoel over
+                            te brengen, sterke <span class="thick-span">associaties</span> te creëren en zo te zorgen voor <span class="thick-span">herkenning,
+                            activatie en conversie</span>.
                         </div>
                         <div class="hero__cta_wrapper">
                             <Button variant="white" href="/contact" class="hero__cta">Let's get started!</Button>
-                            <!-- <Button variant="outline" href="/cases" class="hero__cta">Bekijk cases</Button> -->
+                            <Button variant="outline" href="/cases" class="hero__cta">Bekijk cases</Button>
                         </div>
                     </div>
 
@@ -79,9 +92,9 @@ import { onMounted } from 'vue'
             </div>
 
             <picture class="background-gradient">
-              <source media="(min-width: 768px)" srcset="/images/gradient-ruis-vierkant-min.webp">
-              <source media="(max-width: 767px)" srcset="/images/gradient-mobile-noise.webp">
-              <img src="/images/gradient-mobile-noise.webp" alt="Background gradient">
+              <source media="(min-width: 768px)" srcset="/images/gradient-vierkant-min.webp">
+              <source media="(max-width: 767px)" srcset="/images/gradient-vierkant-mobile-min.webp">
+              <img src="/images/gradient-vierkant-mobile-min.webp" alt="Background gradient">
             </picture>
         </div>
     <!-- </div> -->
@@ -98,9 +111,10 @@ import { onMounted } from 'vue'
     z-index: 3;
     overflow-x: hidden; /* voorkomt scrollbars bij mask */
     padding: 200px 30px 70px;
+    /* padding-bottom: 70px; */
 
-    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    /* mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%); */
 }
 
 .hero .background-gradient {
@@ -109,7 +123,15 @@ import { onMounted } from 'vue'
   top: 0;
   left: 0;
   width: 100%;
-  height: 110%;
+  height: 100vh;
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+-webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.hero .background-gradient img{
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .hero .text-container {
@@ -144,54 +166,87 @@ import { onMounted } from 'vue'
     object-fit: cover;
 }
 
+/* Desktop hover functionality */
+@media (min-width: 768px) {
+    .hero__floating_image.with-hover .hero__floating_image_wrapper{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .hero__floating_image.with-hover img {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+    .hero__floating_image.with-hover video {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* width: 100%;
+        height: 100%; */
+    }
+    
+    .hero__floating_image.with-hover:hover img {
+        opacity: 0;
+    }
+    
+    .hero__floating_image.with-hover:hover video {
+        opacity: 1;
+    }
+}
+
+/* Mobile: show only video */
+@media (max-width: 767px) {
+    .hero__floating_image video {
+        display: block;
+    }
+    .hero__floating_image.with-hover.third video,
+    .hero__floating_image.with-hover.fourth video{
+        display: none;
+    }
+    .hero__floating_image.with-hover.first img,
+    .hero__floating_image.with-hover.sixth img{
+        display: none;
+    }
+}
+
 
 .hero__floating_image.first {
-    height: 160px;
-    width: 150px;
+    height: 250px;
+    width: 180px;
     top: -90px;
     left: 9%;
+    aspect-ratio: 9/16;
 }
 
-.hero__floating_image.second {
-    height: 154px;
-    width: 210px;
-    top: 130px;
-    left: -20px;
-}
 
 .hero__floating_image.third {
-    height: 153px;
-    width: 153px;
-    top: 350px;
+    height: 200px;
+    width: 160px;
+    top: 300px;
     left: 100px;
+    aspect-ratio: 9/16;
 }
 
 .hero__floating_image.fourth {
-    height: 161px;
-    width: 134px;
+    height: 250px;
+    width: 180px;
     inset: -40px 9% auto auto;
-}
-
-.hero__floating_image.fifth {
-    height: 197px;
-    width: 273px;
-    top: 150px;
-    right: -20px;
+    aspect-ratio: 9/16;
 }
 
 .hero__floating_image.sixth {
-    height: 160px;
-    width: 150px;
-    top: 400px;
+    height: 200px;
+    width: 160px;
+    top: 300px;
     right: 200px;
+    aspect-ratio: 9/16;
 }
 
 @media(max-width: 1500px){
     .hero__floating_image.first {
         left: 3%;
-    }
-    .hero__floating_image.second {
-        left: -30px;
     }
     .hero__floating_image.third {
         left: 50px;
@@ -199,19 +254,12 @@ import { onMounted } from 'vue'
     .hero__floating_image.fourth {
         inset: -40px 3% auto auto;
     }
-    .hero__floating_image.fifth {
-        right: -40px;
-    }
     .hero__floating_image.sixth {
         right: 70px;
     }
 }
 
 @media(max-width: 1300px){
-    .hero__floating_image.second ,
-    .hero__floating_image.fifth {
-        display: none;
-    }
     .hero__floating_image.third {
         left: 10px;
     }
@@ -234,9 +282,6 @@ import { onMounted } from 'vue'
     }
     .hero__floating_image.fourth {
         inset: -80px 3% auto auto;
-    }
-    .hero__floating_image.fifth {
-        right: 20px;
     }
     .hero__floating_image.sixth {
         right: 20px;
@@ -265,7 +310,6 @@ import { onMounted } from 'vue'
         height: 95px;
     }
 }
-
 
 
 /* HERO INNER */
@@ -321,9 +365,18 @@ import { onMounted } from 'vue'
 }
 
 .hero__subtitle {
-    font-size: 18px;
-    font-weight: 500;
-    max-width: 600px;
+    font-size: 16px;
+    font-weight: 400;
+    max-width: 630px;
+}
+
+.hero__subtitle .first-span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.hero__subtitle .thick-span {
+    font-weight: 700;
 }
 
 .hero__cta_wrapper {
@@ -351,6 +404,18 @@ import { onMounted } from 'vue'
     .hero__subtitle {
         font-size: 16px;
         max-width: 100%;
+    }
+    .hero__subtitle .first-span {
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .hero__subtitle .thick-span {
+        font-weight: 600;
+    }
+    .hero__cta_wrapper{
+        flex-direction: column;
+        gap: 16px;
     }
 }
 

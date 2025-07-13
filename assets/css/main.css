@@ -37,19 +37,19 @@
 }
 
 .title-font {
-    font-family: Syne, sans-serif;
+    font-family: 'Syne', sans-serif;
     font-weight: 700;
     line-height: 100%;
 }
 
 .subtitle-font {
-    font-family: Syne, sans-serif;
+    font-family: 'Syne', sans-serif;
     font-weight: 600;
     line-height: 100%;
 }
 
 .montserrat-title {
-    font-family: Montserrat;
+    font-family: 'Montserrat', sans-serif;
     font-style: italic;
     font-weight: 800;
 }

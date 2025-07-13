@@ -28,13 +28,13 @@ const { title } = defineProps({
 // ]
 
 const items = [
-    { image: '/images/logos/nubikk.svg', class: 'first' },
-    { image: '/images/logos/logo-happn.png', class: 'second' },
-    { image: '/images/logos/jumbo-logo.svg', class: 'third' },
-    { image: '/images/logos/logo-mobielnl.svg', class: 'fourth' },
-    { image: '/images/logos/logo1.webp', class: 'fifth' },
     { image: '/images/logos/logo-sanisale.svg', class: 'sixth' },
-    { image: '/images/logos/logo2.svg', class: 'seventh' },
+    { image: '/images/logos/logo1.webp', class: 'fifth' },
+    { image: '/images/logos/logo-happn.png', class: 'second' },
+    { image: '/images/logos/jumbo-logo.svg', class: 'fourth' },
+    { image: '/images/logos/logo-mobielnl.svg', class: 'third' },
+    { image: '/images/logos/nubikk.svg', class: 'first' },
+    { image: '/images/logos/logo2.svg', class: 'seventh' },    
     // { image: '/images/logos/logo-happn.png' },
     // { image: '/images/logos/logo3.svg' },
     // { image: '/images/logos/logo-mobielnl.svg' },
@@ -46,7 +46,8 @@ const items = [
         <div class="container">
             <div class="hero__slider_carousel">
                 <div class="carousel__item" :class="item.class" v-for="(item, index) in items" :key="index">
-                    <NuxtImg :src="item.image" alt="Logo" class="" />
+                    <!-- <NuxtImg :src="item.image" alt="Logo" class="" /> -->
+                    <img :src="item.image" alt="Logo" class="" />
                 </div>
             </div>
         </div>

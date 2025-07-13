@@ -1,6 +1,7 @@
 <script setup>
 const colorMode = useColorMode();
 const changeColor = () => (colorMode.preference = 'dark')
+import 'boxicons/css/boxicons.min.css'
 </script>
 <template>
   <div class="bg-black">
