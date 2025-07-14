@@ -22,7 +22,9 @@ const animateFloatingImages = () => {
 }
 
 onMounted(() => {
-  animateFloatingImages()
+    if (window.innerWidth >= 1024) {
+    animateFloatingImages()
+    }
 })
 </script>
 
@@ -35,11 +37,11 @@ onMounted(() => {
 
                  <!-- left images -->
                 <div class="hero__floating_image with-hover first border-radius">
-                    <!-- <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image"> -->
-                    <div class="hero__floating_image_wrapper">
+                    <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
+                    <!-- <div class="hero__floating_image_wrapper">
                         <img src="/images/nubikk-shoot-min.webp" alt="Hero floating image" loading="lazy" >
                         <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
-                    </div>
+                    </div> -->
                 </div>
               
                 <div class="hero__floating_image with-hover third border-radius">
