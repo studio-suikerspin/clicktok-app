@@ -17,8 +17,7 @@ import reviews from '@/lib/reviews'
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
-                                    <!-- <NuxtImg :src="review.avatar" /> -->
-                                    <img :src="review.avatar" >
+                                    <NuxtImg :src="review.avatar" />
                                 </div>
 
                                 <div class="person__info">
@@ -35,8 +34,7 @@ import reviews from '@/lib/reviews'
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
-                                    <!-- <NuxtImg :src="review.avatar"/> -->
-                                    <img :src="review.avatar">
+                                    <NuxtImg :src="review.avatar"/>
                                 </div>
 
                                 <div class="person__info">
@@ -53,8 +51,7 @@ import reviews from '@/lib/reviews'
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
-                                    <!-- <NuxtImg :src="review.avatar"/> -->
-                                    <img :src="review.avatar">
+                                    <NuxtImg :src="review.avatar"/>
                                 </div>
 
                                 <div class="person__info">
@@ -65,8 +62,7 @@ import reviews from '@/lib/reviews'
                         </div>
                     </div>
 
-                    <!-- <NuxtImg class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png"/> -->
-                    <img class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png">
+                    <NuxtImg class="reviews__pixel" src="/images/PIXEL__PIXEL_DARK_BLUE.png"/>
                 </div>
             </div>
         </div>

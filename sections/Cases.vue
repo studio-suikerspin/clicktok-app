@@ -267,8 +267,6 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
 
                                     <div class="stats-grid">
                                         <div v-for="stat in item.stats" :key="stat.title" class="stat-item">
-                                            <!-- <NuxtImg class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
-                                             <!-- <img class="stat-item__pixel" src="/images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
                                             <div class="stat-item__title">{{ stat.title }}</div>
                                             <div class="stat-item__number">
                                                 <span :data-number="stat.stat">{{ stat.stat }}</span>
