@@ -1,5 +1,5 @@
 <script setup>
-import { gsap } from 'gsap'
+import gsap from 'gsap'
 
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import Header from '@/sections/Header/Header.vue'
@@ -7,6 +7,7 @@ import HeroContent from '@/sections/General/HeroWithFloatingMedia.vue'
 import FilteredCollection from '@/sections/FilteredCollection.vue'
 import Footer from '@/sections/General/Footer.vue'
 import { onMounted } from 'vue'
+import CasesHero from '~/sections/CasesHero.vue'
 
 function initAutoplayVideos(selector = 'video[autoplay]') {
   const enableAutoplay = () => {
@@ -41,15 +42,10 @@ onMounted(() => {
         </template>
 
         <template #smooth>
-            <div class="gradient-wrap">
-                <div class="hero__background-fade"/>
-                <Header />
-                <HeroContent
-title="Cases"
-                video="/videos-homepage/BANNER_HOMEPAGE_V1.webm" />
-            </div>
+            <Header />
+            <CasesHero title="Cases" />
 
-            <div class="cases__wrapper section-padding">
+            <div class="cases__wrapper">
                 <FilteredCollection />
             </div>
             <Footer />
