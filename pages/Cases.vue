@@ -45,8 +45,9 @@ onMounted(() => {
             <Header />
             <CasesHero title="Cases" />
 
-            <div class="cases__wrapper">
+            <div class="cases-wrap container">
                 <FilteredCollection />
+                <NuxtImg src="/images/PIXEL__PIXEL_PAARS.png" class="background-pixel" />
             </div>
             <Footer />
         </template>
@@ -54,26 +55,28 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.hero__background-fade {
-    position: absolute; /* of absolute als fixed problemen geeft */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 85vh;
-    background-image: url('/images/gradient-vierkant-min.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 0;
-
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+.cases-wrap {
+  position: relative;
+  overflow: hidden;
 }
 
-@media(max-width: 767px) {
-    .hero__background-fade {
-        background-image: url('/images/gradient-vierkant-mobile-min.webp');
-        height: 100vh;
-    }
+.filtered-collection {
+  position: relative;
+  z-index: 2;
+  min-height: 500px;
 }
+
+.background-pixel {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 992px) {
+  .filtered-collection {
+    min-height: 1000px;
+  }
+}  
 </style>

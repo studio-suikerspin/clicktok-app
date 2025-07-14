@@ -1,31 +1,9 @@
 <script setup>
 import CaseCard from '@/components/CaseCard.vue'
-import GradientBlur from '@/components/GradientBlur.vue'
 import cases from '@/lib/cases.js'
 
 import { gsap } from 'gsap'
 import { computed, nextTick, onMounted, ref } from 'vue'
-
-function initAutoplayVideos(selector = 'video[autoplay]') {
-  const enableAutoplay = () => {
-    const videos = document.querySelectorAll(selector);
-    videos.forEach(video => {
-      // Video-elementen hebben de play() methode, dus gewoon aanroepen
-      video.play().catch(err => {
-        console.warn('Autoplay blocked for video:', video, err);
-      });
-    });
-
-    window.removeEventListener('click', enableAutoplay);
-    window.removeEventListener('touchstart', enableAutoplay);
-    window.removeEventListener('scroll', enableAutoplay);
-  };
-
-  window.addEventListener('click', enableAutoplay);
-  window.addEventListener('touchstart', enableAutoplay);
-  window.addEventListener('scroll', enableAutoplay);
-}
-
 
 const activeFilter = ref('all')
 const collection = ref(null)
@@ -75,7 +53,6 @@ const isActive = (filter) => {
 }
 
 onMounted(() => {
-    initAutoplayVideos()
     animateCards()
 })
 </script>
@@ -120,19 +97,6 @@ onMounted(() => {
                 </template>
             </div>
         </div>
-
-        <GradientBlur
-            :width="{ default: '20vw', sm: '20vw' }"
-            :height="{ default: '30vh', sm: '30vh' }"
-            :top="{ default: '10%', sm: '0' }"
-            :left="{ default: '20%', sm: '0' }"
-        />
-        <GradientBlur
-            :width="{ default: '20vw', sm: '20vw' }"
-            :height="{ default: '30vh', sm: '30vh' }"
-            :top="{ default: '50%', sm: '0' }"
-            :right="{ default: '0', sm: '0' }"
-        />
     </section>
 </template>
 
@@ -144,6 +108,9 @@ onMounted(() => {
     padding-block: 40px;
 
     transition: height 150ms ease-out;
+
+    max-width: 1250px;
+    margin-inline: auto;
 }
 
 .filters {
@@ -245,7 +212,7 @@ onMounted(() => {
 
 @media (min-width: 1200px) {
     .collection {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         padding-block: 80px;
     }
 }

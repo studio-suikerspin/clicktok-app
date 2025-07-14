@@ -28,7 +28,7 @@ onMounted(() => {
 
 <template>
     <div :class="['case-card border-radius', { 'is-detail-page': props.isDetailPage }]" :data-tags="props.tags" :style="`--aspect-ratio: ${props.aspect_ratio};`">
-        <ul class="case-card__tags" :style="`${props.tags_position === 'right' ? 'right: -10px;' : 'left: -10px;'}`">
+        <ul class="case-card__tags" :style="`${props.tags_position === 'right' ? 'right: -10px;' : 'left: -30px;'}`">
             <li v-for="(tag, key) in props.tags" :key="key">
                 <PixelLabel :text="tag" />
             </li>
@@ -126,7 +126,8 @@ onMounted(() => {
 
     position: absolute;
     z-index: 5;
-    top: -10px;
+    top: -16px;
+    left: -50px;
 }
 
 .tag {
