@@ -32,7 +32,7 @@ const props = defineProps({
 const stayAheadSlides = [
 {
     videoId: '7413695052821564704',
-    video: '/videos-nubikk/BANNER_NUBIKK_V1.webm',
+    video: '1dfcb5eed704b08341cfec3dde51b983',
     blocks: [
       {
         title: 'Surprise with ease',
