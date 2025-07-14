@@ -162,9 +162,6 @@ const toggleItem = (itemId: number) => {
       setTimeout(() => {
         const el = document.getElementById(`service-${itemId}`)
         if (el) {
-          const yOffset = -20 // eventueel extra offset als er een sticky header is
-          const y = el.getBoundingClientRect().top + window.scrollY + yOffset
-
           el.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -216,7 +213,7 @@ const toggleItem = (itemId: number) => {
               <div class="service__content_first">
                 <div class="first_text">
                   <div class="title">{{ service.whyTitle }}</div>
-                  <div class="text" v-html="service.whyText"/>
+                  <div class="text">{{ service.whyText }}</div>
                 </div>
                 <div class="second_text">
                   <div class="title">{{ service.whatTitle }}</div>

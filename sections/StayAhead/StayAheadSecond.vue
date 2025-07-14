@@ -10,14 +10,15 @@ import GradientBlur from '@/components/GradientBlur.vue'
 import Button from '@/components/ui/Button.vue'
 import ReviewCard from '@/components/ReviewCard.vue'
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     required: true
   },
   subtitle: {
     type: String,
-    required: false
+    required: false,
+    default: ''
   },
   navigation: {
     type: String,
@@ -123,7 +124,9 @@ xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                   <div class="title title-font title-blue">{{ item.blocks[0].title }}</div>
                   <div class="subtitle">{{ item.blocks[0].subtitle }}</div>
                 </div>
-                <div class="stay__ahead_general-content" v-html="item.blocks[0].content"/>
+                <div class="stay__ahead_general-content">
+                  {{ item.blocks[0].content }}
+                </div>
                 <Button variant="blue" href="/contact" class="blue-btn">Let's get started!</Button>
                 <!-- <div class="values">
                   <div class="value" v-for="value in item.blocks[0].values" :key="value">{{ value }}</div>
@@ -146,7 +149,9 @@ xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 <!-- <div class="values">
                   <div class="value" v-for="value in item.blocks[1].values" :key="value">{{ value }}</div>
                 </div> -->
-                <div class="stay__ahead_general-content" v-html="item.blocks[1].content"/>
+                <div class="stay__ahead_general-content">
+                  {{ item.blocks[1].content }}
+                </div>
                 <div class="stay__ahead_reviews">
                     <ReviewCard v-for="review in item.blocks[1].reviews" :key="review.name" :review="review" />
                 </div>

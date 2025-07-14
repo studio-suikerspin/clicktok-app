@@ -1,12 +1,10 @@
 <script setup>
     import SectionTitle from '@/components/SectionTitle.vue';
     import Button from '@/components/ui/Button.vue';
-    import { Swiper, SwiperSlide } from 'swiper/vue';
-    import { Autoplay } from 'swiper/modules';
     import 'swiper/css';
     import 'swiper/css/autoplay';
 
-    const props = defineProps({
+    defineProps({
         title: {
             type: String,
             default: "(Y)our way to stay ahead"

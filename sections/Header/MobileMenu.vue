@@ -3,7 +3,6 @@ import { gsap } from 'gsap'
 import { onMounted, watch } from 'vue'
 
 import { mobileMenu } from '@/lib/mobileMenuStore.js'
-import GradientBlur from '@/components/GradientBlur.vue';
 
 let menuTl
 
