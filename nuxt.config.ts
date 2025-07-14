@@ -17,7 +17,6 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css', 'boxicons/css/boxicons.min.css'],
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     ['@nuxtjs/google-fonts', {
