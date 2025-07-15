@@ -17,19 +17,19 @@ const titleRef = ref(null)
             </div>
         </div>
 
-        <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient" />
-        <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient" />
+        <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
+        <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient">
     </section>
 </template>
 
 <style>
 .cases-hero {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 3;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .background-gradient {
