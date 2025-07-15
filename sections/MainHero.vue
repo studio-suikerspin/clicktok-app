@@ -242,6 +242,7 @@ onMounted(() => {
     aspect-ratio: 9/16;
 }
 
+
 @media(max-width: 1500px){
     .hero__floating_image.first {
         left: 3%;
