@@ -4,17 +4,17 @@ import Button from '@/components/ui/Button.vue'
 const cases = [
     {
         title: 'Nubikk',
-        image: '/images/nubikk-shoot-min.webp',
+        image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         url: '/cases/nubikk'
     },
     {
         title: 'Sportvision',
-        image: '/images/sportvision-shoot-min.webp',
+        image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3e78f77b-ba68-49f1-718a-7f41e29c3f00/public',
         url: '/cases/sportvision'
     },
     {
         title: 'Maxima Boats',
-        image: '/images/london-shoot3-min.webp',
+        image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1e11a157-9195-402b-7ba8-59f37aea4d00/public',
         url: '/cases/maxima-boats'
     },
 ]
@@ -29,7 +29,7 @@ const cases = [
                         <div class="cases-card__title">{{ item.title }}</div>
                         <Button variant="white" :href="item.url" :title="item.title"> Lees meer </Button>
                     </div>
-                    <NuxtImg :src="item.image" :alt="item.title" />
+                    <img :src="item.image" :alt="item.title" />
                 </div>
             </div>
         </div>

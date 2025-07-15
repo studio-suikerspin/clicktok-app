@@ -40,14 +40,15 @@ onMounted(() => {
                  <!-- left images -->
                 <div class="hero__floating_image with-hover first border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
+                        <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
+                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="1dfcb5eed704b08341cfec3dde51b983" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
               
                 <div class="hero__floating_image with-hover third border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
@@ -55,14 +56,14 @@ onMounted(() => {
                 <!-- right images -->
                 <div class="hero__floating_image with-hover fourth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg provider="cloudflare" src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
+                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
@@ -292,7 +293,8 @@ onMounted(() => {
 @media(max-width: 767px){
     .hero__floating_image.first {
         width: 105px;
-        height: 77px;
+        height: 130px;
+        top: -100px;
     }
     .hero__floating_image.third {
         width: 80px;
@@ -303,8 +305,8 @@ onMounted(() => {
         height: 78px;
     }
     .hero__floating_image.sixth {
-        width: 132px;
-        height: 95px;
+        width: 105px;
+        height: 155px;
     }
 }
 
@@ -391,19 +393,19 @@ onMounted(() => {
         gap: var(--space-m);
     }
     .hero__title {
-        font-size: 80px;
-        line-height: 75px;
+        font-size: 72px;
+        line-height: 90%;
     }
     .hero__title_wrapper-top {
-        font-size: 24px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 100%;
     }
     .hero__subtitle {
-        font-size: 16px;
+        font-size: 14px;
         max-width: 100%;
     }
     .hero__subtitle .first-span {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
     }
 

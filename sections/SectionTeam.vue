@@ -9,22 +9,22 @@ const team = ref([
   {
     name: 'Feie',
     role: 'Founder',
-    image: '/images/contact-image3-min.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6b9c87ae-02e6-4058-ef93-bd342abc9900/public',
   },
   {
     name: 'Jay',
     role: 'Videograaf',
-    image: '/images/contact-image2-min.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/468bc1a9-35ae-40c2-b3e6-90858a329a00/public',
   },
   {
     name: 'Rens',
     role: 'Allround Creative',
-    image: '/images/contact-image1-min.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/31e2839c-2fab-4b91-ac59-2fb31b660000/public',
   },
   {
     name: 'Ciaran',
     role: 'Copywriter',
-    image: '/images/contact-image5-min.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/f1f7d030-c871-4530-ecf5-e31ab29ba900/public',
   },
 ])
 </script>
@@ -45,7 +45,7 @@ const team = ref([
         <SwiperSlide v-for="member in team" :key="member.name">
           <div class="team__item">
             <div class="team__item_image">
-              <NuxtImg :src="member.image" :alt="member.name"/>
+              <img :src="member.image" :alt="member.name"/>
             </div>
             <div class="team__item_content">
               <div class="team__item_name">

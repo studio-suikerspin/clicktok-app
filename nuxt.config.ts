@@ -7,18 +7,6 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()]
   },
-  image: {
-    quality: 80,
-    format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
-    cloudflare: {
-      baseURL: 'https://clicktok.suikerspin.studio'
-    }
-  },
-  devServer: {
-    port: 3000,
-    host: '0.0.0.0'
-  },
-  css: ['~/assets/css/main.css', 'boxicons/css/boxicons.min.css'],
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -36,5 +24,17 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/color-mode',
     'nuxt-viewport'
-  ]
+  ],
+  image: {
+    quality: 80,
+    format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    cloudflare: {
+      baseURL: 'https://clicktok.suikerspin.studio'
+    }
+  },
+  devServer: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
+  css: ['~/assets/css/main.css', 'boxicons/css/boxicons.min.css'],
 })

@@ -3,6 +3,7 @@
     import Button from '@/components/ui/Button.vue';
     import 'swiper/css';
     import 'swiper/css/autoplay';
+    import { VideoStream } from 'stream-vue'
 
     defineProps({
         title: {
@@ -39,15 +40,15 @@
         },
         videoSrc: {
             type: String,
-            default: "https://r2.suikerspin.studio/BANNER_NUBIKK_V6.webm"
+            default: "67fb71ffddf82e449525beb1edec007a"
         },
         associaties: {
             type: Array,
             default: () => [
-                { src: "/images/nubikk/nubikkassociatie.jpg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/nubikkassociatie2.jpg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/nubikkassociatie3.jpg", alt: "Nubikk associaties" },
-                { src: "/images/nubikk/nubikkassociatie4.jpg", alt: "Nubikk associaties" },
+                { src: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/81ffd178-0284-4503-4443-161659921000/public", alt: "Nubikk associaties" },
+                { src: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/2b59a789-97b5-4cfe-988c-68531a1aaa00/public", alt: "Nubikk associaties" },
+                { src: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/81ffd178-0284-4503-4443-161659921000/public", alt: "Nubikk associaties" },
+                { src: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/c3a13e9a-33f1-4634-dbbd-bca9bb1ef200/public", alt: "Nubikk associaties" },
             ]
         },
         swiperConfig: {
@@ -82,8 +83,18 @@
                                 <Button :href="buttonHref" :title="buttonText" variant="white">{{ buttonText }}</Button>
                             </div>
                         </div>
-                        <div class="stay__ahead__content_video">
-                            <video :src="videoSrc" autoplay muted loop playsinline webkit-playsinline class="border-radius"/>
+                        <div class="stay__ahead__content_video">                            
+                            <VideoStream
+                              :src="videoSrc"
+                              playsinline
+                              muted
+                              loop
+                              preload="metadata"
+                              webkit-playsinline
+                              autoplay
+                              class="stay__ahead__content_video_stream border-radius"
+                              loading="lazy"
+                            />                            
                         </div>
                     </div>
                     <div class="stay__ahead__associaties-wrapper border-radius">
@@ -94,12 +105,12 @@
                             </div>
                         </div>
                         <div class="stay__ahead__associaties">
-                            <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                                <NuxtImg :src="associatie.src" :alt="associatie.alt" />
-                            </div>
+                            <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">                                                                
+                                <img :src="associatie.src" :alt="associatie.alt" loading="lazy" />
+                            </div>               
+                                         
                         </div>
                     </div>
-                    
                 </div>
                 <!-- <div class="stay__ahead__associaties-wrapper border-radius">
                     <div class="stay__ahead__associaties-wrapper-title">
@@ -257,21 +268,34 @@
 
 /* Video styling */
 .stay__ahead__content_video{
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     flex: 2;
     
-    max-height: 600px;
+    /* max-height: 600px;
     width: 100%;
     overflow: hidden;
-    aspect-ratio: 9/16;
+    aspect-ratio: 9/16; */
 }
 
-.stay__ahead__content_video video{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.stay__ahead__content_video_stream{
+    will-change: transform;
+    transform: translateZ(0);
+    overflow: hidden;
+
+    aspect-ratio: 9 / 16;
+    max-height: 600px;
+    margin-inline: auto;
+}
+
+
+
+.stay__ahead__content_video_stream stream {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* Associaties styling */
@@ -340,15 +364,28 @@
         padding: 24px;
         padding-top: 0;
     }
+    .stay__ahead__content_video{
+        flex: unset;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 @media(max-width: 767px){
     .stay__ahead__associaties{
         flex-direction: column;
+        padding: 0;
+        padding-bottom: 24px;
     }
     .stay__ahead__associaties_inner_item:nth-child(3),
     .stay__ahead__associaties_inner_item:nth-child(4){
         display: none;
+    }
+    .stay__ahead__associaties-wrapper{
+        padding: 0 24px;
+    }
+    .stay__ahead__associaties-wrapper-title .title{
+        font-size: 24px;
     }
 }
 </style>

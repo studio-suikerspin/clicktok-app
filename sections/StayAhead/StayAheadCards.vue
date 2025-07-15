@@ -61,7 +61,6 @@ onMounted(() => {
           <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT.png" /> -->
           <NuxtImg src="/images/pixel__blue.png" />
           <!-- <NuxtImg src="images/PIXEL__PIXEL_PAARS.png" /> -->
-          <!-- <NuxtImg src="images/PIXEL__PIXEL_GRADIENT.png" /> -->
           <span class="number-text">{{ card.number }}</span>
         </div>
         <div class="stay-ahead-cards__card-title">

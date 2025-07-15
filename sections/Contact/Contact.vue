@@ -145,16 +145,16 @@ onUnmounted(() => {
                     </div>
                     <div class="contact__right">
                         <div class="image__wrapper active">
-                            <NuxtImg src="/images/contact-image1-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/31e2839c-2fab-4b91-ac59-2fb31b660000/public" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image2-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/468bc1a9-35ae-40c2-b3e6-90858a329a00/public" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image3-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6b9c87ae-02e6-4058-ef93-bd342abc9900/public" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                         <div class="image__wrapper">
-                            <NuxtImg src="/images/contact-image5-min.webp" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
+                            <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/f1f7d030-c871-4530-ecf5-e31ab29ba900/public" alt="Contact image" class="contact__right_image border-radius" loading="lazy" />
                         </div>
                     </div>
                 </div>

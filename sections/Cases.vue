@@ -475,6 +475,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
 
     aspect-ratio: 9 / 16;
     max-height: 600px;
+    margin-inline: auto;
 }
 
 .case-card__video stream {
@@ -492,7 +493,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 767px) {
     .cases-slider {
         padding-top: 80px;
     }
@@ -550,6 +551,9 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
         z-index: 2;
     }
 
+}
+
+@media screen and (min-width: 992px) {
     .cases-controls {
         padding-top: 40px;
         justify-self: flex-end;

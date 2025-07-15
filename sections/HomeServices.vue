@@ -115,7 +115,7 @@ onUnmounted(() => {
                                         </div>
                                     </div>
                                     <div class="services__left-item-content" :class="{ hidden: selectedService !== index }">
-                                        <div class="services__left-item-content-text">{{ service.description }}</div>
+                                        <div class="services__left-item-content-text" v-html="service.description"></div>
                                         <div class="services__left-item-content-link">
                                             <a href="/services">
                                                 Meer informatie

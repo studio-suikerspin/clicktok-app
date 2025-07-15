@@ -6,12 +6,12 @@ const offices = ref([
   {
     title: 'Amsterdam',
     text: 'Keizersgracht 520 <br /> 1017EK, Amsterdam',
-    image: '/images/amsterdam-office.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/0383eebd-cfee-4df7-60c8-73314a8ead00/public',
   },
   {
     title: '’s-Hertogenbosch',
     text: 'Rietveldenweg 68b <br /> 5222 AS, ‘s-Hertogenbosch',
-    image: '/images/denbosch-office.webp',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/471cc55c-6061-49f0-268a-3a59f1a60200/public',
   },
 ])
 </script>
@@ -29,7 +29,7 @@ const offices = ref([
             <div class="offices__item_text">{{ office.text }}</div>
           </div>
           <div class="offices__item_image">
-            <NuxtImg :src="office.image" :alt="office.title" />
+            <img :src="office.image" :alt="office.title" />
           </div>
         </div>
       </div>

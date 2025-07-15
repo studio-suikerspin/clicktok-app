@@ -1,7 +1,6 @@
 <script setup>
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import Header from '~/sections/Header/MainHeader.vue'
-import HeroContent from '@/sections/General/HeroWithFloatingMedia.vue'
 import Footer from '@/sections/General/Footer.vue'
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
@@ -67,9 +66,6 @@ onMounted(() => {
         <div class="hero__wrapper">
           <div class="hero__background-fade"/>
           <Header />
-          <HeroContent
-title="Services"
-          video="/videos-homepage/BANNER_HOMEPAGE_V1.webm" />
         </div>
 
         <div class="services__accordion section-padding">

@@ -3,7 +3,6 @@ import gsap from 'gsap'
 
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import Header from '~/sections/Header/MainHeader.vue'
-import HeroContent from '@/sections/General/HeroWithFloatingMedia.vue'
 import FilteredCollection from '@/sections/FilteredCollection.vue'
 import Footer from '@/sections/General/Footer.vue'
 import { onMounted } from 'vue'

@@ -23,22 +23,22 @@ import { onMounted } from 'vue';
 
   const slides = [
     {
-      image: '/images/barber-shoot.jpeg',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6af13110-89b8-4563-d983-165531828200/public',
       title: 'Gebouwd op merkbeleving',
       subtitle: 'Elke video die we maken begint bij het gevoel dat je als merk wilt achterlaten. We bouwen formats op basis van merkwaarden, zodat je content niet alleen een bereik scoort, maar de merkbeleving versterkt bij elke weergave.',
     },
     {
-      image: '/images/nubikk-shoot2-min.webp',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
       title: 'Culture-first',
       subtitle: 'TikTok is geen doorsnee platform – het vraagt om een totaal andere aanpak dan je gewend bent. Wie de cultuur niet snapt, slaat de plank volledig mis. Daarom maken wij content die past bij het platform: native, herkenbaar en shareable.',
     },
     {
-      image: '/images/london-shoot1-min.webp',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6d9daa5f-084e-4644-3fcd-857c4050bc00/public',
       title: 'Alles onder één dak',
       subtitle: 'Alles wat we doen is gericht op TikTok en dát doen we volledig in-house. Van strategie tot scripting, productie en analyse: één team, één focus, één kanaal. Daardoor schakelen we snel, houden we de kwaliteit hoog en kunnen we zorgen voor het best mogelijke resultaat.',
     },
     {
-      image: '/images/nubikk-shoot-min.webp',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
       title: 'Resultaatgericht',
       subtitle: 'We maken geen content voor de views, maar voor wat erna komt. Vanmerkherkenning tot conversie: elk format is creatief sterk én stuurt op resultaat',
     },
@@ -97,7 +97,7 @@ import { onMounted } from 'vue';
   >
     <SwiperSlide v-for="(slide, index) in slides" :key="slide.image">
       <div class="about__slide-container" :class="[{ 'active': index === 0 }, `item-${index}`]">
-        <NuxtImg :src="slide.image" :alt="slide.title" loading="lazy" />
+        <img :src="slide.image" :alt="slide.title" loading="lazy" />
         <div class="overlay"/>
         <div class="about__text">
           <div class="title" :class="{ 'active': index === 0 }">{{ slide.title }}</div>
