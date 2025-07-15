@@ -3,7 +3,7 @@ import cases from '@/lib/cases'
 
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import CaseSteps from '@/sections/CaseDetail/CaseSteps.vue'
-import Hero from '@/sections/CaseDetail/Hero.vue'
+import CaseDetailHero from '@/sections/CaseDetailHero.vue'
 import Contact from '@/sections/Contact/Contact.vue'
 import ClientReference from '@/sections/General/ClientReference.vue'
 import Footer from '@/sections/General/Footer.vue'
@@ -75,7 +75,7 @@ onMounted(() => {
                 <div class="hero__background-fade"/>
                 <div class="hero__content_cases">
                     <Header />
-                    <Hero :project="item" is-detail-page="true" />
+                    <CaseDetailHero :project="item" is-detail-page="true" />
                 </div>
             </div>
 
