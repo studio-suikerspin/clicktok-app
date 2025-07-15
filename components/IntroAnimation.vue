@@ -93,6 +93,8 @@ onMounted(async () => {
     justify-content: center;
     height: 100%;
     gap: 40px;
+
+    opacity: 0;
 }
 
 .intro__text-line-first {
