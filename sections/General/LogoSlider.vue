@@ -7,6 +7,10 @@ defineProps({
     variant: {
       type: String,
       default: ''
+    },
+    classes: {
+      type: String,
+      default: ''
     }
 })
 
@@ -21,7 +25,7 @@ const items = [
   ]
 </script>
 <template>
-    <div :class="['hero__slider', variant ? `hero__slider--${variant}` : '']">
+    <div :class="['hero__slider', variant ? `hero__slider--${variant}` : '', classes]">
         <div class="container">
             <div class="hero__slider_carousel">
                 <div v-for="(item, index) in items" :key="index" class="carousel__item" :class="item.class">
@@ -39,6 +43,10 @@ const items = [
     flex-direction: column;
     gap: 40px;
     padding-top: 80px;
+}
+
+.hero__slider--bw {
+  filter: grayscale(1);
 }
 
 .hero__slider_carousel {
