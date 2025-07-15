@@ -7,12 +7,12 @@ const intro = ref()
 const introText = ref()
 
 onMounted(async () => {
-    await nextTick()
-
-    // const splitType = SplitText.create(introText.value, { type: 'lines, words, chars' })
-    const splitType = SplitText.create(introText.value, { type: 'lines, words, chars', linesClass: 'intro-line' })
-
+  await nextTick()
+  
+  const splitType = SplitText.create(introText.value, { type: 'lines, words, chars', linesClass: 'intro-line' })
+    gsap.set(introText.value, { autoAlpha: 0 })
     gsap.timeline({ paused: true })
+        .set(introText.value, { autoAlpha: 1 })
         .fromTo(splitType.lines, {
             autoAlpha: 0,
             y: 40
@@ -45,7 +45,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div ref="intro" class="intro">
+    <div v-cloak ref="intro" class="intro">
         <div class="container">
             <div ref="introText" class="intro__text title-font">
                 <div class="intro__text-line-first">Full service</div>
