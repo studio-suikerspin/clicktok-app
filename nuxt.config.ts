@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    cloudflare: {
+      baseURL: 'https://clicktok.suikerspin.studio'
+    }
   },
   devServer: {
     port: 3000,
@@ -17,7 +20,6 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css', 'boxicons/css/boxicons.min.css'],
   modules: [
-    '@nuxt/content',
     '@nuxt/eslint',
     '@nuxt/fonts',
     ['@nuxtjs/google-fonts', {

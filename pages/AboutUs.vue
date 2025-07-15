@@ -1,6 +1,6 @@
 <script setup>
 import BaseLayout from '@/layouts/BaseLayout.vue'
-import Header from '@/sections/Header/Header.vue'
+import Header from '~/sections/Header/MainHeader.vue'
 import HeroContent from '@/sections/General/HeroWithFloatingMedia.vue'
 import Footer from '@/sections/General/Footer.vue'
 import ThreeTitles from '@/sections/General/ThreeTitles.vue'
@@ -8,8 +8,8 @@ import StayAheadSecond from '@/sections/StayAhead/StayAheadSecond.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
 import LogoFlex from '@/sections/General/LogoFlex.vue'
 import Contact from '@/sections/Contact/Contact.vue'
-import Offices from '@/sections/General/Offices.vue'
-import Team from '@/sections/Team.vue'
+import Offices from '~/sections/General/MainOffices.vue'
+import SectionTeam from '~/sections/SectionTeam.vue'
 import StayAheadCards from '@/sections/StayAhead/StayAheadCards.vue'
 import ServiceExamples from '@/sections/About/ServiceExamples.vue'
 import NumbersAbout from '@/sections/About/NumbersAbout.vue'
@@ -136,7 +136,7 @@ title="About us"
                 met je merk én met het platform.</div>
             </div>
           </div>
-          <Team />
+          <SectionTeam />
         </div>
         <div class="about__offices">
           <div class="container">

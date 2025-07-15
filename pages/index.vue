@@ -3,13 +3,13 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 
 // Sections
-import Header from '@/sections/Header/Header.vue';
+import Header from '~/sections/Header/MainHeader.vue';
 import Hero from '@/sections/MainHero.vue';
 import Cases from '@/sections/Cases.vue';
 import StayAhead from '@/sections/StayAhead/StayAhead.vue'
-import Marquee from '@/sections/General/Marquee.vue';
-import Services from '@/sections/Services.vue';
-import Reviews from '@/sections/Reviews.vue';
+import Marquee from '~/sections/General/MainMarquee.vue';
+import Services from '~/sections/HomeServices.vue';
+import Reviews from '~/sections/HomeReviews.vue';
 import AboutCarousel from '@/sections/About/AboutCarousel.vue'
 import Contact from '@/sections/Contact/Contact.vue';
 import Footer from '@/sections/General/Footer.vue';

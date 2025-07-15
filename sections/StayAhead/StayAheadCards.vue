@@ -68,7 +68,7 @@ onMounted(() => {
           <h3 class="title-font">{{ card.title }}</h3>
         </div>
         <div class="stay-ahead-cards__card-content">
-          <div v-html="card.content"/>
+          <div>{{ card.content }}</div>
         </div>
         <div class="stay-ahead-cards__card-button">
           <Button v-if="card.number === '03'" variant="blue" href="/contact">Let's get started!</Button>

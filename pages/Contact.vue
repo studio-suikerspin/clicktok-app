@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import BaseLayout from '@/layouts/BaseLayout.vue'
-import Header from '@/sections/Header/Header.vue'
+import Header from '~/sections/Header/MainHeader.vue'
 import Contact from '@/sections/Contact/Contact.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
-import Offices from '@/sections/General/Offices.vue'
+import Offices from '~/sections/General/MainOffices.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Footer from '@/sections/General/Footer.vue'
 import Filters from '@/components/filters/Filters.vue'

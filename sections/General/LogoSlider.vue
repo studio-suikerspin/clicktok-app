@@ -1,31 +1,14 @@
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Autoplay } from 'swiper/modules'
-import 'swiper/css'
-
-const { title } = defineProps({
-    title: String,
-    variant: String,
+defineProps({
+    title: { 
+      type: String,
+      default: ''
+    },
+    variant: {
+      type: String,
+      default: ''
+    }
 })
-
-// const items = [
-//     { image: '/images/logos/logo1.webp' },
-//     { image: '/images/logos/logo6.svg' },
-//     { image: '/images/logos/logo-sanisale.svg' },
-//     { image: '/images/logos/logo2.svg' },
-//     { image: '/images/logos/logo-happn.png' },
-//     { image: '/images/logos/logo3.svg' },
-//     { image: '/images/logos/logo-mobielnl.svg' },
-//     { image: '/images/logos/logo4.svg' },
-//     { image: '/images/logos/jumbo-logo.svg' },
-//     { image: '/images/logos/logo5.png' },
-//     { image: '/images/logos/logo6.svg' },
-//     // { image: '/images/logos/logo7.png' },
-//     { image: '/images/logos/logo1.webp' },
-//     { image: '/images/logos/logo2.svg' },
-//     { image: '/images/logos/logo9.png' },
-//     { image: '/images/logos/logo-mad-science.png' },
-// ]
 
 const items = [
     { image: '/images/logos/logo-sanisale.svg', class: 'sixth' },
@@ -35,10 +18,6 @@ const items = [
     { image: '/images/logos/logo-mobielnl.svg', class: 'third' },
     { image: '/images/logos/nubikk.svg', class: 'first' },
     { image: '/images/logos/logo2.svg', class: 'seventh' },    
-    // { image: '/images/logos/logo-happn.png' },
-    // { image: '/images/logos/logo3.svg' },
-    // { image: '/images/logos/logo-mobielnl.svg' },
-    // { image: '/images/logos/logo4.svg' },
   ]
 </script>
 <template>
@@ -46,7 +25,7 @@ const items = [
         <div class="container">
             <div class="hero__slider_carousel">
                 <div v-for="(item, index) in items" :key="index" class="carousel__item" :class="item.class">
-                    <NuxtImg :src="item.image" alt="Logo" class="" />
+                    <NuxtImg provider="cloudflare" :src="item.image" alt="Logo" class="" />
                 </div>
             </div>
         </div>

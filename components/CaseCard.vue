@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 
+import { VideoStream } from 'stream-vue'
 import PixelLabel from './PixelLabel.vue'
 import Button from './ui/Button.vue'
 
@@ -28,7 +29,7 @@ onMounted(() => {
 
 <template>
     <div :class="['case-card border-radius', { 'is-detail-page': props.isDetailPage }]" :data-tags="props.tags" :style="`--aspect-ratio: ${props.aspect_ratio};`">
-        <ul class="case-card__tags" :style="`${props.tags_position === 'right' ? 'right: -10px;' : 'left: -10px;'}`">
+        <ul class="case-card__tags" :style="`${props.tags_position === 'right' ? 'right: -10px;' : 'left: -30px;'}`">
             <li v-for="(tag, key) in props.tags" :key="key">
                 <PixelLabel :text="tag" />
             </li>
@@ -39,11 +40,19 @@ onMounted(() => {
                 <Button v-if="props.handle" :href="`/cases/${props.handle}`" variant="outline">Bekijk case</Button>
             </div>
 
-            <video v-if="props.featured_video !== undefined" class="case-card__video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;">
-                <source :src="props.featured_video" type="video/webm" loading="lazy">
-            </video>
+            <VideoStream 
+              v-if="props.featured_video !== undefined" 
+              :src="props.featured_video" 
+              class="case-card__video" 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              webkit-playsinline 
+              style="pointer-events: none;"
+            />
 
-            <NuxtImg v-else class="case-card__image" :src="props.featured_image" :alt="props.client" loading="lazy" />
+            <NuxtImg v-else class="case-card__image" provider="cloudflare" :src="props.featured_image" :alt="props.client" loading="lazy" />
         </div>
     </div>
 </template>
@@ -126,7 +135,8 @@ onMounted(() => {
 
     position: absolute;
     z-index: 5;
-    top: -10px;
+    top: -16px;
+    left: -50px;
 }
 
 .tag {

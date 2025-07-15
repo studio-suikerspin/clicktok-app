@@ -7,7 +7,6 @@ import { ref, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
 
 const numbersSectionRef = ref<HTMLElement | null>(null)
-const hasAnimatedInitial = ref(false)
 
 const animateNumbers = () => {
     const numberElements = document.querySelectorAll('.numbers__result_number')

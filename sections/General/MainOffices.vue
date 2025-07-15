@@ -26,7 +26,7 @@ const offices = ref([
             <div class="offices__item_title">
               <h2>{{ office.title }}</h2>
             </div>
-            <div class="offices__item_text" v-html="office.text"/>
+            <div class="offices__item_text">{{ office.text }}</div>
           </div>
           <div class="offices__item_image">
             <NuxtImg :src="office.image" :alt="office.title" />

@@ -2,8 +2,10 @@
 // Components
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
-import { gsap } from 'gsap'
+
+import gsap from 'gsap'
 import { onMounted } from 'vue'
+import { VideoStream } from 'stream-vue'
 
 // Floating animation function
 const animateFloatingImages = () => {
@@ -38,30 +40,30 @@ onMounted(() => {
                  <!-- left images -->
                 <div class="hero__floating_image with-hover first border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
-                        <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
+                        <VideoStream src="1dfcb5eed704b08341cfec3dde51b983" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
               
                 <div class="hero__floating_image with-hover third border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/jumbo-video.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
 
                 <!-- right images -->
                 <div class="hero__floating_image with-hover fourth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/keukensale.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <NuxtImg provider="cloudflare" src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
+                        <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
-                        <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
 
@@ -89,11 +91,7 @@ onMounted(() => {
                 <LogoSlider />
             </div>
 
-            <picture class="background-gradient">
-              <source media="(min-width: 768px)" srcset="/images/gradient-vierkant-min.webp">
-              <source media="(max-width: 767px)" srcset="/images/gradient-vierkant-mobile-min.webp">
-              <img src="/images/gradient-vierkant-mobile-min.webp" alt="Background gradient">
-            </picture>
+            <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" />
         </div>
     <!-- </div> -->
 </template>
@@ -158,7 +156,7 @@ onMounted(() => {
 }
 
 .hero__floating_image img,
-.hero__floating_image video{
+.hero__floating_image stream {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -175,7 +173,7 @@ onMounted(() => {
         opacity: 1;
         transition: opacity 0.3s ease;
     }
-    .hero__floating_image.with-hover video {
+    .hero__floating_image.with-hover stream {
         opacity: 0;
         transition: opacity 0.3s ease;
         position: absolute;
@@ -189,18 +187,18 @@ onMounted(() => {
         opacity: 0;
     }
     
-    .hero__floating_image.with-hover:hover video {
+    .hero__floating_image.with-hover:hover stream {
         opacity: 1;
     }
 }
 
 /* Mobile: show only video */
 @media (max-width: 767px) {
-    .hero__floating_image video {
+    .hero__floating_image stream {
         display: block;
     }
-    .hero__floating_image.with-hover.third video,
-    .hero__floating_image.with-hover.fourth video{
+    .hero__floating_image.with-hover.third stream,
+    .hero__floating_image.with-hover.fourth stream{
         display: none;
     }
     .hero__floating_image.with-hover.first img,

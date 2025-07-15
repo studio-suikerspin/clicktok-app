@@ -1,5 +1,4 @@
 <script setup>
-import GradientBlur from '@/components/GradientBlur.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import gsap from 'gsap'
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
@@ -56,7 +55,7 @@ const services = [
     },
 ]
 
-watch(selectedService, (newValue) => {
+watch(selectedService, () => {
     gsap.to(imageRef.value, {
         opacity: 0,
         duration: 0.3,
@@ -116,7 +115,7 @@ onUnmounted(() => {
                                         </div>
                                     </div>
                                     <div class="services__left-item-content" :class="{ hidden: selectedService !== index }">
-                                        <div class="services__left-item-content-text" v-html="service.description"/>
+                                        <div class="services__left-item-content-text">{{ service.description }}</div>
                                         <div class="services__left-item-content-link">
                                             <a href="/services">
                                                 Meer informatie
