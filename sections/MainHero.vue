@@ -92,12 +92,14 @@ onMounted(() => {
                 <LogoSlider />
             </div>
 
-            <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" />
+            <!-- <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" /> -->
+            <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient" />
+            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient" />
         </div>
     <!-- </div> -->
 </template>
 
-<style>
+<style scoped>
 .hero {
     position: relative;
     min-height: 100vh;
@@ -125,6 +127,10 @@ onMounted(() => {
 -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
 }
 
+.hero .background-gradient.mobile {
+  display: none;
+}
+
 .hero .background-gradient img{
   height: 100%;
   object-fit: cover;
@@ -139,6 +145,12 @@ onMounted(() => {
 @media(max-width: 767px){
     .hero {
         padding: 190px 0;
+    }
+    .hero .background-gradient.mobile {
+        display: block;
+    }
+    .hero .background-gradient {
+        display: none;
     }
 }
 

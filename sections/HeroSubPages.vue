@@ -17,7 +17,8 @@ const titleRef = ref(null)
             </div>
         </div>
 
-        <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" />
+        <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient" />
+        <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient" />
     </section>
 </template>
 
@@ -42,6 +43,10 @@ const titleRef = ref(null)
 -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
 }
 
+.cases-hero .background-gradient.mobile {
+  display: none;
+}
+
 .cases-hero__inner {
     display: flex;
     align-items: center;
@@ -51,7 +56,7 @@ const titleRef = ref(null)
     gap: 24px;
     color: var(--off-white);
     z-index: 2;
-    min-height: 500px;
+    min-height: 300px;
 }
 
  
@@ -73,6 +78,12 @@ const titleRef = ref(null)
 @media (max-width: 767px) {
     .cases-hero__title {
         font-size: 72px;
+    }
+    .cases-hero .background-gradient.mobile {
+        display: block;
+    }
+    .cases-hero .background-gradient {
+        display: none;
     }
 }
 </style>

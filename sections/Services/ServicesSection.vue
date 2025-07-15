@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue'
 import { ref, nextTick } from 'vue'
+import { VideoStream } from 'stream-vue'
 
 // Service data object
 const servicesData = [
@@ -10,7 +11,7 @@ const servicesData = [
     subtitle: 'Organisch groeien doormiddel van tikTok',
     title: 'Organic Campaign',
     whyTitle: 'Waarom organisch?',
-    whyText: 'Organisch zichtbaar zijn op TikTok betekent bouwen aan langdurige merkherkenning zonder afhankelijk te zijn van advertentiebudget.<br /><br /> Wie op TikTok wil bouwen aan merkbeleving, begint met een sterk format: herkenbaar, herhaalbaar en niet tijdgebonden. <br /><br /> Zo creëer je een duurzame stroom aan bereik, herkenning en engagement, wat uiteindelijk leidt tot sterkere merkvoorkeur.',
+    whyText: 'Organisch zichtbaar zijn op TikTok betekent bouwen aan langdurige merkherkenning zonder afhankelijk te zijn van advertentiebudget. Wie op TikTok wil bouwen aan merkbeleving, begint met een sterk format: herkenbaar, herhaalbaar en niet tijdgebonden. Zo creëer je een duurzame stroom aan bereik, herkenning en engagement, wat uiteindelijk leidt tot sterkere merkvoorkeur.',
     whatTitle: 'Wat doen wij?',
     steps: [
       {
@@ -35,7 +36,7 @@ const servicesData = [
       { src: '/images/logos/logo-keukensale.png', alt: 'Keukensale logo' },
       { src: '/images/logos/nubikk.svg', alt: 'Nubikk logo' }
     ],
-    video: '/videos-organic/BANNER_ORGANIC_V1.webm',
+    video: '3a4865f8daa7358772a279881a4b9925',
     ctaText: 'Let\'s get started',
     ctaHref: '/contact'
   },
@@ -45,7 +46,7 @@ const servicesData = [
     subtitle: 'Betaalde advertenties voor directe resultaten',
     title: 'Paid Advertising',
     whyTitle: 'Waarom paid advertising?',
-    whyText: 'Adverteren op TikTok is dé manier om snel op te schalen en gericht resultaat te behalen.<br /><br />Van brand awareness tot conversie campagnes en leadgeneratie: we zetten TikTok in als performance kanaal dat niet alleen opvalt, maar aanzet tot actie. <br /><br /> Met slimme targeting, conversiegerichte creatives en continue optimalisatie bouwen we campagnes die presteren; voor e-com merken, apps én organisaties die talent of klanten willen werven.<br /><br />Zo combineer je bereik met rendement. Creativiteit met data. Impact met schaal.',
+    whyText: 'Adverteren op TikTok is dé manier om snel op te schalen en gericht resultaat te behalen. Van brand awareness tot conversie campagnes en leadgeneratie: we zetten TikTok in als performance kanaal dat niet alleen opvalt, maar aanzet tot actie. Met slimme targeting, conversiegerichte creatives en continue optimalisatie bouwen we campagnes die presteren; voor e-com merken, apps én organisaties die talent of klanten willen werven. Zo combineer je bereik met rendement. Creativiteit met data. Impact met schaal.',
     whatTitle: 'Wat doen wij?',
     steps: [
       {
@@ -70,7 +71,7 @@ const servicesData = [
     //   { src: '/images/logos/logo3.svg', alt: 'Client logo 3' },
     //   { src: '/images/logos/logo4.svg', alt: 'Client logo 4' }
     // ],
-    video: '/videos/jumbo-video.webm',
+    video: '924de0fb167dcb867709b92b694f387b',
     ctaText: 'Start je campagne',
     ctaHref: '/contact'
   },
@@ -104,7 +105,7 @@ const servicesData = [
       { src: '/images/logos/logo-cookingtotem.avif', alt: 'Client logo 6' },
       { src: '/images/logos/logo-happn.png', alt: 'Client logo 7' },
     ],
-    video: '/videos/keukensale.webm',
+    video: '4bd7c667bfe2da80cfed40c90bc94c72',
     ctaText: "Let's get started",
     ctaHref: '/contact'
   },
@@ -139,7 +140,7 @@ const servicesData = [
     //   { src: '/images/logos/logo7.png', alt: 'Client logo 7' },
     //   { src: '/images/logos/logo8.png', alt: 'Client logo 8' }
     // ],
-    video: '/videos/keukensale.webm',
+    video: '',
     ctaText: 'Ontdek creators',
     ctaHref: '/contact'
   },
@@ -225,10 +226,7 @@ const toggleItem = (itemId: number) => {
                     >
                       <div class="item_title">
                         <div class="number">
-                          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT_OUTLINE.png" /> -->
-                          <!-- <NuxtImg src="images/PIXEL__PIXEL_WIT.png" /> -->
-                          <NuxtImg src="/images/pixel__blue.png" />
-                          <!-- <NuxtImg src="images/PIXEL__PIXEL_PAARS.png" /> -->                          
+                          <NuxtImg src="images/PIXEL__PIXEL_WIT_OUTLINE.png" />                    
                           <span class="number-text">{{ step.number }}</span>
                         </div>
                         <div class="title">{{ step.title }}</div>
@@ -251,14 +249,15 @@ const toggleItem = (itemId: number) => {
                   </div>
                 </div>
               </div>
-              <div class="service__content_second">
+              <div class="service__content_second" v-if="service.video">
                 <div class="service__content_video">
-                  <video :src="service.video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;"/>
+                  <VideoStream :src="service.video" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                 </div>
-                <div class="service__content_cta">
-                  <Button variant="blue" :href="service.ctaHref" :title="service.ctaText">
+                <div class="service__content_cta" >
+                  <Button variant="white" :href="service.ctaHref" :title="service.ctaText">
                     {{ service.ctaText }}
                   </Button>
+                  
                 </div>
               </div>
             </div>
@@ -270,6 +269,9 @@ const toggleItem = (itemId: number) => {
 </template>
 
 <style scoped>
+.services__section{
+  width: 100%;
+}
 /* Accordion */
 .services__accordion{
   display: flex;
@@ -298,8 +300,6 @@ const toggleItem = (itemId: number) => {
   flex-direction: column;
 }
 
-
-
 .title__wrapper{
   display: flex;
   align-items: center;
@@ -314,25 +314,25 @@ const toggleItem = (itemId: number) => {
 }
 
 .service__number{
-  font-size: 80px;
+  font-size: 40px;
   font-weight: 300;
   font-style: italic;
 }
 
 .service_title{
-  font-size: 80px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .icon i{
-  font-size: 44px;
+  font-size: 32px;
   color: var(--off-white);
 }
 
 @media(max-width: 992px){
   .service__number,
   .service_title{
-    font-size: 40px;
+    font-size: 24px;
   }
   .service__accordion-item_title{
     gap: 24px;
@@ -342,7 +342,7 @@ const toggleItem = (itemId: number) => {
 @media(max-width: 767px){
   .service__number,
   .service_title{
-    font-size: 24px;
+    font-size: 20px;
   }
   .service__accordion-subtitle{
     font-size: 14px;
@@ -367,7 +367,7 @@ const toggleItem = (itemId: number) => {
 .service__content_first{
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
   flex: 2;
 }
 
@@ -402,8 +402,8 @@ const toggleItem = (itemId: number) => {
 
 .first_text .title,
 .second_text .title{
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .first_text .text{
@@ -414,7 +414,8 @@ const toggleItem = (itemId: number) => {
 
 .second_text_flex-list{
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .second_text_flex-list .flex-item{
@@ -437,7 +438,7 @@ const toggleItem = (itemId: number) => {
 }
 
 .second_text_flex-list .flex-item .item_title .number-text{
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: var(--off-white);
   z-index: 2;
@@ -478,12 +479,15 @@ const toggleItem = (itemId: number) => {
   gap: 24px;
 }
 
+.logo_item{
+  width: 80px;
+  height: 60px;
+}
+
 .logo_item img{
   width: 100%;
   height: 100%;
   object-fit: contain;
-  width: 150px;
-  max-height: 60px;
 }
 
 /* video content second item */
