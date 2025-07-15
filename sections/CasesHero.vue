@@ -17,11 +17,7 @@ const titleRef = ref(null)
             </div>
         </div>
 
-        <picture class="background-gradient">
-            <source media="(min-width: 768px)" srcset="/images/gradient-vierkant-min.webp">
-            <source media="(max-width: 767px)" srcset="/images/gradient-vierkant-mobile-min.webp">
-            <img src="/images/gradient-vierkant-mobile-min.webp" alt="Background gradient">
-        </picture>
+        <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" />
     </section>
 </template>
 

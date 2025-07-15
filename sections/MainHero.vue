@@ -38,14 +38,14 @@ onMounted(() => {
                  <!-- left images -->
                 <div class="hero__floating_image with-hover first border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" />
                         <video src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
               
                 <div class="hero__floating_image with-hover third border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
                         <video src="https://r2.suikerspin.studio/jumbo-video.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
@@ -53,14 +53,14 @@ onMounted(() => {
                 <!-- right images -->
                 <div class="hero__floating_image with-hover fourth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
+                        <NuxtImg provider="cloudflare" src="/images/camera-image.webp" alt="Hero floating image" loading="lazy" />
                         <video src="https://r2.suikerspin.studio/keukensale.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius">
                     <div class="hero__floating_image_wrapper">
-                        <NuxtImg src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
+                        <NuxtImg provider="cloudflare" src="/images/nubikk-shoot2-min.webp" alt="Hero floating image" loading="lazy" />
                         <video src="https://r2.suikerspin.studio/BANNER_HAPPN_V1.webm" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                     </div>
                 </div>
@@ -89,11 +89,7 @@ onMounted(() => {
                 <LogoSlider />
             </div>
 
-            <picture class="background-gradient">
-              <source media="(min-width: 768px)" srcset="/images/gradient-vierkant-min.webp">
-              <source media="(max-width: 767px)" srcset="/images/gradient-vierkant-mobile-min.webp">
-              <img src="/images/gradient-vierkant-mobile-min.webp" alt="Background gradient">
-            </picture>
+            <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" />
         </div>
     <!-- </div> -->
 </template>

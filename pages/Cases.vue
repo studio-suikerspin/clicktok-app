@@ -47,7 +47,11 @@ onMounted(() => {
 
             <div class="cases-wrap container">
                 <FilteredCollection />
-                <NuxtImg src="/images/PIXEL__PIXEL_PAARS.png" class="background-pixel" />
+                <NuxtImg 
+                  provider="cloudflare"
+                  src="/images/PIXEL__PIXEL_PAARS.png" 
+                  class="background-pixel" 
+                />
             </div>
             <Footer />
         </template>

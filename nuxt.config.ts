@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
+    cloudflare: {
+      baseURL: 'https://clicktok.suikerspin.studio'
+    }
   },
   devServer: {
     port: 3000,
