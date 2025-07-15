@@ -2,15 +2,24 @@
 import { ref } from 'vue';
 import GradientBlur from '@/components/GradientBlur.vue';
 
+defineProps({
+  showText: {
+    type: Boolean,
+    default: false
+  }
+})
+
 const offices = ref([
   {
     title: 'Amsterdam',
-    text: 'Keizersgracht 520 <br /> 1017EK, Amsterdam',
+    address: 'Keizersgracht 520 <br /> 1017EK, Amsterdam',
+    text: 'Ons kantoor in Amsterdam is de creatieve hub waar ideeën tot leven komen. Gevestigd in het bruisende hart van de stad, combineren we hier strategisch denken met artistieke energie. Het is de plek waar we samenwerken, experimenteren en onze beste concepten ontwikkelen.',
     image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/0383eebd-cfee-4df7-60c8-73314a8ead00/public',
   },
   {
     title: '’s-Hertogenbosch',
-    text: 'Rietveldenweg 68b <br /> 5222 AS, ‘s-Hertogenbosch',
+    address: 'Rietveldenweg 68b <br /> 5222 AS, ‘s-Hertogenbosch',
+    text: 'Ons kantoor in Amsterdam is de creatieve hub waar ideeën tot leven komen. Gevestigd in het bruisende hart van de stad, combineren we hier strategisch denken met artistieke energie. Het is de plek waar we samenwerken, experimenteren en onze beste concepten ontwikkelen.',
     image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/471cc55c-6061-49f0-268a-3a59f1a60200/public',
   },
 ])
@@ -26,7 +35,7 @@ const offices = ref([
             <div class="offices__item_title">
               <h2>{{ office.title }}</h2>
             </div>
-            <div class="offices__item_text">{{ office.text }}</div>
+            <div class="offices__item_text" v-html="showText ? office.text : office.address" />
           </div>
           <div class="offices__item_image">
             <img :src="office.image" :alt="office.title" />
