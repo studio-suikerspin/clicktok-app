@@ -53,13 +53,9 @@ const form = {
   cv: null,
 };
 
-function submitForm() {
-  // form.post('/forms', {
-  //     preserveScroll: true,
-  //     onSuccess: () => {
-  //         console.log('success')
-  //     }
-  // });
+const submitForm = async () => {
+  const { data, error } = await $fetch('/api/contact');
+  console.log(data, error);
 }
 
 onMounted(() => {
