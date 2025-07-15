@@ -7,10 +7,10 @@ import Carousel from '@/components/Carousel.vue'
 import CarouselControls from '@/components/CarouselControls.vue'
 
 import GradientBlur from '@/components/GradientBlur.vue'
-import PixelLabel from '@/components/PixelLabel.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
+import { VideoStream } from 'stream-vue'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -30,7 +30,7 @@ const props = defineProps({
 
 const cases = [
     {
-        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3.webm',
+        video: '480bbad9d3fd24382153acb05611a117',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
@@ -52,7 +52,7 @@ const cases = [
         ],
     },
     {
-        video: 'https://r2.suikerspin.studio/BANNER_HAPPN_V3.webm',
+        video: '0799a169b1a02f89535f72f7442a88a9',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
@@ -64,7 +64,7 @@ const cases = [
 
 const casesSecond = [
     {
-        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3.webm',
+        video: '62c16ea3db18cef4aa975dd47310422b',
         title: 'Dogman Video Game',
         label: 'Creator collaborations',
         subtitle: 'Direct Activation',
@@ -86,7 +86,7 @@ const casesSecond = [
         ],
     },
     {
-        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3.webm',
+        video: '67a755e5d6f763df02a63e3ed97e32f2',
         title: 'mobiel.nl',
         label: 'UGC Ad Creatie',
         subtitle: 'Built on Association',
@@ -112,9 +112,9 @@ const setupVideoObserver = () => {
                 const videoIndex = videoRefs.value.indexOf(video)
 
                 if (entry.isIntersecting && videoIndex === currentSlideIndex.value) {
-                    video.play().catch(console.warn)
+                    // video.play().catch(console.warn)
                 } else {
-                    video.pause()
+                    // video.pause()
                 }
             })
         },
@@ -148,7 +148,7 @@ const setupScrollTrigger = () => {
 const playActiveVideo = (slideIndex: number) => {
     // Pause all videos first
     videoRefs.value.forEach((video) => {
-        if (video) video.pause()
+        // if (video) video.pause()
     })
 
     // Play only the active video
@@ -197,14 +197,14 @@ const animateNumbers = (slideIndex: number | null = null) => {
 
 const handleSlideChange = (slideIndex: number) => {
     currentSlideIndex.value = slideIndex
-    playActiveVideo(slideIndex)
+    // playActiveVideo(slideIndex)
 
     // Trigger intersection observer check for the new active video
-    const activeVideo = videoRefs.value[slideIndex]
-    if (activeVideo && videoObserver) {
-        videoObserver.unobserve(activeVideo)
-        videoObserver.observe(activeVideo)
-    }
+    // const activeVideo = videoRefs.value[slideIndex]
+    // if (activeVideo && videoObserver) {
+    //     videoObserver.unobserve(activeVideo)
+    //     videoObserver.observe(activeVideo)
+    // }
 
     setTimeout(() => {
         animateNumbers(slideIndex)
@@ -213,17 +213,17 @@ const handleSlideChange = (slideIndex: number) => {
 
 onMounted(async () => {
     await nextTick()
-    setupVideoObserver()
+    // setupVideoObserver()
     setupScrollTrigger()
 
-    videoRefs.value.forEach((video) => {
-        if (video && videoObserver) {
-            videoObserver.observe(video)
-        }
-    })
+    // videoRefs.value.forEach((video) => {
+    //     if (video && videoObserver) {
+    //         videoObserver.observe(video)
+    //     }
+    // })
 
     setTimeout(() => {
-        playActiveVideo(0)
+        // playActiveVideo(0)
     }, 500)
 })
 </script>
@@ -279,22 +279,19 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                         </Carousel>
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
-                            <div v-for="(item, index) in cases" :key="index" class="case-card">
-                                <!-- <PixelLabel :text="item.label" /> -->
-                                <video
-                                    :ref="(el) => { if (el) videoRefs[index] = el as HTMLVideoElement }"
-                                    class="case-card__video border-radius"
-                                    playsinline
-                                    muted
-                                    loop
-                                    preload="metadata"
-                                    webkit-playsinline
-                                    :autoplay="index === 0"
-                                    :controls="index === 1"
-                                >
-                                    <source :src="item.video" type="video/webm" loading="lazy" >
-                                </video>
-                            </div>
+                            <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-card">
+                              <VideoStream
+                              class="case-card__video border-radius"
+                              :src="item.video"
+                              playsinline
+                              muted
+                              loop
+                              preload="metadata"
+                              webkit-playsinline
+                              :autoplay="index === 0"
+                              :controls="index === 1"
+                            />
+                          </div>
                         </Carousel>
                     </div>
 
@@ -472,14 +469,18 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
 }
 
 .case-card__video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
     will-change: transform;
     transform: translateZ(0);
+    overflow: hidden;
 
     aspect-ratio: 9 / 16;
     max-height: 600px;
+}
+
+.case-card__video stream {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 @media (max-width: 767px) {
