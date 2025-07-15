@@ -11,33 +11,64 @@ const { classes } = defineProps({
     }
 })
 
+const revealTypeRef = ref(null)
+let splitTextInstance = null
+let scrollTriggerInstance = null
+
+const animationOptions = computed(() => ({
+  opacity: 1,
+  stagger: 0.8,
+  duration: 1.1,
+  scrollTrigger: {
+    trigger: revealTypeRef.value,
+    start: "top 80%",
+    end: "top 40%",
+    scrub: 1,
+  }
+}))
+
+const initialState = computed(() => ({
+  opacity: 0.6
+}))
+
+const createAnimation = () => {
+  if (! revealTypeRef.value) return
+  
+  cleanUpAnimation()
+
+  splitTextInstance = SplitText.create(revealTypeRef.value, { type: "words, chars" })
+  
+  scrollTriggerInstance = gsap.fromTo(
+    splitTextInstance.chars,
+    initialState.value,
+    animationOptions.value
+  )
+}
+
+const cleanUpAnimation = () => {
+  if (scrollTriggerInstance) {
+    scrollTriggerInstance.kill()
+    scrollTriggerInstance = null
+  }
+
+  if (splitTextInstance) {
+    splitTextInstance.revert()
+    splitTextInstance = null
+  }
+}
+
 onMounted(async () => {
-    await nextTick()
-    const dev = new URLSearchParams(window.location.params).get('dev') ? true : false;
+  await nextTick()
+  createAnimation()
+})
 
-
-    const revealTypes = gsap.utils.toArray('.reveal-type');
-    revealTypes.forEach(revealType => {
-        const split = SplitText.create(revealType, { type: "words, chars" })
-
-        gsap.fromTo(split.chars, {opacity: 0.6}, {
-            scrollTrigger: {
-                trigger: revealType,
-                start: "top 80%",
-                end: "top 40%",
-                scrub: 1,
-                markers: dev,
-            },
-            opacity: 1,
-            stagger: 0.8,
-            duration: 1.1
-        })
-    })
+onUnmounted(() => {
+  cleanUpAnimation()
 })
 </script>
 
 <template>
-    <div :class="`reveal-type ${classes}`">
+    <div ref="revealTypeRef" :class="`reveal-type ${classes}`">
         <slot/>
     </div>
 </template>
