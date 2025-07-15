@@ -2,6 +2,7 @@
 import { onMounted } from 'vue'
 import { gsap } from 'gsap'
 
+import { VideoStream } from 'stream-vue'
 import PixelLabel from './PixelLabel.vue'
 import Button from './ui/Button.vue'
 
@@ -39,11 +40,19 @@ onMounted(() => {
                 <Button v-if="props.handle" :href="`/cases/${props.handle}`" variant="outline">Bekijk case</Button>
             </div>
 
-            <video v-if="props.featured_video !== undefined" class="case-card__video" autoplay muted loop playsinline webkit-playsinline style="pointer-events: none;">
-                <source :src="props.featured_video" type="video/webm" loading="lazy">
-            </video>
+            <VideoStream 
+              v-if="props.featured_video !== undefined" 
+              :src="props.featured_video" 
+              class="case-card__video" 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              webkit-playsinline 
+              style="pointer-events: none;"
+            />
 
-            <NuxtImg v-else class="case-card__image" :src="props.featured_image" :alt="props.client" loading="lazy" />
+            <NuxtImg v-else class="case-card__image" provider="cloudflare" :src="props.featured_image" :alt="props.client" loading="lazy" />
         </div>
     </div>
 </template>
