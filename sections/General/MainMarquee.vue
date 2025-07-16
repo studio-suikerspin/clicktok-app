@@ -1,19 +1,20 @@
 <script setup>
 import { horizontalLoop } from '@/composables/useHorizontalLoop';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import { onMounted } from 'vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
+const { $gsap, $ScrollTrigger } = useNuxtApp()
+
 onMounted(() => {
-    const slides = gsap.utils.toArray('.marquee__slide'),
+    const slides = $gsap.utils.toArray('.marquee__slide'),
     loop = horizontalLoop(slides, {
         paused: false,
         repeat: -1,
         speed: 1
     })
 
-    ScrollTrigger.create({
+    $ScrollTrigger.create({
         trigger: ".marquee__slide",
         start: "bottom bottom", // Start when marquee enters viewport from bottom
         end: "top top",         // End when marquee exits viewport from top

@@ -3,16 +3,17 @@
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
 
-import gsap from 'gsap'
 import { onMounted } from 'vue'
 import { VideoStream } from 'stream-vue'
+
+const { $gsap } = useNuxtApp()
 
 // Floating animation function
 const animateFloatingImages = () => {
   const floatingImages = document.querySelectorAll('.hero__floating_image')
   
   floatingImages.forEach((image, index) => {
-    gsap.to(image, {
+    $gsap.to(image, {
       y: '4px',
       duration: 2 + (index * 0.3),
       ease: 'power1.inOut',

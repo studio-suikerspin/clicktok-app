@@ -4,7 +4,8 @@ import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
-import { gsap } from 'gsap'
+
+const { $gsap } = useNuxtApp()
 
 const numbersSectionRef = ref<HTMLElement | null>(null)
 
@@ -14,7 +15,7 @@ const animateNumbers = () => {
     numberElements.forEach((element, index) => {
         const targetValue = parseFloat(element.textContent || '0')
 
-        gsap.fromTo(element, {
+        $gsap.fromTo(element, {
             textContent: 0,
         }, {
             textContent: targetValue,
@@ -42,7 +43,7 @@ function numberWithCommas(x) {
 }
 
 onMounted(async () => {
-    gsap.ticker.fps(30)
+    $gsap.ticker.fps(30)
 
     await nextTick()
 

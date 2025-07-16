@@ -8,8 +8,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, nextTick, readonly } from 'vue'
-import { gsap } from 'gsap'
-import { Draggable } from 'gsap/Draggable'
+
+const { $gsap } = useNuxtApp()
 
 interface Props {
     effect?: 'slide' | 'fade'
@@ -62,8 +62,8 @@ const animateToSlide = (index: number) => {
     if (props.effect === 'fade') {
         slides.forEach((slide, i) => {
             if (i === index) {
-                gsap.set(slide, { opacity: 0, display: 'block' })
-                gsap.to(slide,
+                $gsap.set(slide, { opacity: 0, display: 'block' })
+                $gsap.to(slide,
                     {
                         opacity: 1,
                         duration: props.duration,
@@ -71,12 +71,12 @@ const animateToSlide = (index: number) => {
                     }
                 )
             } else {
-                gsap.to(slide, {
+                $gsap.to(slide, {
                     opacity: 0,
                     duration: props.duration,
                     ease: props.ease,
                 })
-                gsap.set(slide, { display: 'none' })
+                $gsap.set(slide, { display: 'none' })
             }
         })
     } else {
@@ -85,7 +85,7 @@ const animateToSlide = (index: number) => {
         const slideWidthWithGap = slideWidth + gap
         const translateX = -index * slideWidthWithGap
 
-        gsap.to(carouselWrapper.value, {
+        $gsap.to(carouselWrapper.value, {
             x: translateX,
             duration: props.duration,
             ease: props.ease
@@ -102,7 +102,6 @@ const goToSlide = (index: number) => animateToSlide(index)
 
 
 onMounted(async () => {
-    gsap.registerPlugin(Draggable);
     await nextTick()
 
     const slides = getSlides()
@@ -113,11 +112,11 @@ onMounted(async () => {
     if (props.effect === 'fade') {
         // Set up fade effect - hide all slides except first
         slides.forEach((slide, i) => {
-            gsap.set(slide, { opacity: i === 0 ? 1 : 0 })
+            $gsap.set(slide, { opacity: i === 0 ? 1 : 0 })
         })
     } else {
         // Set up slide effect
-        gsap.set(carouselWrapper.value, { x: 0 })
+        $gsap.set(carouselWrapper.value, { x: 0 })
     }
 
     emit('slideChange', 0)

@@ -1,7 +1,7 @@
 <script setup>
 import { nextTick, onMounted } from 'vue';
-import gsap from 'gsap';
-import { SplitText } from 'gsap/all';
+
+const { $gsap, $SplitText } = useNuxtApp()
 
 const { classes } = defineProps({
     classes: {
@@ -36,9 +36,9 @@ const createAnimation = () => {
   
   cleanUpAnimation()
 
-  splitTextInstance = SplitText.create(revealTypeRef.value, { type: "words, chars" })
+  splitTextInstance = $SplitText.create(revealTypeRef.value, { type: "words, chars" })
   
-  scrollTriggerInstance = gsap.fromTo(
+  scrollTriggerInstance = $gsap.fromTo(
     splitTextInstance.chars,
     initialState.value,
     animationOptions.value

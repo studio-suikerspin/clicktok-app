@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted, ref, nextTick } from 'vue';
-import gsap from 'gsap';
+
+const { $gsap } = useNuxtApp()
 
 const { title, link, animateOnScroll } = defineProps({
     title: String,
@@ -25,7 +26,7 @@ onMounted(async () => {
     } : null;
 
     if (titleRef.value) {
-        gsap.fromTo(
+        $gsap.fromTo(
             titleRef.value,
             {
                 opacity: 0,
@@ -48,7 +49,7 @@ onMounted(async () => {
     } : null;
 
     if (subtitleRef.value) {
-        gsap.fromTo(
+        $gsap.fromTo(
             subtitleRef.value,
             {
                 opacity: 0,

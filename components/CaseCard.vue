@@ -1,10 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
-import { gsap } from 'gsap'
 
 import { VideoStream } from 'stream-vue'
 import PixelLabel from './PixelLabel.vue'
 import Button from './ui/Button.vue'
+
+const { $gsap } = useNuxtApp()
 
 const props = defineProps({
     tags: Array,
@@ -26,7 +27,7 @@ const props = defineProps({
 })
 
 onMounted(() => {
-    gsap.to('.case-card', {
+    $gsap.to('.case-card', {
         opacity: 1,
         y: 0,
         ease: 'power2.inOut'

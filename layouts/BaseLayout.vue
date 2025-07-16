@@ -1,19 +1,21 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
-
-import { gsap } from 'gsap'
-import { SplitText } from 'gsap/SplitText'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { TextPlugin } from 'gsap/TextPlugin'
-
+import { onMounted } from 'vue'
 import Lenis from 'lenis'
 
-gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin)
+const { $gsap, $ScrollTrigger } = useNuxtApp()
 
 onMounted(() => {
     const lenis = new Lenis({
         autoRaf: true,
     });
+
+    lenis.on('scroll', $ScrollTrigger.update)
+
+    $gsap.ticker.add(time => {
+      lenis.raf(time * 1000)
+    })
+
+    $gsap.ticker.lagSmoothing(0)
 })
 </script>
 

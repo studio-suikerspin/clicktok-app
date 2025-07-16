@@ -1,7 +1,7 @@
 <script setup>
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { nextTick, onMounted, ref } from "vue";
+import { onMounted, ref } from "vue";
+
+const { $gsap, $SplitText } = useNuxtApp();
 
 const intro = ref(null);
 const introText = ref(null);
@@ -44,14 +44,14 @@ const createIntroAnimation = async () => {
 
   cleanup();
 
-  splitInstance = SplitText.create(introText.value, {
+  splitInstance = $SplitText.create(introText.value, {
     type: "lines, words, chars",
     linesClass: "intro-line",
   });
 
-  gsap.set(introText.value, { autoAlpha: 1 })
+  $gsap.set(introText.value, { autoAlpha: 1 })
 
-  timeline = gsap.timeline({ paused: true })
+  timeline = $gsap.timeline({ paused: true })
     .fromTo(
       splitInstance.lines,
       {
