@@ -2,7 +2,6 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import Header from '~/sections/Header/MainHeader.vue'
 import Footer from '@/sections/General/Footer.vue'
-import StayAheadSecond from '@/sections/StayAhead/StayAheadSecond.vue'
 import LogoFlex from '@/sections/General/LogoFlex.vue'
 import Contact from '@/sections/Contact/Contact.vue'
 import Offices from '~/sections/General/MainOffices.vue'
@@ -12,7 +11,8 @@ import ServiceExamples from '@/sections/About/ServiceExamples.vue'
 import NumbersAbout from '@/sections/About/NumbersAbout.vue'
 import HeroSubPages from '@/sections/HeroSubPages.vue'
 import RevealingTypes from '@/sections/RevealingTypes.vue'
-
+import StayAhead from '@/sections/StayAhead/StayAhead.vue'
+import { VideoStream } from 'stream-vue'
 
 const numbersData = [
     {
@@ -42,14 +42,23 @@ const numbersData = [
       <template #smooth>
         <Header />
         <HeroSubPages title="About us" />
+
+        <div class="about__video">
+          <div class="container">
+            <div class="about__video_wrapper">
+              <VideoStream src="e524f0436d0e27a17931cb5451d3d33e" webkit-playsinline autoplay muted loop playsinline class="about__video_stream border-radius"/>
+            </div>
+          </div>
+        </div>
+
         <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen."  />
         
         <div class="about__stay__ahead__cards padding-bottom">
           <StayAheadCards />
         </div>
-        <div class="about__stay__ahead">
-          <StayAheadSecond title="How we turned <span class='highlight'>brand values</span> into a <span class='highlight'>viral format</span>" navigation="bottom" subtitle="Voor Nubikk, dat zorgt voor sterkere <span class='highlight'>merkherkenning</span>." />
-        </div>
+
+        <StayAhead  :lazy-loading="true" :title="'How we turned brand values into a viral format'" :subtitle="'Voor Nubikk, dat zorgt voor sterkere merkherkenning.'"/>
+
         <div class="about__service__examples padding-top">
           <ServiceExamples />
         </div>
@@ -98,6 +107,31 @@ const numbersData = [
 </template>
 
 <style>
+.about__video{
+  margin-top: -200px;
+  z-index: 5;
+  position: relative;
+}
+
+.about__video_wrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__video_stream{
+  width: 450px;
+  height: 650px;
+  overflow: hidden;
+}
+
+.about__video_stream stream{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 /* title */
