@@ -42,14 +42,15 @@ onMounted(() => {
                     <div class="hero__floating_image_wrapper">
                         <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="1dfcb5eed704b08341cfec3dde51b983" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <VideoStream src="1dfcb5eed704b08341cfec3dde51b983" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
                     </div>
                 </div>
+                
               
                 <div class="hero__floating_image with-hover third border-radius">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
                     </div>
                 </div>
 
@@ -57,14 +58,14 @@ onMounted(() => {
                 <div class="hero__floating_image with-hover fourth border-radius">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                        <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
                     </div>
                 </div>
 
@@ -186,32 +187,32 @@ onMounted(() => {
         opacity: 1;
         transition: opacity 0.3s ease;
     }
-    .hero__floating_image.with-hover stream {
+    .hero__floating_image.with-hover .hero__floating_image_video {
         opacity: 0;
         transition: opacity 0.3s ease;
         position: absolute;
         top: 0;
         left: 0;
-        /* width: 100%;
-        height: 100%; */
+        width: 100%;
+        height: 100%;
     }
     
     .hero__floating_image.with-hover:hover img {
         opacity: 0;
     }
     
-    .hero__floating_image.with-hover:hover stream {
+    .hero__floating_image.with-hover:hover .hero__floating_image_video {
         opacity: 1;
     }
 }
 
 /* Mobile: show only video */
 @media (max-width: 767px) {
-    .hero__floating_image stream {
+    .hero__floating_image .hero__floating_image_video {
         display: block;
     }
-    .hero__floating_image.with-hover.third stream,
-    .hero__floating_image.with-hover.fourth stream{
+    .hero__floating_image.with-hover.third .hero__floating_image_video,
+    .hero__floating_image.with-hover.fourth .hero__floating_image_video{
         display: none;
     }
     .hero__floating_image.with-hover.first img,
