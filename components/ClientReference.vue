@@ -15,7 +15,7 @@ defineProps({
 
     <div class="review__person">
       <div class="person__image border-radius">
-        <img :src="reference.avatar" />
+        <img :src="reference.avatar">
       </div>
 
       <div class="person__info">
@@ -74,7 +74,6 @@ defineProps({
 
 .person__image img {
   object-fit: cover;
-  width: 100%;
   height: 100%;
 }
 

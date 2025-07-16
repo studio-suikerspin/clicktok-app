@@ -99,6 +99,10 @@ onMounted(async () => {
     line-height: 110%;
 }
 
+.case-detail .section-title__title {
+  font-size: 40px;
+}
+
 @media screen and (min-width: 992px) {
     .section-title__title {
         font-size: 72px;
