@@ -83,7 +83,7 @@ const contactForms = [
             />
           </div>
           <div class="logo-flex-wrapper">
-            <LogoSlider variant="bw" />
+            <LogoSlider />
           </div>
         </div>
 
