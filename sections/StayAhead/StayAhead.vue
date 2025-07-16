@@ -6,6 +6,10 @@
     import { VideoStream } from 'stream-vue'
 
     defineProps({
+        showTitle: {
+            type: Boolean,
+            default: true
+        },
         title: {
             type: String,
             default: "(Y)our way to stay ahead"
@@ -67,7 +71,7 @@
     <section class="stay__ahead">
         <div class="container">
             <div class="stay__ahead-inner">
-                <SectionTitle :title="title" :subtitle="subtitle" />
+                <SectionTitle v-if="showTitle" :title="title" :subtitle="subtitle" />
                 <div class="stay__ahead__block border-radius">
                     <div class="stay__ahead__content">
                         <div class="stay__ahead__content_text">
@@ -92,8 +96,8 @@
                               preload="metadata"
                               webkit-playsinline
                               autoplay
+                              controls
                               class="stay__ahead__content_video_stream border-radius"
-                              loading="lazy"
                             />                            
                         </div>
                     </div>
@@ -112,19 +116,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="stay__ahead__associaties-wrapper border-radius">
-                    <div class="stay__ahead__associaties-wrapper-title">
-                        <div class="title">Associaties</div>
-                        <div class="text">
-                            Content met de juiste associaties doet meer dan opvallen; het bouwt herkenning, vertrouwen en voorkeur op.
-                        </div>
-                    </div>
-                    <div class="stay__ahead__associaties">
-                        <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                            <img :src="associatie.src" :alt="associatie.alt" />
-                        </div>
-                    </div>
-                </div> -->
+              
             </div>
         </div>
     </section>

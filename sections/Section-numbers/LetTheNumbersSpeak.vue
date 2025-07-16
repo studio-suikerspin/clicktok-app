@@ -6,6 +6,14 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 import { ref, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
 
+const props = defineProps({
+    title: {
+        type: String,
+        required: false,
+        default: 'The numbers speak for themselves',
+    },
+})
+
 const numbersSectionRef = ref<HTMLElement | null>(null)
 
 const animateNumbers = () => {
@@ -56,7 +64,7 @@ onMounted(async () => {
         <div class="container">
             <div class="numbers__speak-inner">
                 <div class="numbers__speak-title">
-                    <TypeRevealTitle>The numbers speak for themselves</TypeRevealTitle>
+                    <TypeRevealTitle>{{ title }}</TypeRevealTitle>
                 </div>
                 <div class="numbers__speak-results">
                     <div class="numbers__speak-results-item">

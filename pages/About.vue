@@ -12,6 +12,8 @@ import NumbersAbout from '@/sections/About/NumbersAbout.vue'
 import HeroSubPages from '@/sections/HeroSubPages.vue'
 import RevealingTypes from '@/sections/RevealingTypes.vue'
 import StayAhead from '@/sections/StayAhead/StayAhead.vue'
+import LetTheNumbersSpeak from '@/sections/Section-numbers/LetTheNumbersSpeak.vue';
+import LogoSlider from '@/sections/General/LogoSlider.vue';
 import { VideoStream } from 'stream-vue'
 
 const numbersData = [
@@ -43,15 +45,7 @@ const numbersData = [
         <Header />
         <HeroSubPages title="About us" />
 
-        <div class="about__video">
-          <div class="container">
-            <div class="about__video_wrapper">
-              <VideoStream src="e524f0436d0e27a17931cb5451d3d33e" webkit-playsinline autoplay muted loop playsinline class="about__video_stream border-radius"/>
-            </div>
-          </div>
-        </div>
-
-        <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen."  />
+        <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen." :sectionPadding="false" />
         
         <div class="about__stay__ahead__cards padding-bottom">
           <StayAheadCards />
@@ -59,47 +53,30 @@ const numbersData = [
 
         <StayAhead  :lazy-loading="true" :title="'How we turned brand values into a viral format'" :subtitle="'Voor Nubikk, dat zorgt voor sterkere merkherkenning.'"/>
 
-        <div class="about__service__examples padding-top">
+        <!-- <div class="about__service__examples padding-top">
           <ServiceExamples />
+        </div> -->
+
+        <div class="section-padding">
+          <LetTheNumbersSpeak title="And we do it well" />
         </div>
-        <div class="about__numbers padding-top">
-            <div class="container">
-              <div class="about__title montserrat">
-                  <div>And we do it <span class="highlight">well</span></div>
-              </div>
-            </div>
-            <NumbersAbout :numbers="numbersData" />
-        </div>
-        <div class="about__team">
-          <div class="container">
-            <div class="about__title with-subtitle">
-                <div>With this <span class="highlight">Team</span></div>
-                <div class="subtitle">Achter elke video staat een gespecialiseerd team dat TikTok door en door
-                begrijpt. Alles gebeurt in-house: van strategie tot productie, zodat elke seconde klopt
-                met je merk én met het platform.</div>
-            </div>
-          </div>
-          <SectionTeam />
-        </div>
+
+        <SectionTeam />
+        
         <div class="about__offices">
-          <div class="container">
             <div class="about__title">
-                <div>In these <span class="highlight">Places</span></div>
+                <SectionTitle title="In these places" />
             </div>
-          </div>
           <Offices />
         </div>
+
         <div class="about__logo_slider padding-bottom">
-          <div class="container">>
-            <div class="about__title logos">
-                <div>For these <span class="highlight">Brands</span></div>
-            </div>
+          <div class="about__title logos">
+              <SectionTitle title="For these brands" />
           </div>
-          <div class="logo-flex-wrapper">
-              <LogoFlex />
-          </div>
-          <!-- <LogoSlider /> -->
+            <LogoSlider />
         </div>
+
         <Contact />
         <Footer />
       </template>
@@ -107,124 +84,23 @@ const numbersData = [
 </template>
 
 <style>
-.about__video{
-  margin-top: -200px;
-  z-index: 5;
-  position: relative;
-}
-
-.about__video_wrapper{
-  width: 100%;
-  height: 100%;
+.about__offices,
+.about__logo_slider{
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about__video_stream{
-  width: 450px;
-  height: 650px;
-  overflow: hidden;
-}
-
-.about__video_stream stream{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
-/* title */
-.about__stay__ahead .section-title_wrapper{
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
-
-.about__stay__ahead .section-title_wrapper .section-title__subtitle,
-.about__stay__ahead .section-title_wrapper .section-title{
-  text-align: center;
-  max-width: 1100px;
-}
-.about__title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 80px;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    font-style: italic;
-    color: var(--off-white);
-    margin-bottom: 80px;
-}
-
-.about__title.montserrat{
-  font-family: 'Montserrat';
-  line-height: 1.2;
-  color: var(--color-white);
-  font-style: italic;
-  font-weight: 900;
-}
-
-.about__title.logos{
-  margin-bottom: 48px;
-}
-
-.about__title.with-subtitle {
   flex-direction: column;
-  gap: 16px;
+  gap: 80px;
 }
 
-.about__title.with-subtitle .subtitle {
-  font-size: 18px;
-  font-weight: 400;
-  max-width: 940px;
-  text-align: start;
+.about__logo_slider{
+  gap: 40px;
 }
 
-.about__title .highlight{
-  color: var(--accent-blue);
-}
-
-@media(max-width: 767px) {
-  .about__title{
-    font-size: 32px;
-    margin-bottom: 50px;
+@media(max-width: 768px) {
+    .about__offices,
+    .about__logo_slider{
+      gap: 40px;
   }
 }
 
-
-/* Stay ahead */
-.about__stay__ahead .section-title__title{
-  font-size: 80px;
-  text-align: center;
-}
-
-@media(max-width: 767px) {
-  .about__stay__ahead .section-title__title{
-    font-size: 32px;
-  }
-}
-
-/* Numbers */
-.about__numbers .numbers__title{
-    display: none;
-}
-
-.about__numbers .numbers__item-4,
-.about__numbers .numbers__item-5{
-  display: none;
-}
-
-.about__numbers .highlight{
-  font-size: 14px;
-}
-
-@media(max-width: 767px) {
-  .about__numbers .highlight{
-    font-size: 12px;
-  }
-}
 
 </style>

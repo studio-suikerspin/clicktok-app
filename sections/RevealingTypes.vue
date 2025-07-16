@@ -16,12 +16,17 @@ const props = defineProps({
         type: String,
         required: true,
         default: 'We create impact'
+    },
+    sectionPadding: {
+        type: Boolean,
+        required: false,
+        default: true
     }
 })
 </script>
 
 <template>
-    <section class="section-padding relative">
+    <section class="relative" :class="sectionPadding ? 'section-padding' : 'padding-small'">
         <div class="container ">
             <TypeRevealTitle classes="revealing-types__inner">
                 <span class="max-w-4xl mx-auto">{{ titleFirst }}</span>
@@ -39,6 +44,11 @@ const props = defineProps({
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+.padding-small {
+    padding-top: 80px;
+    padding-bottom: 200px;
 }
 
 @media screen and (min-width: 992px) {

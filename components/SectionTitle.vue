@@ -89,6 +89,7 @@ onMounted(async () => {
     opacity: 0;
     transform: translateY(50px);
     text-align: center;
+    max-width: 1250px;
 }
 
 .section-title__subtitle {
@@ -99,9 +100,11 @@ onMounted(async () => {
     line-height: 110%;
 }
 
+
 .case-detail .section-title__title {
-  font-size: 40px;
+    font-size: 40px;
 }
+
 
 @media screen and (min-width: 992px) {
     .section-title__title {
