@@ -108,6 +108,7 @@ const offices = ref([
 @media (max-width: 992px) {
   .offices__inner {
     flex-direction: column;
+    gap: 40px;
   }
   .offices__item_image {
     height: 300px;
