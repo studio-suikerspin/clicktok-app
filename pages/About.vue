@@ -2,9 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.vue'
 import Header from '~/sections/Header/MainHeader.vue'
 import Footer from '@/sections/General/Footer.vue'
-import ThreeTitles from '@/sections/General/ThreeTitles.vue'
 import StayAheadSecond from '@/sections/StayAhead/StayAheadSecond.vue'
-import LogoSlider from '@/sections/General/LogoSlider.vue'
 import LogoFlex from '@/sections/General/LogoFlex.vue'
 import Contact from '@/sections/Contact/Contact.vue'
 import Offices from '~/sections/General/MainOffices.vue'
@@ -12,8 +10,8 @@ import SectionTeam from '~/sections/SectionTeam.vue'
 import StayAheadCards from '@/sections/StayAhead/StayAheadCards.vue'
 import ServiceExamples from '@/sections/About/ServiceExamples.vue'
 import NumbersAbout from '@/sections/About/NumbersAbout.vue'
-import { onMounted } from 'vue'
-import { gsap } from 'gsap'
+import HeroSubPages from '@/sections/HeroSubPages.vue'
+import RevealingTypes from '@/sections/RevealingTypes.vue'
 
 
 const numbersData = [
@@ -32,54 +30,7 @@ const numbersData = [
     }
 ]
 
-function initAutoplayVideos(selector = 'video[autoplay]') {
-  const enableAutoplay = () => {
-    const videos = document.querySelectorAll(selector);
-    videos.forEach(video => {
-      // Video-elementen hebben de play() methode, dus gewoon aanroepen
-      video.play().catch(err => {
-        console.warn('Autoplay blocked for video:', video, err);
-      });
-    });
 
-    window.removeEventListener('click', enableAutoplay);
-    window.removeEventListener('touchstart', enableAutoplay);
-    window.removeEventListener('scroll', enableAutoplay);
-  };
-
-  window.addEventListener('click', enableAutoplay);
-  window.addEventListener('touchstart', enableAutoplay);
-  window.addEventListener('scroll', enableAutoplay);
-}
-
-
-
-onMounted(() => {
-  initAutoplayVideos() // pakt alle <video autoplay> elementen op de pagina
-
-
-  // Animate all about__title elements when they come into view
-  gsap.utils.toArray('.about__title').forEach((title, index) => {
-    gsap.fromTo(title,
-      {
-        opacity: 0,
-        y: 50
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: title,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          toggleActions: 'play none none reverse'
-        }
-      }
-    )
-  })
-})
 </script>
 
 <template>
@@ -89,23 +40,10 @@ onMounted(() => {
       </template>
 
       <template #smooth>
-        <div class="hero__wrapper">
-          <div class="hero__background-fade"/>
-          <Header />
-        </div>
-        <div class="about__three__titles">
-            <ThreeTitles>
-                <template #first>
-                    <h2>You want more than <span class="highlight">views.</span></h2>
-                </template>
-                <template #second>
-                    <h2>You want people to resonate with <span class="highlight">your brand.</span></h2>
-                </template>
-                <template #third>
-                    <h2>We make content that makes <span class="highlight">this happen.</span></h2>
-                </template>
-            </ThreeTitles>
-        </div>
+        <Header />
+        <HeroSubPages title="About us" />
+        <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen."  />
+        
         <div class="about__stay__ahead__cards padding-bottom">
           <StayAheadCards />
         </div>
@@ -160,28 +98,7 @@ onMounted(() => {
 </template>
 
 <style>
-.hero__background-fade {
-    position: absolute; /* of absolute als fixed problemen geeft */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 85vh;
-    background-image: url('/images/gradient-vierkant-min.webp');
-    background-size: cover;
-    background-repeat: no-repeat;
-    pointer-events: none;
-    z-index: 0;
 
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-}
-
-@media(max-width: 767px) {
-    .hero__background-fade {
-        background-image: url('/images/gradient-vierkant-mobile-min.webp');
-        height: 100vh;
-    }
-}
 
 /* title */
 .about__stay__ahead .section-title_wrapper{
@@ -243,11 +160,6 @@ onMounted(() => {
   }
 }
 
-
-/* Three titles */
-.about__three__titles .gradient__blur{
-  display: none;
-}
 
 /* Stay ahead */
 .about__stay__ahead .section-title__title{

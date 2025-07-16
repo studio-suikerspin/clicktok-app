@@ -14,7 +14,6 @@ import AboutCarousel from '@/sections/About/AboutCarousel.vue'
 import Contact from '@/sections/Contact/Contact.vue';
 import Footer from '@/sections/General/Footer.vue';
 import LetTheNumbersSpeak from '@/sections/Section-numbers/LetTheNumbersSpeak.vue';
-import { onMounted } from 'vue';
 
 // Components
 import TypeRevealTitle from '@/components/TypeRevealTitle.vue';
@@ -23,29 +22,6 @@ import LogoSlider from '@/sections/General/LogoSlider.vue';
 import IntroAnimation from '@/components/IntroAnimation.vue';
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
-function initAutoplayVideos(selector = 'video[autoplay]') {
-  const enableAutoplay = () => {
-    const videos = document.querySelectorAll(selector);
-    videos.forEach(video => {
-      // Video-elementen hebben de play() methode, dus gewoon aanroepen
-      video.play().catch(err => {
-        console.warn('Autoplay blocked for video:', video, err);
-      });
-    });
-
-    window.removeEventListener('click', enableAutoplay);
-    window.removeEventListener('touchstart', enableAutoplay);
-    window.removeEventListener('scroll', enableAutoplay);
-  };
-
-  window.addEventListener('click', enableAutoplay);
-  window.addEventListener('touchstart', enableAutoplay);
-  window.addEventListener('scroll', enableAutoplay);
-}
-
-onMounted(() => {
-  initAutoplayVideos() // pakt alle <video autoplay> elementen op de pagina
-})
 
 </script>
 
