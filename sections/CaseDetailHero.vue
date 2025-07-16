@@ -84,7 +84,7 @@ onMounted(() => animateNumbers());
               class="detail-wrap"
             >
               <div class="label">{{ stat.title }}</div>
-              <div class="value" :data-number="stat.stat">{{ stat.stat }}</div>
+              <div class="value value--stat" :data-number="stat.stat">{{ stat.stat }}</div>
             </div>
           </div>
         </div>
@@ -214,11 +214,15 @@ onMounted(() => animateNumbers());
 .value {
 color: var(--White_off, #FDFDFD);
 font-family: Montserrat;
-font-size: 24px;
+font-size: 18px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
 letter-spacing: -0.96px;
+}
+
+.value--stat {
+  font-family: Syne;
 }
 
 @media (min-width: 768px) {
@@ -228,6 +232,10 @@ letter-spacing: -0.96px;
 
   .hero__inner {
     grid-template-columns: 55% 1fr;
+  }
+
+  .value {
+    font-size: 24px;
   }
 }
 

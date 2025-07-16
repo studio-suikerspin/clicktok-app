@@ -14,7 +14,14 @@ const props = defineProps({
     featured_video: String,
     featured_image: String,
     aspect_ratio: String,
-    autoplay: Boolean,
+    autoplay: {
+      type: Boolean,
+      default: true,
+    },
+    controls: {
+      type: Boolean,
+      default: false,
+    },
     isDetailPage: Boolean,
 })
 
@@ -35,21 +42,21 @@ onMounted(() => {
             </li>
         </ul>
         <div class="case-card__video-wrap border-radius">
-            <div class="case-card__content">
-                <div class="case-card__title">{{ props.client }}</div>
-                <Button v-if="props.handle" :href="`/cases/${props.handle}`" variant="outline">Bekijk case</Button>
-            </div>
-
+            <div class="case-card__overlay"/>
+            
+            <div class="case-card__title">{{ props.client }}</div>
+            <Button v-if="props.handle" classes="pointer-events-all z-10 relative" :href="`/cases/${props.handle}`" variant="outline">Bekijk case</Button>
+            
             <VideoStream 
               v-if="props.featured_video !== undefined" 
               :src="props.featured_video" 
-              class="case-card__video" 
-              autoplay 
+              :class="['case-card__video', props.controls ? '' : 'pointer-events-none']" 
+              :autoplay="props.autoplay"
+              :controls="props.controls"
               muted 
               loop 
               playsinline 
               webkit-playsinline 
-              style="pointer-events: none;"
             />
 
             <NuxtImg v-else class="case-card__image" provider="cloudflare" :src="props.featured_image" :alt="props.client" loading="lazy" />
@@ -76,25 +83,39 @@ onMounted(() => {
     height: 100%;
 }
 
+.case-card__title {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  pointer-events: none;
+}
+
+.case-card .btn {
+  position:absolute;
+  z-index: 2;
+  bottom: 48px;
+  left: 50%;
+  translate: -50% -50%;
+}
+
 .case-card__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.case-card__content {
+.case-card__overlay {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
+    
+    pointer-events: none;
 
     width: 100%;
     height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     background: rgba(0, 0, 0, 0.25);
 }
@@ -153,5 +174,11 @@ onMounted(() => {
     .case-card.is-detail-page {
         display: none;
     }
+}
+
+@media screen and (min-width: 768px) {
+  .case-card .btn {
+    bottom: 16px;
+  }
 }
 </style>

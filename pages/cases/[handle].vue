@@ -29,7 +29,7 @@ if (!item) {
 </script>
 
 <template>
-  <BaseLayout>
+  <BaseLayout class="case-detail">
     <template #head>
       <title>ClickTok - Case {{ item.client }}</title>
     </template>
@@ -42,7 +42,7 @@ if (!item) {
 
       <section
         v-if="item.brand_value?.title || item.brand_values?.length"
-        class="tabbed-content"
+        class="tabbed-content padding-top"
       >
         <div class="container">
           <TabbedContent v-if="item.brand_values" :default-index="0">
@@ -150,9 +150,9 @@ if (!item) {
         </div>
       </section>
 
-      <LetTheNumbersSpeak class="padding-bottom" />
+      <LetTheNumbersSpeak class="padding-top" />
 
-      <section v-if="item.reference.content" class="reference">
+      <section v-if="item.reference.content" class="reference padding-top">
         <div class="container">
           <div class="reference__inner">
             <type-reveal-title>This is what our client says</type-reveal-title>
@@ -173,11 +173,11 @@ if (!item) {
         </div>
       </section>
 
-      <div class="section-padding">
-        <LogoSlider variant="bw" />
+      <div class="padding-top">
+        <LogoSlider />
       </div>
 
-      <Contact />
+      <Contact class="padding-top" />
       <Footer />
     </template>
   </BaseLayout>
@@ -270,14 +270,10 @@ if (!item) {
     padding-block: 80px;
 } */
 
-.tabbed-content {
-  padding-block: 160px;
-}
-
 .reference__inner {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
 }
 
 @media (max-width: 767px) {
@@ -301,6 +297,12 @@ if (!item) {
   .contact__wrapper {
     padding-block: 0;
     padding-bottom: 100px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .reference__inner {
+    gap: 80px;
   }
 }
 </style>

@@ -44,14 +44,14 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="steps">
+  <section class="steps padding-top">
     <div class="container gradient-blur-wrapper">
       <div class="steps__inner">
         <div class="steps__card-wrap">
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[0]"
-              autoplay
+              controls
               playsinline
               muted
               loop
@@ -72,7 +72,7 @@ onMounted(() => {
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[2]"
-              autoplay
+              controls
               playsinline
               muted
               loop
@@ -105,7 +105,7 @@ onMounted(() => {
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[1]"
-              autoplay
+              controls
               playsinline
               muted
               loop
@@ -130,10 +130,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.steps {
-  padding-block: 80px;
-}
-
 .steps__inner {
   position: relative;
 
@@ -156,7 +152,7 @@ onMounted(() => {
 
 .card {
   overflow: clip;
-  max-height: 800px;
+  max-height: 650px;
 }
 
 .card--gradient {
@@ -169,8 +165,7 @@ onMounted(() => {
   justify-content: center;
   gap: 24px;
 
-  padding-inline: 40px;
-  padding-block: 40px;
+  padding: 24px 0;
 }
 
 .card__title {
@@ -252,13 +247,11 @@ onMounted(() => {
 
 .steps__card-wrap .card:has(video, img) {
   align-items: center;
-  max-height: 500px;
+  max-height: 650px;
 }
 
 .steps__card-wrap video {
-  /* aspect-ratio: 9 / 16; */
   height: 100%;
-  width: 100%;
   object-fit: cover;
   border-radius: 24px;
 }
@@ -308,6 +301,11 @@ onMounted(() => {
   .steps__card-wrap {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
+  }
+
+  .card--gradient {
+    padding-inline: 40px;
+    padding-block: 40px;
   }
 }
 </style>
