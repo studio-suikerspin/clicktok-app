@@ -175,4 +175,10 @@ onMounted(() => {
         display: none;
     }
 }
+
+@media screen and (min-width: 768px) {
+  .case-card .btn {
+    bottom: 16px;
+  }
+}
 </style>

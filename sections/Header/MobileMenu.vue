@@ -93,6 +93,8 @@ watch(
     width: 100vw;
     height: 100dvh;
 
+    overflow: hidden;
+
     pointer-events: none;
 }
 
