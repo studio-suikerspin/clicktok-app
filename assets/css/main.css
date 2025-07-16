@@ -9,9 +9,9 @@
     }
 }
 
-#smooth-content {
+/* #smooth-content {
     will-change: transform;
-}
+} */
 
 :root {
     --off-white: #FDFDFD;

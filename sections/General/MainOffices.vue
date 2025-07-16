@@ -57,6 +57,8 @@ const offices = ref([
 <style scoped>
 .offices {
   width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
 }
 
 .offices__inner {
