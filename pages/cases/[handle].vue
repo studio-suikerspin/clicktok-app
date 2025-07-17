@@ -35,7 +35,6 @@ if (!item) {
       <title>ClickTok - Case {{ item.client }}</title>
     </template>
 
-    <template #smooth>
       <MainHeader />
       <CaseDetailHero :project="item" :is-detail-page="true" />
 
@@ -124,7 +123,6 @@ if (!item) {
 
       <Contact class="padding-top" />
       <Footer />
-    </template>
   </BaseLayout>
 </template>
 

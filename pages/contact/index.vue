@@ -61,7 +61,6 @@ const contactForms = [
       <title>ClickTok - Contact</title>
     </template>
 
-    <template #smooth>
       <div class="contact-hero">
         <Header />
         
@@ -100,7 +99,6 @@ const contactForms = [
       </div>
 
       <Footer />
-    </template>
   </BaseLayout>
 </template>
 
