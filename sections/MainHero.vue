@@ -2,32 +2,32 @@
 // Components
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
-
-import gsap from 'gsap'
-import { onMounted } from 'vue'
 import { VideoStream } from 'stream-vue'
 
-// Floating animation function
-const animateFloatingImages = () => {
-  const floatingImages = document.querySelectorAll('.hero__floating_image')
-  
-  floatingImages.forEach((image, index) => {
-    gsap.to(image, {
-      y: '4px',
-      duration: 2 + (index * 0.3),
-      ease: 'power1.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: index * 0.2
-    })
-  })
-}
+// import gsap from 'gsap'
+// import { onMounted } from 'vue'
 
-onMounted(() => {
-    if (window.innerWidth >= 1024) {
-    animateFloatingImages()
-    }
-})
+// Floating animation function
+// const animateFloatingImages = () => {
+//   const floatingImages = document.querySelectorAll('.hero__floating_image')
+  
+//   floatingImages.forEach((image, index) => {
+//     gsap.to(image, {
+//       y: '4px',
+//       duration: 2 + (index * 0.3),
+//       ease: 'power1.inOut',
+//       yoyo: true,
+//       repeat: -1,
+//       delay: index * 0.2
+//     })
+//   })
+// }
+
+// onMounted(() => {
+//     if (window.innerWidth >= 1024) {
+//     animateFloatingImages()
+//     }
+// })
 </script>
 
 <template>
@@ -38,7 +38,7 @@ onMounted(() => {
             <div class="container relative text-container">
 
                  <!-- left images -->
-                <div class="hero__floating_image with-hover first border-radius">
+                <div class="hero__floating_image with-hover first border-radius floating-animation-1">
                     <div class="hero__floating_image_wrapper">
                         <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
@@ -47,7 +47,7 @@ onMounted(() => {
                 </div>
                 
               
-                <div class="hero__floating_image with-hover third border-radius">
+                <div class="hero__floating_image with-hover third border-radius floating-animation-2">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
@@ -55,14 +55,14 @@ onMounted(() => {
                 </div>
 
                 <!-- right images -->
-                <div class="hero__floating_image with-hover fourth border-radius">
+                <div class="hero__floating_image with-hover fourth border-radius floating-animation-3">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
                     </div>
                 </div>
                
-                <div class="hero__floating_image with-hover sixth border-radius">
+                <div class="hero__floating_image with-hover sixth border-radius floating-animation-4">
                     <div class="hero__floating_image_wrapper">
                         <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public" alt="Hero floating image" loading="lazy" />
                         <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
@@ -437,5 +437,36 @@ onMounted(() => {
     }
 }
 
+/* CSS Keyframes Floating Animation */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+/* Desktop only floating animations */
+@media (min-width: 1024px) {
+    .floating-animation-1 {
+        animation: floating 2s ease-in-out infinite;
+    }
+    
+    .floating-animation-2 {
+        animation: floating 2.3s ease-in-out infinite;
+        animation-delay: 0.2s;
+    }
+    
+    .floating-animation-3 {
+        animation: floating 2.6s ease-in-out infinite;
+        animation-delay: 0.4s;
+    }
+    
+    .floating-animation-4 {
+        animation: floating 2.9s ease-in-out infinite;
+        animation-delay: 0.6s;
+    }
+}
 
 </style>
