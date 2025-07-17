@@ -17,7 +17,7 @@ import reviews from '@/lib/reviews'
 
                             <div class="review__person">
                                 <div class="person__image border-radius">
-                                    <img :src="review.avatar" />
+                                    <img :src="review.avatar" >
                                 </div>
 
                                 <div class="person__info">

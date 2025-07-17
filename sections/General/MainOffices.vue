@@ -46,7 +46,7 @@ const offices = ref([
             />
           </div>
           <div class="offices__item_image">
-            <img :src="office.image" :alt="office.title" />
+            <img :src="office.image" :alt="office.title" >
           </div>
         </div>
       </div>

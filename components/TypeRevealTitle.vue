@@ -37,7 +37,7 @@ const initHighlightText = () => {
     autoSplit: true,
     onSplit(self) {
       animationContext = gsap.context(() => {
-        let tl = gsap.timeline({
+        const tl = gsap.timeline({
           scrollTrigger: {
             scrub: true,
             trigger: revealTypeRef.value, 

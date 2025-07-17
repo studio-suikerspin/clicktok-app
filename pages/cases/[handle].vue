@@ -68,12 +68,12 @@ if (!item) {
                   :index="key"
                 >
                   <StayAhead
-                    :showTitle="false"
-                    brandValue="Brand value"
-                    :mainTitle="brand_value.value"
+                    :show-title="false"
+                    brand-value="Brand value"
+                    :main-title="brand_value.value"
                     :description="brand_value.content"
-                    bottomTitle="Hieromheen is het format gebouwd"
-                    :videoSrc="brand_value.video"
+                    bottom-title="Hieromheen is het format gebouwd"
+                    :video-src="brand_value.video"
                     :associaties="brand_value.associaties"
                   />
                 </TabContent>
@@ -82,12 +82,12 @@ if (!item) {
 
             <StayAhead
               v-else-if="item.brand_value && item.brand_value.value"
-              :showTitle="false"
-              brandValue="Brand value"
-              :mainTitle="item.brand_value.value"
-              bottomTitle="Hieromheen is het format gebouwd"
+              :show-title="false"
+              brand-value="Brand value"
+              :main-title="item.brand_value.value"
+              bottom-title="Hieromheen is het format gebouwd"
               :description="item.brand_value.content"
-              :videoSrc="item.brand_value.video"
+              :video-src="item.brand_value.video"
               :associaties="item.brand_value.associaties"
             />
           </div>
@@ -106,7 +106,7 @@ if (!item) {
                 v-if="item.reference.content"
                 :reference="item.reference"
               />
-              <div class="fun-fact border-radius" v-if="item.detail_large_stat">
+              <div v-if="item.detail_large_stat" class="fun-fact border-radius">
                 <div class="fun-fact__title">Fun fact</div>
                 <div class="fun-fact__content">
                   {{ item.detail_large_stat.text }}

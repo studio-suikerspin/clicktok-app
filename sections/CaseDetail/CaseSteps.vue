@@ -60,7 +60,7 @@ onMounted(() => {
                 :src="project.videos[0]"
                 type="video/webm"
                 loading="lazy"
-              />
+              >
             </video>
 
             <NuxtImg v-else :src="project.images[0]" :alt="project.title" />
@@ -81,7 +81,7 @@ onMounted(() => {
                 :src="project.videos[2]"
                 type="video/webm"
                 loading="lazy"
-              />
+              >
             </video>
 
             <NuxtImg v-else :src="project.images[2]" :alt="project.title" />
@@ -114,7 +114,7 @@ onMounted(() => {
                 :src="project.videos[1]"
                 type="video/webm"
                 loading="lazy"
-              />
+              >
             </video>
 
             <NuxtImg v-else :src="project.images[1]" :alt="project.title" />

@@ -73,7 +73,7 @@ watch(selectedService, async () => {
                                         </div>
                                     </div>
                                     <div class="services__left-item-content" :class="{ hidden: selectedService !== index }">
-                                        <div class="services__left-item-content-text" v-html="service.description"></div>
+                                        <div class="services__left-item-content-text" v-html="service.description"/>
                                         <div class="services__left-item-content-link">
                                             <a href="/services">
                                                 Meer informatie
@@ -81,7 +81,7 @@ watch(selectedService, async () => {
                                             </a>
                                         </div>
                                         <div class="services__left-item_mobile-video">
-                                            <div class="services__video_wrapper" v-if="services[selectedService].video">
+                                            <div v-if="services[selectedService].video" class="services__video_wrapper">
                                                 <video
                                                 :key="services[selectedService].video"
                                                 :src="services[selectedService].video"

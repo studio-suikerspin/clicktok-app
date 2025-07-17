@@ -108,7 +108,7 @@
                         </div>
                         <div class="stay__ahead__associaties">
                             <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">                                                                
-                                <img :src="associatie.src" :alt="associatie.alt" loading="lazy" />
+                                <img :src="associatie.src" :alt="associatie.alt" loading="lazy" >
                             </div>               
                                          
                         </div>

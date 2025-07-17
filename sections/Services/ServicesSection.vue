@@ -249,7 +249,7 @@ const toggleItem = (itemId: number) => {
                   </div>
                 </div>
               </div>
-              <div class="service__content_second" v-if="service.video">
+              <div v-if="service.video" class="service__content_second">
                 <div class="service__content_video">
                   <VideoStream :src="service.video" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
                 </div>

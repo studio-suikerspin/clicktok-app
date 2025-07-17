@@ -137,31 +137,31 @@ onUnmounted(() => {
 
             <div class="stay__ahead_inner">
                 <div class="stay__ahead_header">
-                    <SectionTitle :title="title" :subtitle="subtitle" :animateOnScroll="props.animateOnScroll" />
+                    <SectionTitle :title="title" :subtitle="subtitle" :animate-on-scroll="props.animateOnScroll" />
                 </div>
 
-                <div class="stay__ahead_blocks_inner" v-for="(item, index) in props.slides" :key="index">
+                <div v-for="(item, index) in props.slides" :key="index" class="stay__ahead_blocks_inner">
                     <div class="stay__ahead_block border-radius">
-                        <img src="/images/gradient-vierkant-mobile-min.webp" :loading="props.lazyLoading ? 'lazy' : ''" />
+                        <img src="/images/gradient-vierkant-mobile-min.webp" :loading="props.lazyLoading ? 'lazy' : ''" >
                         <div class="title title-font">{{ item.blocks[0].title }}</div>
                         <div class="text__content">
                             <div class="title-wrap">
                                 <div class="title-blue">{{ item.blocks[0].subtitle }}</div>
                                 <div class="subtitle">{{ item.blocks[0].secondTitle }}</div>
                             </div>
-                            <div class="general-content" v-html="item.blocks[0].content"></div>
+                            <div class="general-content" v-html="item.blocks[0].content"/>
                             <Button variant="blue" href="/contact" class="blue-btn">Let's get started!</Button>
                         </div>
                     </div>
 
                     <div class="stay__ahead_video border-radius">
                         <video
-                            class="stay__ahead_video_inner border-radius"
                             :ref="
                                 (el) => {
                                     if (el) videoRefs.push(el)
                                 }
                             "
+                            class="stay__ahead_video_inner border-radius"
                             preload="metadata"
                             muted
                             playsinline
@@ -176,14 +176,14 @@ onUnmounted(() => {
                                 width="100%"
                                 height="978"
                                 :loading="props.lazyLoading ? 'lazy' : ''"
-                            />
+                            >
                         </video>
                     </div>
 
                     <div class="stay__ahead_block second border-radius">
-                        <img src="/images/gradient-vierkant-mobile-min.webp" :loading="props.lazyLoading ? 'lazy' : ''" />
+                        <img src="/images/gradient-vierkant-mobile-min.webp" :loading="props.lazyLoading ? 'lazy' : ''" >
                         <div class="title title-font">{{ item.blocks[1].title }}</div>
-                        <div class="general-content" v-html="item.blocks[1].content"></div>
+                        <div class="general-content" v-html="item.blocks[1].content"/>
                         <div class="stay__ahead_reviews">
                             <ReviewCard v-for="review in item.blocks[1].reviews" :key="review.name" :review="review" />
                         </div>

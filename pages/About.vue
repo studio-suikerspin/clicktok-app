@@ -42,7 +42,7 @@ const numbersData = [
       <Header />
       <HeroSubPages title="About us" />
 
-      <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen." :sectionPadding="false" />
+      <RevealingTypes title-first="You want more than views." title-second="You want people to resonate with your brand." title-third="We make content that makes this happen." :section-padding="false" />
       
       <div class="about__stay__ahead__cards padding-bottom">
         <StayAheadCards />

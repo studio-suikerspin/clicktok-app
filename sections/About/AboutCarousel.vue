@@ -102,7 +102,7 @@ import { onMounted } from 'vue';
   >
     <SwiperSlide v-for="(slide, index) in slides" :key="slide.image">
       <div class="about__slide-container" :class="[{ 'active': index === 0 }, `item-${index}`]">
-        <img :src="slide.image" :alt="slide.title" loading="lazy" />
+        <img :src="slide.image" :alt="slide.title" loading="lazy" >
         <div class="overlay"/>
         <div class="about__text">
           <div class="title" :class="{ 'active': index === 0 }">{{ slide.title }}</div>

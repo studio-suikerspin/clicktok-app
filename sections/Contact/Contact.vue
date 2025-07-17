@@ -119,19 +119,19 @@ onUnmounted(() => {
                     type="text"
                     name="name"
                     placeholder="Naam"
-                  />
+                  >
                   <input
                     v-if="!isCreator && !isSollicitation"
                     v-model="form.company"
                     type="text"
                     placeholder="Bedrijfsnaam"
-                  />
+                  >
                   <input
                     v-if="isCreator"
                     v-model="form.username"
                     type="text"
                     placeholder="Username"
-                  />
+                  >
                 </div>
                 <div class="contact__form_row">
                   <input
@@ -139,13 +139,13 @@ onUnmounted(() => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                  />
+                  >
                   <input
                     v-model="form.phone"
                     type="tel"
                     name="tel"
                     placeholder="Telefoon"
-                  />
+                  >
                 </div>
                 <div v-if="isSollicitation" class="contact__form_row">
                   <textarea v-model="form.message" placeholder="Motivatie" />
@@ -160,7 +160,7 @@ onUnmounted(() => {
                     class="file-upload"
                     style="display: none"
                     @input="form.portfolio = $event.target.files[0]"
-                  />
+                  >
                   <label class="upload-label" for="cv"> Upload CV </label>
                   <input
                     id="cv"
@@ -168,7 +168,7 @@ onUnmounted(() => {
                     class="file-upload"
                     style="display: none"
                     @input="form.cv = $event.target.files[0]"
-                  />
+                  >
                   <progress
                     v-if="form.progress"
                     :value="form.progress.percentage"
@@ -189,7 +189,7 @@ onUnmounted(() => {
                     type="checkbox"
                     name="gdpr"
                     class="border-radius"
-                  />
+                  >
                   <label for="gdpr"
                     >Ik ga akkoord met de
                     <a href="/privacy-policy">privacyverklaring</a></label
@@ -212,7 +212,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -220,7 +220,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -228,7 +228,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -236,7 +236,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
           </div>
         </div>
