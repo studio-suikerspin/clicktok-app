@@ -3,30 +3,30 @@
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
 
-import gsap from 'gsap'
-import { onMounted } from 'vue'
+// import gsap from 'gsap'
+// import { onMounted } from 'vue'
 
 // Floating animation function
-const animateFloatingImages = () => {
-  const floatingImages = document.querySelectorAll('.hero__floating_image')
+// const animateFloatingImages = () => {
+//   const floatingImages = document.querySelectorAll('.hero__floating_image')
   
-  floatingImages.forEach((image, index) => {
-    gsap.to(image, {
-      y: '4px',
-      duration: 2 + (index * 0.3),
-      ease: 'power1.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: index * 0.2
-    })
-  })
-}
+//   floatingImages.forEach((image, index) => {
+//     gsap.to(image, {
+//       y: '4px',
+//       duration: 2 + (index * 0.3),
+//       ease: 'power1.inOut',
+//       yoyo: true,
+//       repeat: -1,
+//       delay: index * 0.2
+//     })
+//   })
+// }
 
-onMounted(() => {
-    if (window.innerWidth >= 1024) {
-    animateFloatingImages()
-    }
-})
+// onMounted(() => {
+//     if (window.innerWidth >= 1024) {
+//     animateFloatingImages()
+//     }
+// })
 </script>
 
 <template>
@@ -37,7 +37,7 @@ onMounted(() => {
             <div class="container relative text-container">
 
                  <!-- left images -->
-                <div class="hero__floating_image with-hover first border-radius">
+                <div class="hero__floating_image with-hover first border-radius floating-animation-1">
                     <div class="hero__floating_image_wrapper">
                         <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
                         <!-- <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image"> -->
@@ -58,7 +58,7 @@ onMounted(() => {
                 </div>
                 
               
-                <div class="hero__floating_image with-hover third border-radius">
+                <div class="hero__floating_image with-hover third border-radius floating-animation-2">
                     <div class="hero__floating_image_wrapper">
                         <video 
                           preload="none" 
@@ -77,7 +77,7 @@ onMounted(() => {
                 </div>
 
                 <!-- right images -->
-                <div class="hero__floating_image with-hover fourth border-radius">
+                <div class="hero__floating_image with-hover fourth border-radius floating-animation-3">
                     <div class="hero__floating_image_wrapper">
                         <video 
                           preload="none" 
@@ -95,7 +95,7 @@ onMounted(() => {
                     </div>
                 </div>
                
-                <div class="hero__floating_image with-hover sixth border-radius">
+                <div class="hero__floating_image with-hover sixth border-radius floating-animation-4">
                     <div class="hero__floating_image_wrapper">
                         <video 
                           preload="none" 
@@ -479,5 +479,36 @@ onMounted(() => {
     }
 }
 
+/* CSS Keyframes Floating Animation */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+
+/* Desktop only floating animations */
+@media (min-width: 1024px) {
+    .floating-animation-1 {
+        animation: floating 2s ease-in-out infinite;
+    }
+    
+    .floating-animation-2 {
+        animation: floating 2.3s ease-in-out infinite;
+        animation-delay: 0.2s;
+    }
+    
+    .floating-animation-3 {
+        animation: floating 2.6s ease-in-out infinite;
+        animation-delay: 0.4s;
+    }
+    
+    .floating-animation-4 {
+        animation: floating 2.9s ease-in-out infinite;
+        animation-delay: 0.6s;
+    }
+}
 
 </style>
