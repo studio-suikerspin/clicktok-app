@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TypeRevealTitle from '@/components/TypeRevealTitle.vue'
+import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
@@ -77,15 +77,12 @@ onMounted(async () => {
 })
 </script>
 
-
-
-
 <template>
     <section ref="numbersSectionRef" class="numbers__speak">
         <div class="container">
             <div class="numbers__speak-inner">
-                <div class="numbers__speak-title">
-                    <TypeRevealTitle>{{ title }}</TypeRevealTitle>
+                <div class="numbers__speak-title hidden md:block">
+                    {{ title }}
                 </div>
                 <div class="numbers__speak-results">
                     <div class="numbers__speak-results-item">
@@ -163,6 +160,13 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
 
 .numbers__speak-title {
     max-width: 800px;
+    color: var(--off-white, #FDFDFD);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .numbers__speak-results-item {
@@ -185,8 +189,12 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
 
 @media(min-width: 992px) {
     .numbers__speak-results {
-        gap: 24px;
-        flex-direction: row;
+      gap: 24px;
+      flex-direction: row;
+    }
+
+    .numbers__speak-title {
+      font-size: 60px;
     }
 }
 

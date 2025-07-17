@@ -1,7 +1,7 @@
 <script setup>
 import { nextTick, onMounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger, SplitText } from 'gsap/all';
+
+const { gsap, SplitText } = useGsap();
 
 const { classes } = defineProps({
     classes: {
