@@ -181,9 +181,9 @@ onMounted(async () => {
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />
-                <BlurGlow
+                <!-- <BlurGlow
 top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">

@@ -5,9 +5,9 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 
 <template>
     <div data-css-marquee="" class="marquee-css section-padding">
-        <BlurGlow
+        <!-- <BlurGlow
 top="" left="40%" :width="'400px'" :height="'45%'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
         <div data-css-marquee-list="" class="marquee-css__list">
             <div class="marquee-css__item">
                 <h2>We create formats that elevate your brand's voice.</h2>

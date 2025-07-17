@@ -4,6 +4,8 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
 
+const { gsap } = useGsap()
+
 defineProps({
     title: {
         type: String,
@@ -21,24 +23,21 @@ const animateNumbers = () => {
 
     numberElements.forEach((element) => {
         const targetValue = parseFloat(element.getAttribute('data-target') || '0')
-        const duration = 2000
-        const startTime = performance.now()
-
-        const update = (currentTime: number) => {
-            const elapsed = currentTime - startTime
-            const progress = Math.min(elapsed / duration, 1)
-            const currentValue = targetValue * progress
-
-            element.textContent = numberWithCommas(Math.ceil(currentValue))
-
-            if (progress < 1) {
-                requestAnimationFrame(update)
-            } else {
-                element.textContent = numberWithCommas(targetValue)
+        
+        // Use GSAP TextPlugin for smooth number animation
+        gsap.fromTo(element, 
+            { textContent: 0 },
+            {
+                textContent: targetValue,
+                duration: 2,
+                ease: "power2.out",
+                snap: { textContent: 1 },
+                onUpdate: function() {
+                    const currentValue = Math.round(this.targets()[0].textContent)
+                    element.textContent = numberWithCommas(currentValue)
+                }
             }
-        }
-
-        requestAnimationFrame(update)
+        )
     })
 }
 
@@ -131,14 +130,14 @@ onMounted(async () => {
                     <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
                         started!</Button>
                 </div>
-
+<!-- 
                 <BlurGlow
 top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                     :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
 
                 <BlurGlow
 top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
-                    :mobile-no-blur-width="'200px'" :mobile-no-blur-height="'200px'" />
+                    :mobile-no-blur-width="'200px'" :mobile-no-blur-height="'200px'" /> -->
             </div>
         </div>
     </section>

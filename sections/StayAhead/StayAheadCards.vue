@@ -47,12 +47,12 @@ const cards = [
         <Button variant="white" href="/contact">Let's get started!</Button>
       </div>
 
-      <BlurGlow
+      <!-- <BlurGlow
         top="0" left="10px" :width="'400px'" :height="'480px'" :mobile-no-blur="true"
         :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
         <BlurGlow
         top="-20px" right="10px" :width="'400px'" :height="'480px'" :mobile-no-blur="true"
-        :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
+        :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
 
     </div>
   </div>
