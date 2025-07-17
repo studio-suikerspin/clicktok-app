@@ -42,6 +42,11 @@ import { onMounted } from 'vue';
       title: 'Resultaatgericht',
       subtitle: 'We maken geen content voor de views, maar voor wat erna komt. Vanmerkherkenning tot conversie: elk format is creatief sterk én stuurt op resultaat',
     },
+    {
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6af13110-89b8-4563-d983-165531828200/public',
+      title: 'Gebouwd op merkbeleving',
+      subtitle: 'Elke video die we maken begint bij het gevoel dat je als merk wilt achterlaten. We bouwen formats op basis van merkwaarden, zodat je content niet alleen een bereik scoort, maar de merkbeleving versterkt bij elke weergave.',
+    },
   ];
 </script>
 
@@ -57,7 +62,7 @@ import { onMounted } from 'vue';
    <swiper
     class="about__swiper"
     :modules="modules"
-    :slides-per-view="4"
+    :slides-per-view="3"
     :space-between="30"
     :loop="true"
     :autoplay="baseAutoplay"

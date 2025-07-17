@@ -4,7 +4,6 @@ import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
-import { gsap } from 'gsap'
 
 const props = defineProps({
     title: {
@@ -17,46 +16,68 @@ const props = defineProps({
 const numbersSectionRef = ref<HTMLElement | null>(null)
 
 const animateNumbers = () => {
-    const numberElements = document.querySelectorAll('.numbers__result_number')
+    if (!numbersSectionRef.value) return
+    
+    const numberElements = numbersSectionRef.value.querySelectorAll('.numbers__result_number')
 
-    numberElements.forEach((element, index) => {
-        const targetValue = parseFloat(element.textContent || '0')
+    numberElements.forEach((element) => {
+        const targetValue = parseFloat(element.getAttribute('data-target') || '0')
+        const duration = 2000 // in ms
+        const startTime = performance.now()
 
-        gsap.fromTo(element, {
-            textContent: 0,
-        }, {
-            textContent: targetValue,
-            duration: 2,
-            stagger: index * 0.1,
-            ease: "power1.in",
-            snap: { textContent: 1 },
-            onUpdate: function () {
-                element.textContent = numberWithCommas(Math.ceil(this.targets()[0].textContent));
-            },
-            scrollTrigger: numbersSectionRef.value,
-        });
+        const update = (currentTime: number) => {
+            const elapsed = currentTime - startTime
+            const progress = Math.min(elapsed / duration, 1)
+            const currentValue = targetValue * progress
+
+            element.textContent = numberWithCommas(Math.ceil(currentValue))
+
+            if (progress < 1) {
+                requestAnimationFrame(update)
+            } else {
+                element.textContent = numberWithCommas(targetValue)
+            }
+        }
+
+        requestAnimationFrame(update)
     })
 }
 
-function numberWithCommas(x) {
+function numberWithCommas(x: number) {
     if (x === Math.floor(x)) {
         return x.toLocaleString('en-US')
     }
 
     return x.toLocaleString('en-US', {
         minimumFractionDigits: 1,
-        maximumFractionDigits: 1
+        maximumFractionDigits: 1,
     })
 }
 
 onMounted(async () => {
-    gsap.ticker.fps(30)
-
     await nextTick()
 
-    animateNumbers()
+    if (!numbersSectionRef.value) return
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateNumbers()
+                    observer.disconnect() // alleen 1x animeren
+                }
+            })
+        },
+        {
+            threshold: 0.5, // 50% van sectie moet zichtbaar zijn
+        }
+    )
+
+    observer.observe(numbersSectionRef.value)
 })
 </script>
+
+
 
 
 <template>
@@ -71,7 +92,7 @@ onMounted(async () => {
                         <div class="numbers__result">
                             <div class="numbers__result_title">Creators</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">77</span>
+                                <span class="numbers__result_number" data-target="77">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Aantal creators</div>
@@ -81,7 +102,7 @@ onMounted(async () => {
                         <div class="numbers__result">
                             <div class="numbers__result_title">Views</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">88200000</span>
+                                <span class="numbers__result_number" data-target="88200000">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Totaal bereik</div>
@@ -91,7 +112,7 @@ onMounted(async () => {
                         <div class="numbers__result">
                             <div class="numbers__result_title">Campagnes</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">23</span>
+                                <span class="numbers__result_number" data-target="23">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Aantal campagnes</div>
