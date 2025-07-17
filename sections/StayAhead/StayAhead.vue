@@ -3,7 +3,6 @@
     import Button from '@/components/ui/Button.vue';
     import 'swiper/css';
     import 'swiper/css/autoplay';
-    import { VideoStream } from 'stream-vue'
 
     defineProps({
         showTitle: {
@@ -44,7 +43,7 @@
         },
         videoSrc: {
             type: String,
-            default: "67fb71ffddf82e449525beb1edec007a"
+            default: "https://r2.suikerspin.studio/BANNER_NUBIKK_V6--SHORT.mp4"
         },
         associaties: {
             type: Array,
@@ -88,14 +87,13 @@
                             </div>
                         </div>
                         <div class="stay__ahead__content_video">                            
-                            <VideoStream
+                            <video
                               :src="videoSrc"
                               playsinline
                               muted
                               loop
                               preload="metadata"
                               webkit-playsinline
-                              autoplay
                               controls
                               class="stay__ahead__content_video_stream border-radius"
                             />                            
