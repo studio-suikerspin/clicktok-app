@@ -3,9 +3,6 @@ import { nextTick, onMounted } from 'vue';
 import gsap from 'gsap';
 import { ScrollTrigger, SplitText } from 'gsap/all';
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger, SplitText);
-
 const { classes } = defineProps({
     classes: {
         required: false,
