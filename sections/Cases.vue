@@ -10,7 +10,6 @@ import GradientBlur from '@/components/GradientBlur.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
-import { VideoStream } from 'stream-vue'
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger)
@@ -30,7 +29,7 @@ const props = defineProps({
 
 const cases = [
     {
-        video: '480bbad9d3fd24382153acb05611a117',
+        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3--SHORT.mp4',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
@@ -52,7 +51,7 @@ const cases = [
         ],
     },
     {
-        video: '0799a169b1a02f89535f72f7442a88a9',
+        video: 'https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
@@ -64,7 +63,7 @@ const cases = [
 
 const casesSecond = [
     {
-        video: '62c16ea3db18cef4aa975dd47310422b',
+        video: 'https://r2.suikerspin.studio/BANNER_DOGMAN_V1.mp4',
         title: 'Dogman Video Game',
         label: 'Creator collaborations',
         subtitle: 'Direct Activation',
@@ -86,7 +85,7 @@ const casesSecond = [
         ],
     },
     {
-        video: '67a755e5d6f763df02a63e3ed97e32f2',
+        video: 'https://r2.suikerspin.studio/BANNER_MOBIELNL_V1--SHORT.mp4',
         title: 'mobiel.nl',
         label: 'UGC Ad Creatie',
         subtitle: 'Built on Association',
@@ -280,7 +279,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
                             <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-card">
-                              <VideoStream
+                              <video
                               class="case-card__video border-radius"
                               :src="item.video"
                               playsinline
@@ -288,8 +287,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                               loop
                               preload="metadata"
                               webkit-playsinline
-                              :autoplay="index === 0"
-                              :controls="index === 1"
+                              :controls="true"
                             />
                           </div>
                         </Carousel>

@@ -2,7 +2,6 @@
 // Components
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
-import { VideoStream } from 'stream-vue'
 
 // import gsap from 'gsap'
 // import { onMounted } from 'vue'
@@ -41,31 +40,76 @@ import { VideoStream } from 'stream-vue'
                 <div class="hero__floating_image with-hover first border-radius floating-animation-1">
                     <div class="hero__floating_image_wrapper">
                         <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
-                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="1dfcb5eed704b08341cfec3dde51b983" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
+                        <!-- <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image"> -->
+                        <video 
+                          preload="none" 
+                          webkit-playsinline 
+                          playsinline 
+                          muted
+                          loop 
+                          class="hero__floating_image_video"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
+                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
+                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
+                        >
+                          <source src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.mp4">
+                        </video>
                     </div>
                 </div>
                 
               
                 <div class="hero__floating_image with-hover third border-radius floating-animation-2">
                     <div class="hero__floating_image_wrapper">
-                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="924de0fb167dcb867709b92b694f387b" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
+                        <video 
+                          preload="none" 
+                          webkit-playsinline 
+                          playsinline 
+                          muted
+                          loop 
+                          class="hero__floating_image_video"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
+                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
+                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
+                        >
+                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
+                        </video>
                     </div>
                 </div>
 
                 <!-- right images -->
                 <div class="hero__floating_image with-hover fourth border-radius floating-animation-3">
                     <div class="hero__floating_image_wrapper">
-                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="4bd7c667bfe2da80cfed40c90bc94c72" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
+                        <video 
+                          preload="none" 
+                          webkit-playsinline 
+                          playsinline 
+                          muted
+                          loop 
+                          class="hero__floating_image_video"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public"
+                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
+                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
+                        >
+                          <source src="https://r2.suikerspin.studio/keukensale.mp4">
+                        </video>
                     </div>
                 </div>
                
                 <div class="hero__floating_image with-hover sixth border-radius floating-animation-4">
                     <div class="hero__floating_image_wrapper">
-                        <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public" alt="Hero floating image" loading="lazy" />
-                        <VideoStream src="ee4778eee199131194912a4ca1dfcd0a" webkit-playsinline autoplay muted loop playsinline loading="lazy" class="hero__floating_image_video"/>
+                        <video 
+                          preload="none" 
+                          webkit-playsinline 
+                          playsinline 
+                          muted
+                          loop 
+                          class="hero__floating_image_video"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public"
+                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
+                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
+                        >
+                          <source src="https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4">
+                        </video>
                     </div>
                 </div>
 
@@ -93,9 +137,8 @@ import { VideoStream } from 'stream-vue'
                 <LogoSlider />
             </div>
 
-            <!-- <NuxtImg provider="cloudflare" class="background-gradient" src="/images/gradient-vierkant-min.webp" alt="Background gradient" /> -->
-            <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient" />
-            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient" />
+            <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
+            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient">
         </div>
     <!-- </div> -->
 </template>
@@ -170,7 +213,7 @@ import { VideoStream } from 'stream-vue'
 }
 
 .hero__floating_image img,
-.hero__floating_image stream {
+.hero__floating_image video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -183,13 +226,12 @@ import { VideoStream } from 'stream-vue'
         width: 100%;
         height: 100%;
     }
-    .hero__floating_image.with-hover img {
+    /* .hero__floating_image.with-hover img {
         opacity: 1;
         transition: opacity 0.3s ease;
-    }
+    } */
     .hero__floating_image.with-hover .hero__floating_image_video {
-        opacity: 0;
-        transition: opacity 0.3s ease;
+        opacity: 1;
         position: absolute;
         top: 0;
         left: 0;
