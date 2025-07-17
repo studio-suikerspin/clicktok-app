@@ -62,7 +62,9 @@ const numbersData = [
       
       <div class="about__offices">
           <div class="about__title">
+            <div class="container">
               <SectionTitle title="In these places" />
+            </div>
           </div>
         <Offices />
       </div>

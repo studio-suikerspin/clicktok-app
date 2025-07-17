@@ -112,6 +112,7 @@ const cards = [
   flex: 1;
   transition: transform 0.3s ease-in-out;
   border: 1px solid var(--off-white_50);
+  z-index: 9;
 }
 
 @media(min-width: 992px) {

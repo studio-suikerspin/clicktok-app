@@ -41,6 +41,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+@media(max-width: 767px){
+    body {
+        overflow-x: hidden;
+    }
+}
+
 .title-font {
     font-family: 'Syne', sans-serif;
     font-weight: 700;
