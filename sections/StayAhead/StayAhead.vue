@@ -142,7 +142,7 @@
     justify-content: center;
     max-width: 1250px;
     padding: 40px;
-    background-image: url('/images/gradient-ruis-vierkant-min.webp');
+    background-image: url('https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public');
     background-size: cover;
     background-position: center;
     background-repeat: repeat;

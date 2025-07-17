@@ -117,7 +117,7 @@ const items = [
 
 @media (max-width: 992px) {
     .footer {
-        background-image: url('/images/gradient-vierkant-mobile-min.webp');
+        background-image: url('https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public');
         mask-image: linear-gradient(to bottom, transparent, black 7%);
         -webkit-mask-image: linear-gradient(to bottom, transparent, black 7%);
     }
