@@ -11,6 +11,7 @@ const services = [
         description:
             'Met een organic campaign bouwen we aan duurzame zichtbaarheid zonder advertentiebudget.<br><br> We ontwikkelen <span>formats vanuit jouw merkwaarden</span>, om zo een <span>herkenbaar merkgevoel</span> over te brengen dat blijft hangen én tot actie aanzet. In dit proces doen we alles: van <span>concepting</span> en <span>scripting</span> tot <span>shoot, edit</span> en <span>analyse</span>.<br><br> Daarnaast zetten we TikTok’s zoekmachine slim in, niet alleen om je merk vindbaar te maken, maar juist om gebruikers in de overwegingsfase te overtuigen.<br><br> Het doel? Content maken die de juiste associaties oproept en daarmee herkenning en <span>merkvoorkeur</span> opbouwt bij je doelgroep.<br><br> Deze campagnes zijn vaak langlopend en consistent, zodat je merk <span>top-of-mind</span> blijft.',
         video: 'https://r2.suikerspin.studio/BANNER_ORGANIC_V1.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
     },
     {
         number: '02',
@@ -18,6 +19,7 @@ const services = [
         description:
             'Met paid advertising zetten we TikTok in als <span>performance</span> kanaal – slim, schaalbaar en gericht op resultaat.<br><br> Van <span>conversiecampagnes</span> voor e-com merken tot leadgen voor personeelswerving: wij zetten je doel om in een strategie die scoort.<br><br> We denken mee in <span>targeting</span>, <span>funnelopbouw</span> en <span>boodschap</span>, en <span>runnen</span> de campagnes van opzet tot <span>optimalisatie</span>.<br><br> De creatives? Die maken we samen met ons inhouse productieteam én een groot netwerk van UGC creators.',
         video: 'https://r2.suikerspin.studio/keukensale.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
     },
     {
         number: '03',
@@ -25,6 +27,7 @@ const services = [
         description:
             'Met UGC ad creatives én native brand creatives maken we advertenties die aanvoelen als TikToks - maar gebouwd zijn voor conversie. UGC is geen hype, het werkt. Campagnes met user-generated content leveren gemiddeld tot 29% hogere conversie op. Daarnaast ontwikkelen we ook in-house brand creatives die je merkverhaal vertalen naar performancegerichte content, altijd afgestemd op het platform en je doelgroep. We bouwen op jouw merkwaarden en combineren die met bewezen, conversiegerichte elementen die presteren. Daarbij nemen we het volledige proces uit handen: van conceptontwikkeling en scripting tot creator matching, briefing, editing en oplevering. Dit doen we voor e-com merken, apps en organisaties die leads willen genereren.',
         video: 'https://r2.suikerspin.studio/keukensale.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
     },
     {
         number: '04',
@@ -91,6 +94,7 @@ watch(selectedService, async () => {
                                                 muted
                                                 loop
                                                 class="border-radius desktop-video"
+                                                :poster="services[selectedService].poster"
                                                 />
                                                 <video
                                                 :key="services[selectedService].video + '-mobile'"
@@ -100,6 +104,7 @@ watch(selectedService, async () => {
                                                 playsinline
                                                 muted
                                                 class="border-radius mobile-video"
+                                                :poster="services[selectedService].poster"
                                                 />
                                             </div>
                                         </div>
@@ -120,6 +125,7 @@ watch(selectedService, async () => {
                                     controls="true"
                                     webkit-playsinline
                                     class="border-radius"
+                                    :poster="services[selectedService].poster"
                                 />
                             </div>
                         </div>

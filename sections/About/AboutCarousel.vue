@@ -78,6 +78,7 @@ import { onMounted } from 'vue';
         slidesPerView: 1.2,
         autoplay: false,
         speed: 1000,
+        loop: false,
         scrollbar: {
             draggable: true,
             dragSize: 50,

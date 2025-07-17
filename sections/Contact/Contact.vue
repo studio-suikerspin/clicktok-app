@@ -441,7 +441,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
 
-  max-height: 615px;
+  /* max-height: 615px; */
 
   width: 100%;
   height: 100%;
@@ -458,5 +458,11 @@ onUnmounted(() => {
 
 .image__wrapper.active {
   display: flex;
+}
+
+@media(max-width: 767px){
+  .image__wrapper {
+    max-height: 615px;
+  }
 }
 </style>

@@ -45,6 +45,10 @@
             type: String,
             default: "https://r2.suikerspin.studio/BANNER_NUBIKK_V6--SHORT.mp4"
         },
+        poster: {
+            type: String,
+            default: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public"
+        },
         associaties: {
             type: Array,
             default: () => [
@@ -96,6 +100,7 @@
                               webkit-playsinline
                               controls
                               class="stay__ahead__content_video_stream border-radius"
+                              :poster="poster"
                             />                            
                         </div>
                     </div>

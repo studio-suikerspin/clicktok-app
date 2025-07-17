@@ -59,11 +59,13 @@ top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
             <Cases :show-first-two="true" :show-last-two="false" /> 
         </div>
 
-        <LetTheNumbersSpeak />
+        <!-- <LetTheNumbersSpeak /> -->
 
         <RevealingTypes />
 
         <StayAhead  :lazy-loading="true" />
+
+        <LetTheNumbersSpeak />
 
         <Marquee />
         <Services />

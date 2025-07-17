@@ -80,7 +80,8 @@ onMounted(async () => {
     <section ref="numbersSectionRef" class="numbers__speak">
         <div class="container">
             <div class="numbers__speak-inner">
-                <div class="numbers__speak-title hidden md:block">
+                <!-- <div class="numbers__speak-title hidden md:block"> -->
+                <div class="numbers__speak-title  md:block">
                   <TypeRevealTitle>{{ title }}</TypeRevealTitle>
                 </div>
 
