@@ -33,53 +33,49 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
             <meta name="keywords" content="TikTok marketing, virale content, short-form video, TikTok agency Nederland, social media marketing, UGC creatie, organic campaigns, merkstrategie TikTok">
         </template>
 
-        <template #smooth>
-            <IntroAnimation />
-            <Header />
-            <Hero />
-            <div class="logo-slider-mobile padding-top">
-                <TypeRevealTitle>Trusted by</TypeRevealTitle>
-                <LogoSlider />
-            </div>
+        <IntroAnimation />
+        <Header />
+        <Hero />
+        <div class="logo-slider-mobile padding-top">
+            <TypeRevealTitle>Trusted by</TypeRevealTitle>
+            <LogoSlider />
+        </div>
 
-            <section class="padding-top">
-                <div class="container relative-container">
-                    <BlurGlow
+        <section class="padding-top">
+            <div class="container relative-container">
+                <BlurGlow
 top="0" left="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
-                    <TypeRevealTitle>
-                        We help brands stay ahead through <br>viral short-form content
-                    </TypeRevealTitle>
-                    <BlurGlow
+            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
+                <TypeRevealTitle>
+                    We help brands stay ahead through <br>viral short-form content
+                </TypeRevealTitle>
+                <BlurGlow
 top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
-                </div>
-            </section>
-
-            <div class="section-padding">
-                <Cases :show-first-two="true" :show-last-two="false" /> 
+            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
             </div>
+        </section>
 
-            <LetTheNumbersSpeak />
+        <div class="section-padding">
+            <Cases :show-first-two="true" :show-last-two="false" /> 
+        </div>
 
-            <RevealingTypes />
+        <LetTheNumbersSpeak />
 
-            <StayAhead  :lazy-loading="true" />
+        <RevealingTypes />
 
-            <Marquee />
-            <Services />
-            <div class="padding-top">
-                <Cases :show-first-two="false" :show-last-two="true" /> 
-            </div>
-            <Reviews />
-            <AboutCarousel />
+        <StayAhead  :lazy-loading="true" />
 
-            <Contact />
+        <Marquee />
+        <Services />
+        <div class="padding-top">
+            <Cases :show-first-two="false" :show-last-two="true" /> 
+        </div>
+        <Reviews />
+        <AboutCarousel />
 
-            <Footer />
-        </template>
+        <Contact />
 
-        <template #static/>
+        <Footer />
     </BaseLayout>
 </template>
 

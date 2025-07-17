@@ -39,45 +39,43 @@ const numbersData = [
           <title>ClickTok - Over ClickTok</title>
       </template>
 
-      <template #smooth>
-        <Header />
-        <HeroSubPages title="About us" />
+      <Header />
+      <HeroSubPages title="About us" />
 
-        <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen." :sectionPadding="false" />
-        
-        <div class="about__stay__ahead__cards padding-bottom">
-          <StayAheadCards />
-        </div>
+      <RevealingTypes titleFirst="You want more than views." titleSecond="You want people to resonate with your brand." titleThird="We make content that makes this happen." :sectionPadding="false" />
+      
+      <div class="about__stay__ahead__cards padding-bottom">
+        <StayAheadCards />
+      </div>
 
-        <StayAhead  :lazy-loading="true" :title="'How we turned brand values into a viral format'" :subtitle="'Voor Nubikk, dat zorgt voor sterkere merkherkenning.'"/>
+      <StayAhead  :lazy-loading="true" :title="'How we turned brand values into a viral format'" :subtitle="'Voor Nubikk, dat zorgt voor sterkere merkherkenning.'"/>
 
-        <!-- <div class="about__service__examples padding-top">
-          <ServiceExamples />
-        </div> -->
+      <!-- <div class="about__service__examples padding-top">
+        <ServiceExamples />
+      </div> -->
 
-        <div class="section-padding">
-          <LetTheNumbersSpeak title="And we do it well" />
-        </div>
+      <div class="section-padding">
+        <LetTheNumbersSpeak title="And we do it well" />
+      </div>
 
-        <SectionTeam />
-        
-        <div class="about__offices">
-            <div class="about__title">
-                <SectionTitle title="In these places" />
-            </div>
-          <Offices />
-        </div>
-
-        <div class="about__logo_slider padding-bottom">
-          <div class="about__title logos">
-              <SectionTitle title="For these brands" />
+      <SectionTeam />
+      
+      <div class="about__offices">
+          <div class="about__title">
+              <SectionTitle title="In these places" />
           </div>
-            <LogoSlider />
-        </div>
+        <Offices />
+      </div>
 
-        <Contact />
-        <Footer />
-      </template>
+      <div class="about__logo_slider padding-bottom">
+        <div class="about__title logos">
+            <SectionTitle title="For these brands" />
+        </div>
+          <LogoSlider />
+      </div>
+
+      <Contact />
+      <Footer />
   </BaseLayout>
 </template>
 
