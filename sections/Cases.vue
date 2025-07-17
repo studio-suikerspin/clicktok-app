@@ -11,9 +11,6 @@ import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
-
 const props = defineProps({
     showFirstTwo: {
         type: Boolean,
