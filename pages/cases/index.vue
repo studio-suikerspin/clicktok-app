@@ -40,20 +40,18 @@ onMounted(() => {
             <title>ClickTok - Cases</title>
         </template>
 
-        <template #smooth>
-            <Header />
-            <CasesHero title="Cases" />
+        <Header />
+        <CasesHero title="Cases" />
 
-            <div class="cases-wrap container">
-                <FilteredCollection />
-                <NuxtImg 
-                  provider="cloudflare"
-                  src="/images/PIXEL__PIXEL_PAARS.png" 
-                  class="background-pixel" 
-                />
-            </div>
-            <Footer />
-        </template>
+        <div class="cases-wrap container">
+            <FilteredCollection />
+            <NuxtImg 
+              provider="cloudflare"
+              src="/images/PIXEL__PIXEL_PAARS.png" 
+              class="background-pixel" 
+            />
+        </div>
+        <Footer />
     </BaseLayout>
 </template>
 

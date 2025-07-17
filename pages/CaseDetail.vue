@@ -70,7 +70,6 @@ onMounted(() => {
             <title>ClickTok - Case {{ item.client }}</title>
         </template>
 
-        <template #smooth>
             <div class="hero__wrapper">
                 <div class="hero__background-fade"/>
                 <div class="hero__content_cases">
@@ -176,7 +175,6 @@ onMounted(() => {
             </div>
             <Contact />
             <Footer />
-        </template>
     </BaseLayout>
 </template>
 
