@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
 
-const props = defineProps({
+defineProps({
     title: {
         type: String,
         required: false,
@@ -22,7 +21,7 @@ const animateNumbers = () => {
 
     numberElements.forEach((element) => {
         const targetValue = parseFloat(element.getAttribute('data-target') || '0')
-        const duration = 2000 // in ms
+        const duration = 2000
         const startTime = performance.now()
 
         const update = (currentTime: number) => {
@@ -64,12 +63,12 @@ onMounted(async () => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     animateNumbers()
-                    observer.disconnect() // alleen 1x animeren
+                    observer.disconnect()
                 }
             })
         },
         {
-            threshold: 0.5, // 50% van sectie moet zichtbaar zijn
+            threshold: 0.5,
         }
     )
 
@@ -82,8 +81,9 @@ onMounted(async () => {
         <div class="container">
             <div class="numbers__speak-inner">
                 <div class="numbers__speak-title hidden md:block">
-                    {{ title }}
+                    <TypeRevealTitle>{{ title }}</TypeRevealTitle>
                 </div>
+
                 <div class="numbers__speak-results">
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
@@ -160,13 +160,6 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
 
 .numbers__speak-title {
     max-width: 800px;
-    color: var(--off-white, #FDFDFD);
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 30px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: normal;
 }
 
 .numbers__speak-results-item {
@@ -191,10 +184,6 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
     .numbers__speak-results {
       gap: 24px;
       flex-direction: row;
-    }
-
-    .numbers__speak-title {
-      font-size: 60px;
     }
 }
 
