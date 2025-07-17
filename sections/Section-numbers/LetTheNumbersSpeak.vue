@@ -81,7 +81,7 @@ onMounted(async () => {
         <div class="container">
             <div class="numbers__speak-inner">
                 <!-- <div class="numbers__speak-title hidden md:block"> -->
-                <div class="numbers__speak-title  md:block">
+                <div class="numbers__speak-title">
                   <TypeRevealTitle>{{ title }}</TypeRevealTitle>
                 </div>
 

@@ -267,6 +267,11 @@
     align-items: center;
     justify-content: center; */
     flex: 2;
+    width: 100%;
+    max-height: 600px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    position: relative;
     
     /* max-height: 600px;
     width: 100%;
@@ -276,13 +281,10 @@
 
 
 .stay__ahead__content_video_stream{
-    will-change: transform;
-    transform: translateZ(0);
-    overflow: hidden;
-
-    aspect-ratio: 9 / 16;
-    max-height: 600px;
-    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← belangrijk */
+    display: block;
 }
 
 
