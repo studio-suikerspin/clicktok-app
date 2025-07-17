@@ -30,6 +30,7 @@ const props = defineProps({
 const cases = [
     {
         video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3--SHORT.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
@@ -52,6 +53,7 @@ const cases = [
     },
     {
         video: 'https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
@@ -64,6 +66,7 @@ const cases = [
 const casesSecond = [
     {
         video: 'https://r2.suikerspin.studio/BANNER_DOGMAN_V1.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'Dogman Video Game',
         label: 'Creator collaborations',
         subtitle: 'Direct Activation',
@@ -86,6 +89,7 @@ const casesSecond = [
     },
     {
         video: 'https://r2.suikerspin.studio/BANNER_MOBIELNL_V1--SHORT.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'mobiel.nl',
         label: 'UGC Ad Creatie',
         subtitle: 'Built on Association',
@@ -95,31 +99,11 @@ const casesSecond = [
     },
 ]
 
-const videoRefs = ref<HTMLVideoElement[]>([])
 const casesCarousel = ref()
 const detailsCarousel = ref()
 const currentSlideIndex = ref(0)
 const sectionRef = ref<HTMLElement>()
-let videoObserver: IntersectionObserver | null = null
 const hasAnimatedInitial = ref(false)
-
-const setupVideoObserver = () => {
-    videoObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const video = entry.target as HTMLVideoElement
-                const videoIndex = videoRefs.value.indexOf(video)
-
-                if (entry.isIntersecting && videoIndex === currentSlideIndex.value) {
-                    // video.play().catch(console.warn)
-                } else {
-                    // video.pause()
-                }
-            })
-        },
-        { threshold: 0.3 },
-    )
-}
 
 const setupScrollTrigger = () => {
     ScrollTrigger.create({
@@ -142,19 +126,6 @@ const setupScrollTrigger = () => {
             }
         }
     })
-}
-
-const playActiveVideo = (slideIndex: number) => {
-    // Pause all videos first
-    videoRefs.value.forEach((video) => {
-        // if (video) video.pause()
-    })
-
-    // Play only the active video
-    const activeVideo = videoRefs.value[slideIndex]
-    if (activeVideo) {
-        activeVideo.play().catch(console.warn)
-    }
 }
 
 const animateNumbers = (slideIndex: number | null = null) => {
@@ -196,14 +167,6 @@ const animateNumbers = (slideIndex: number | null = null) => {
 
 const handleSlideChange = (slideIndex: number) => {
     currentSlideIndex.value = slideIndex
-    // playActiveVideo(slideIndex)
-
-    // Trigger intersection observer check for the new active video
-    // const activeVideo = videoRefs.value[slideIndex]
-    // if (activeVideo && videoObserver) {
-    //     videoObserver.unobserve(activeVideo)
-    //     videoObserver.observe(activeVideo)
-    // }
 
     setTimeout(() => {
         animateNumbers(slideIndex)
@@ -212,18 +175,7 @@ const handleSlideChange = (slideIndex: number) => {
 
 onMounted(async () => {
     await nextTick()
-    // setupVideoObserver()
     setupScrollTrigger()
-
-    // videoRefs.value.forEach((video) => {
-    //     if (video && videoObserver) {
-    //         videoObserver.observe(video)
-    //     }
-    // })
-
-    setTimeout(() => {
-        // playActiveVideo(0)
-    }, 500)
 })
 </script>
 
@@ -282,6 +234,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                               <video
                               class="case-card__video border-radius"
                               :src="item.video"
+                              :poster="item.poster"
                               playsinline
                               muted
                               loop
@@ -474,12 +427,8 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
     aspect-ratio: 9 / 16;
     max-height: 600px;
     margin-inline: auto;
-}
 
-.case-card__video stream {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {
