@@ -53,7 +53,7 @@ const cases = [
     },
     {
         video: 'https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4',
-        poster: '',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
@@ -66,7 +66,7 @@ const cases = [
 const casesSecond = [
     {
         video: 'https://r2.suikerspin.studio/BANNER_DOGMAN_V1.mp4',
-        poster: '',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'Dogman Video Game',
         label: 'Creator collaborations',
         subtitle: 'Direct Activation',
@@ -89,7 +89,7 @@ const casesSecond = [
     },
     {
         video: 'https://r2.suikerspin.studio/BANNER_MOBIELNL_V1--SHORT.mp4',
-        poster: '',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
         title: 'mobiel.nl',
         label: 'UGC Ad Creatie',
         subtitle: 'Built on Association',
