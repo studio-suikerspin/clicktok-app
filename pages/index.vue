@@ -27,11 +27,11 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 
 <template>
     <BaseLayout>
-        <template #head>
+        <Head>
             <title>ClickTok - Full Service TikTok Agency | Van Merkwaarden naar Virale Content</title>
             <meta name="description" content="ClickTok helpt merken groeien op TikTok met virale short-form content die past bij je merkwaarden. Van organic campaigns tot UGC creatie - alles onder één dak.">
             <meta name="keywords" content="TikTok marketing, virale content, short-form video, TikTok agency Nederland, social media marketing, UGC creatie, organic campaigns, merkstrategie TikTok">
-        </template>
+        </Head>
 
         <IntroAnimation />
         <Header />

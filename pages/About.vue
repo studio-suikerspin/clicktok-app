@@ -35,9 +35,9 @@ const numbersData = [
 
 <template>
   <BaseLayout>
-      <template #head>
+      <Head>
           <title>ClickTok - Over ClickTok</title>
-      </template>
+      </Head>
 
       <Header />
       <HeroSubPages title="About us" />

@@ -31,9 +31,9 @@ if (!item) {
 
 <template>
   <BaseLayout class="case-detail">
-    <template #head>
+    <Head>
       <title>ClickTok - Case {{ item.client }}</title>
-    </template>
+    </Head>
 
       <MainHeader />
       <CaseDetailHero :project="item" :is-detail-page="true" />

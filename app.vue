@@ -5,7 +5,7 @@ const colorMode = useColorMode()
 colorMode.preference = 'dark'
 </script>
 <template>
-  <div class="bg-black">
+  <div class="bg-black overflow-x-hidden">
     <nuxt-layout>
       <nuxt-page />
     </nuxt-layout>

@@ -59,9 +59,9 @@ onMounted(() => {
 
 <template>
   <BaseLayout>
-      <template #head>
+      <Head>
           <title>ClickTok - Services</title>
-      </template>
+      </Head>
 
       <Header />
       <HeroSubPages title="Services" />

@@ -9,11 +9,13 @@ import { Draggable } from 'gsap/Draggable'
 
 
 gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin, Draggable)
-
 </script>
 
 <template>
     <div>
-        <slot />
+      <Head>
+       <meta name="theme-color" content="#000000">
+      </Head>
+      <slot />
     </div>
 </template>

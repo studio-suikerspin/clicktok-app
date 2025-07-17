@@ -36,9 +36,9 @@ onMounted(() => {
 
 <template>
     <BaseLayout>
-        <template #head>
+        <Head>
             <title>ClickTok - Cases</title>
-        </template>
+        </Head>
 
         <Header />
         <CasesHero title="Cases" />
