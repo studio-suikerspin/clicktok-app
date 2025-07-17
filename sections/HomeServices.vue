@@ -1,28 +1,8 @@
 <script setup>
 import SectionTitle from '@/components/SectionTitle.vue'
-import gsap from 'gsap'
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 
 const selectedService = ref(0)
-const imageRef = ref(null)
-const videoRefs = ref([])
-let videoObserver = null
-
-const setupVideoObserver = () => {
-    videoObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const video = entry.target
-                if (entry.isIntersecting) {
-                    // video.play().catch(console.warn)
-                } else {
-                    video.pause()
-                }
-            })
-        },
-        { threshold: 0.3 },
-    )
-}
 
 const services = [
     {
@@ -55,36 +35,14 @@ const services = [
     },
 ]
 
-watch(selectedService, () => {
-    gsap.to(imageRef.value, {
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => {
-            gsap.to(imageRef.value, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'power2.out',
-            })
-        },
-    })
-})
-
-onMounted(async () => {
+watch(selectedService, async () => {
     await nextTick()
-
-    setupVideoObserver()
-
-    videoRefs.value.forEach((video) => {
-        if (video && videoObserver) {
-            videoObserver.observe(video)
-        }
+    const videos = document.querySelectorAll('video')
+    videos.forEach((v) => {
+        v.pause()
+        v.currentTime = 0
+        v.load()
     })
-})
-
-onUnmounted(() => {
-    if (videoObserver) {
-        videoObserver.disconnect()
-    }
 })
 </script>
 
@@ -123,13 +81,9 @@ onUnmounted(() => {
                                             </a>
                                         </div>
                                         <div class="services__left-item_mobile-video">
-                                            <div class="services__video_wrapper">
+                                            <div class="services__video_wrapper" v-if="services[selectedService].video">
                                                 <video
-                                                :ref="
-                                                    (el) => {
-                                                        if (el) videoRefs.push(el)
-                                                    }
-                                                "
+                                                :key="services[selectedService].video"
                                                 :src="services[selectedService].video"
                                                 preload="metadata"
                                                 autoplay
@@ -139,11 +93,7 @@ onUnmounted(() => {
                                                 class="border-radius desktop-video"
                                                 />
                                                 <video
-                                                :ref="
-                                                    (el) => {
-                                                        if (el) videoRefs.push(el)
-                                                    }
-                                                "
+                                                :key="services[selectedService].video + '-mobile'"
                                                 :src="services[selectedService].video"
                                                 preload="metadata"
                                                 controls="true"
@@ -161,11 +111,7 @@ onUnmounted(() => {
                         <div class="services__right border-radius">
                             <div v-if="services[selectedService].video" class="services__video_wrapper">
                                 <video
-                                    :ref="
-                                        (el) => {
-                                            if (el) videoRefs.push(el)
-                                        }
-                                    "
+                                    :key="services[selectedService].video + '-side'"
                                     :src="services[selectedService].video"
                                     preload="metadata"
                                     playsinline
