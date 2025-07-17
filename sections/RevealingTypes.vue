@@ -4,17 +4,17 @@ import TypeRevealTitle from '@/components/TypeRevealTitle.vue';
 const props = defineProps({
     titleFirst: {
         type: String,
-        required: true,
+        required: false,
         default: 'We don\'t just make content'
     },
     titleSecond: {
         type: String,
-        required: true,
+        required: false,
         default: 'We shape how people feel about your brand'
     },
     titleThird: {
         type: String,
-        required: true,
+        required: false,
         default: 'We create impact'
     },
     sectionPadding: {
