@@ -93,8 +93,7 @@ onUnmounted(() => {
 
 .header.is-scrolling .header__inner{
     /* background: rgba(38, 38, 38, 0.95); */
-    background: #1e193a8e;
-    backdrop-filter: blur(10px);
+    background: rgba(30, 25, 58, 0.9);
     border-radius: 100px;
     padding: 12px 32px;
     width: 1200px;

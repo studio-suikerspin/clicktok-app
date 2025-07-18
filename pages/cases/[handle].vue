@@ -10,7 +10,6 @@ import cases from "@/lib/cases";
 import CaseSteps from "@/sections/CaseDetail/CaseSteps.vue";
 import MainHeader from "@/sections/Header/MainHeader.vue";
 import StayAhead from "@/sections/StayAhead/StayAhead.vue";
-import StayAheadSecond from "@/sections/StayAhead/StayAheadSecond.vue";
 
 import CaseDetailHero from "@/sections/CaseDetailHero.vue";
 import Contact from "@/sections/Contact/Contact.vue";

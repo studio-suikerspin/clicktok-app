@@ -52,8 +52,8 @@ import { onMounted } from 'vue';
 
 <template>
 <div class="about padding-bottom gradient-blur-wrapper">
-  <GradientBlur :width="{ default: '450px', sm: '60vw' }" :height="{ default: '40%', sm: '50vh' }" :right="{ default: '5%', sm: '10%' }" :top="{ default: '40%', sm: '20%' }" class="big__text_blur first"  />
-  <GradientBlur :width="{ default: '485px', sm: '70vw' }" :height="{ default: '40%', sm: '50vh' }" :left="{ default: '5%', sm: '10%' }" :top="{ default: '5%', sm: '20%' }" class="big__text_blur second"  />
+  <!-- <GradientBlur :width="{ default: '450px', sm: '60vw' }" :height="{ default: '40%', sm: '50vh' }" :right="{ default: '5%', sm: '10%' }" :top="{ default: '40%', sm: '20%' }" class="big__text_blur first"  />
+  <GradientBlur :width="{ default: '485px', sm: '70vw' }" :height="{ default: '40%', sm: '50vh' }" :left="{ default: '5%', sm: '10%' }" :top="{ default: '5%', sm: '20%' }" class="big__text_blur second"  /> -->
   <div class="container">
     <div class="about__title">
       <SectionTitle title="About us" link="/about" link-title="Lees meer" />

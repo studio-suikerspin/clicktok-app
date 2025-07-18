@@ -248,12 +248,12 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                 <CarouselControls :targets="[casesCarousel, detailsCarousel]" class="cases-controls" />
             </div>
 
-            <GradientBlur
+            <!-- <GradientBlur
                 :width="{ default: '40%', sm: '30%' }"
                 :height="{ default: '40%', sm: '30%' }"
                 :top="{ default: '50%', sm: '50%' }"
                 :left="{ default: '20%', sm: '50%' }"
-            />
+            /> -->
         </div>
     </section>
 </template>

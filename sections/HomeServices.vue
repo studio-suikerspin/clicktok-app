@@ -164,6 +164,7 @@ watch(selectedService, async () => {
     color: var(--color-white);
     gap: 12px;
     height: auto;
+    /* overflow: hidden; */
 }
 
 @media (max-width: 1024px) {
@@ -314,7 +315,7 @@ watch(selectedService, async () => {
 
     max-height: 600px;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     aspect-ratio: 9/16;
 }
 

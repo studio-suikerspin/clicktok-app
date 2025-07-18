@@ -59,15 +59,15 @@ top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
             <Cases :show-first-two="true" :show-last-two="false" /> 
         </div>
 
-        <!-- <LetTheNumbersSpeak /> -->
+        <LetTheNumbersSpeak />
 
-        <RevealingTypes :section-padding="false" />
+        <RevealingTypes  />
 
         <StayAhead  :lazy-loading="true" />
 
-        <div class="padding-top">
+        <!-- <div class="padding-top">
             <LetTheNumbersSpeak />
-        </div>
+        </div> -->
 
         <Marquee />
         <Services />
