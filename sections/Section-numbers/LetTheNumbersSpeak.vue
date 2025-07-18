@@ -78,9 +78,10 @@ onMounted(async () => {
 
 <template>
     <section ref="numbersSectionRef" class="numbers__speak">
-        <div class="container">
+        <div class="container relative-container">
+            <img src="/images/background__blur-min.webp" class="background__blur_numbers" />
             <div class="numbers__speak-inner">
-                <img src="/images/background__blur-min.webp" class="background__blur_numbers" />
+
                 <!-- <div class="numbers__speak-title hidden md:block"> -->
                 <div class="numbers__speak-title">
                   <TypeRevealTitle>{{ title }}</TypeRevealTitle>
@@ -266,8 +267,17 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
     width: 570px;
     height: 800px;
     -o-object-fit: cover;
-    object-fit: cover;
-    margin-inline: auto;
+    object-fit: cover;    
     opacity: 60%;
+}
+
+@media(max-width: 767px){
+  .background__blur_numbers{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    left: 0;
+    top: 30%;
+  }
 }
 </style>

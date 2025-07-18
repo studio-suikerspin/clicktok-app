@@ -103,6 +103,10 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
     }
     .background__blur_home{
         top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        left: 10%;
     }
 }
 </style>
