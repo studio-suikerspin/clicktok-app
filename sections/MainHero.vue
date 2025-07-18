@@ -55,7 +55,7 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                           muted
                           loop 
                           class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/fd776e2d-0111-4b65-daf0-8aab4e322d00/public"
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
@@ -74,7 +74,7 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                           muted
                           loop 
                           class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb025c39-dc81-4d32-387e-abe935b0e900/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public"
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
@@ -92,7 +92,7 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                           muted
                           loop 
                           class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3f94af6f-79b9-43f1-d67b-e1e76448c400/public"
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
@@ -106,7 +106,7 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                           loop 
                           autoplay
                           class="hero__floating_image_video mobile"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3f94af6f-79b9-43f1-d67b-e1e76448c400/public"
                         >
                           <source src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.mp4">
                         </video>

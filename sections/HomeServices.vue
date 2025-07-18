@@ -19,7 +19,7 @@ const services = [
         description:
             'Met paid advertising zetten we TikTok in als <span>performance</span> kanaal – slim, schaalbaar en gericht op resultaat.<br><br> Van <span>conversiecampagnes</span> voor e-com merken tot leadgen voor personeelswerving: wij zetten je doel om in een strategie die scoort.<br><br> We denken mee in <span>targeting</span>, <span>funnelopbouw</span> en <span>boodschap</span>, en <span>runnen</span> de campagnes van opzet tot <span>optimalisatie</span>.<br><br> De creatives? Die maken we samen met ons inhouse productieteam én een groot netwerk van UGC creators.',
         video: 'https://r2.suikerspin.studio/keukensale.mp4',
-        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public',
     },
     {
         number: '03',
@@ -27,7 +27,7 @@ const services = [
         description:
             'Met UGC ad creatives én native brand creatives maken we advertenties die aanvoelen als TikToks - maar gebouwd zijn voor conversie. UGC is geen hype, het werkt. Campagnes met user-generated content leveren gemiddeld tot 29% hogere conversie op. Daarnaast ontwikkelen we ook in-house brand creatives die je merkverhaal vertalen naar performancegerichte content, altijd afgestemd op het platform en je doelgroep. We bouwen op jouw merkwaarden en combineren die met bewezen, conversiegerichte elementen die presteren. Daarbij nemen we het volledige proces uit handen: van conceptontwikkeling en scripting tot creator matching, briefing, editing en oplevering. Dit doen we voor e-com merken, apps en organisaties die leads willen genereren.',
         video: 'https://r2.suikerspin.studio/keukensale.mp4',
-        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public',
     },
     {
         number: '04',
