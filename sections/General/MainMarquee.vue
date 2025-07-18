@@ -109,5 +109,12 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
     object-fit: cover;
     opacity: 60%;
 }
+
+@media(max-width: 767px){
+  .background__blur_marquee{
+    width: 100%;
+    height: 100%;
+  }
+}
 </style>
 

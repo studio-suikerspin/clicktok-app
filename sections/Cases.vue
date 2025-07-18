@@ -532,7 +532,7 @@ onMounted(async () => {
 @media(max-width: 767px){
     .background__blur_cases {
         top: 15%;
-        width: 350px;
+        width: 100%;
         height: 400px;
     }
 }
