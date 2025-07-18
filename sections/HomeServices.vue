@@ -126,6 +126,7 @@ watch(selectedService, async () => {
                                     webkit-playsinline
                                     class="border-radius"
                                     :poster="services[selectedService].poster"
+                                    @mouseover="(e) => playVideoOnMouseOver(e.target)"
                                 />
                             </div>
                         </div>

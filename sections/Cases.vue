@@ -3,6 +3,8 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted, ref, nextTick } from 'vue'
 
+import { playVideoOnMouseOver } from '@/composables/videoPlayOnHover'
+
 import Carousel from '@/components/Carousel.vue'
 import CarouselControls from '@/components/CarouselControls.vue'
 
@@ -237,6 +239,7 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                               preload="metadata"
                               webkit-playsinline
                               :controls="true"
+                              @mouseover="(e) => playVideoOnMouseOver(e.target)"
                             />
                           </div>
                         </Carousel>

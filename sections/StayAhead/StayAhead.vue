@@ -101,6 +101,7 @@
                               controls
                               class="stay__ahead__content_video_stream border-radius"
                               :poster="poster"
+                              @mouseover="(e) => playVideoOnMouseOver(e.target)"
                             />                            
                         </div>
                     </div>
