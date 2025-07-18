@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-const { gsap, ScrollTrigger } = useGsap();
+const { gsap } = useGsap();
 
 const { project } = defineProps({
   project: Object,
@@ -74,6 +74,7 @@ onMounted(() => {
               playsinline
               muted
               loop
+              @mouseover="(e) => playVideoOnMouseOver(e.target)"
             >
               <source
                 :src="project.videos[2]"
@@ -106,6 +107,7 @@ onMounted(() => {
               playsinline
               muted
               loop
+              @mouseover="(e) => playVideoOnMouseOver(e.target)"
             >
               <source
                 :src="project.videos[1]"
