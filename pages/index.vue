@@ -106,7 +106,8 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
         width: 100%;
         height: 100%;
         object-fit: cover;
-        left: 10%;
+        left: 0%;
+        max-width: 200px;
     }
 }
 </style>
