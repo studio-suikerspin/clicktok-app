@@ -1,9 +1,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
-import { gsap } from "gsap";
 
-// Components
-import GradientBlur from "@/components/GradientBlur.vue";
+const { gsap, ScrollTrigger } = useGsap();
 
 const { project } = defineProps({
   project: Object,
@@ -51,6 +49,7 @@ onMounted(() => {
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[0]"
+              :poster="project.images[0]"
               controls
               playsinline
               muted
@@ -58,8 +57,6 @@ onMounted(() => {
             >
               <source
                 :src="project.videos[0]"
-                type="video/webm"
-                loading="lazy"
               >
             </video>
 
@@ -72,6 +69,7 @@ onMounted(() => {
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[2]"
+              :poster="project.images[2]"
               controls
               playsinline
               muted
@@ -79,8 +77,6 @@ onMounted(() => {
             >
               <source
                 :src="project.videos[2]"
-                type="video/webm"
-                loading="lazy"
               >
             </video>
 
@@ -105,6 +101,7 @@ onMounted(() => {
           <div class="card border-radius">
             <video
               v-if="project.videos && project.videos[1]"
+              :poster="project.images[1]"
               controls
               playsinline
               muted
@@ -112,8 +109,6 @@ onMounted(() => {
             >
               <source
                 :src="project.videos[1]"
-                type="video/webm"
-                loading="lazy"
               >
             </video>
 

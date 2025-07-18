@@ -2,7 +2,6 @@
 import { onMounted } from "vue";
 import { gsap } from "gsap";
 
-import { VideoStream } from "stream-vue";
 import PixelLabel from "./PixelLabel.vue";
 import Button from "./ui/Button.vue";
 

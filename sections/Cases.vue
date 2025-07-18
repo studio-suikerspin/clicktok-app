@@ -27,7 +27,7 @@ const props = defineProps({
 const cases = [
     {
         video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3--SHORT.mp4',
-        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/fd985156-cef9-487d-96f4-e3e12ceb1d00/public',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
