@@ -54,7 +54,10 @@ const form = {
 };
 
 const submitForm = async () => {
-  const { data, error } = await $fetch('/api/contact');
+  const { data, error } = await $fetch('/api/contact', {
+    method: 'POST',
+    body: form
+  });
   console.log(data, error);
 }
 
