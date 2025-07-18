@@ -101,19 +101,25 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 }
 
 .background__blur_marquee{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 60%;
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  width: 500px;
+  height: 600px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  opacity: 60%;
 }
 
 @media(max-width: 767px){
   .background__blur_marquee{
     width: 100%;
     height: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    left: 15%;
+    top: 20%;
+
   }
 }
 </style>
