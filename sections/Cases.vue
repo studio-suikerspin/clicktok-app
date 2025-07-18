@@ -177,7 +177,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section ref="sectionRef" class="cases overflow-x-hidden">
+    <section ref="sectionRef" class="cases overflow-hidden">
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />
