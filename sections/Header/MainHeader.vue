@@ -179,6 +179,9 @@ onUnmounted(() => {
 }
 
 .header__menu-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 32px;
     color: var(--off-white);
 }
