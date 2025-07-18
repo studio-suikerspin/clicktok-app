@@ -184,6 +184,7 @@ onMounted(async () => {
                 <!-- <BlurGlow
 top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                 :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
+                <img src="/images/background__blur-min.webp" class="background__blur" />
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">
@@ -516,4 +517,22 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
         margin-right: -24px;
     }
 }
+
+.background__blur {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 650px;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 767px){
+    .background__blur {
+        top: 15%;
+        width: 350px;
+        height: 400px;
+    }
+}
+
 </style>
