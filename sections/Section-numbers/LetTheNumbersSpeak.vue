@@ -265,7 +265,7 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
     top: 0;
     left: 35%;
     width: 570px;
-    height: 800px;
+    height: 100%;
     -o-object-fit: cover;
     object-fit: cover;    
     opacity: 60%;
