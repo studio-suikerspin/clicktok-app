@@ -6,10 +6,8 @@ import { onMounted, ref, nextTick } from 'vue'
 import Carousel from '@/components/Carousel.vue'
 import CarouselControls from '@/components/CarouselControls.vue'
 
-import GradientBlur from '@/components/GradientBlur.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
-import BlurGlow from '@/components/blur/Blurglow.vue'
 
 const props = defineProps({
     showFirstTwo: {
@@ -177,7 +175,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section ref="sectionRef" class="cases">
+    <section ref="sectionRef" class="cases overflow-x-hidden">
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />

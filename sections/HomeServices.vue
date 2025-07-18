@@ -165,6 +165,7 @@ watch(selectedService, async () => {
     gap: 12px;
     height: auto;
     /* overflow: hidden; */
+    position: relative;
 }
 
 @media (max-width: 1024px) {
