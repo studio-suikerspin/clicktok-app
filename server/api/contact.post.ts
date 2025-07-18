@@ -1,6 +1,7 @@
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.NUXT_RESEND_API_KEY)
+const resendEmail = process.env.NUXT_TO_EMAIL ? process.env.NUXT_TO_EMAIL : 'info@suikerspin.studio'
 
 export default defineEventHandler(async (event) => {
   try {
@@ -23,7 +24,7 @@ export default defineEventHandler(async (event) => {
 
     const data = await resend.emails.send({
       from: 'ClickTok <clicktok@suikerspin.studio>',
-      to: ['robin@suikerspin.studio'],
+      to: [resendEmail],
       subject: "Contactformulier ingevuld!",
       html: html
     })
