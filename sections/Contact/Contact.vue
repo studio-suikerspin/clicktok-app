@@ -115,19 +115,19 @@ onUnmounted(() => {
                     type="text"
                     name="name"
                     placeholder="Naam"
-                  />
+                  >
                   <input
                     v-if="!isCreator && !isSollicitation"
                     v-model="form.company"
                     type="text"
                     placeholder="Bedrijfsnaam"
-                  />
+                  >
                   <input
                     v-if="isCreator"
                     v-model="form.username"
                     type="text"
                     placeholder="Username"
-                  />
+                  >
                 </div>
                 <div class="contact__form_row">
                   <input
@@ -135,13 +135,13 @@ onUnmounted(() => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                  />
+                  >
                   <input
                     v-model="form.phone"
                     type="tel"
                     name="tel"
                     placeholder="Telefoon"
-                  />
+                  >
                 </div>
                 <div v-if="isSollicitation" class="contact__form_row">
                   <textarea v-model="form.message" placeholder="Motivatie" />
@@ -156,7 +156,7 @@ onUnmounted(() => {
                     class="file-upload"
                     style="display: none"
                     @input="form.portfolio = $event.target.files[0]"
-                  />
+                  >
                   <label class="upload-label" for="cv"> Upload CV </label>
                   <input
                     id="cv"
@@ -164,7 +164,7 @@ onUnmounted(() => {
                     class="file-upload"
                     style="display: none"
                     @input="form.cv = $event.target.files[0]"
-                  />
+                  >
                   <progress
                     v-if="form.progress"
                     :value="form.progress.percentage"
@@ -185,7 +185,7 @@ onUnmounted(() => {
                     type="checkbox"
                     name="gdpr"
                     class="border-radius"
-                  />
+                  >
                   <label for="gdpr"
                     >Ik ga akkoord met de
                     <a href="/privacy-policy">privacyverklaring</a></label
@@ -208,7 +208,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -216,7 +216,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -224,7 +224,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
             <div class="image__wrapper">
               <img
@@ -232,7 +232,7 @@ onUnmounted(() => {
                 alt="Contact image"
                 class="contact__right_image border-radius"
                 loading="lazy"
-              />
+              >
             </div>
           </div>
         </div>
@@ -271,7 +271,7 @@ onUnmounted(() => {
 
 .contact__left {
   flex: 3;
-  background-image: url("/images/gradient-ruis-vierkant-min.webp");
+  background-image: url("https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -437,7 +437,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
 
-  max-height: 615px;
+  /* max-height: 615px; */
 
   width: 100%;
   height: 100%;
@@ -454,5 +454,11 @@ onUnmounted(() => {
 
 .image__wrapper.active {
   display: flex;
+}
+
+@media(max-width: 767px){
+  .image__wrapper {
+    max-height: 615px;
+  }
 }
 </style>

@@ -14,7 +14,6 @@ import AboutCarousel from '@/sections/About/AboutCarousel.vue'
 import Contact from '@/sections/Contact/Contact.vue';
 import Footer from '@/sections/General/Footer.vue';
 import LetTheNumbersSpeak from '@/sections/Section-numbers/LetTheNumbersSpeak.vue';
-import { onMounted } from 'vue';
 
 // Components
 import TypeRevealTitle from '@/components/TypeRevealTitle.vue';
@@ -23,87 +22,60 @@ import LogoSlider from '@/sections/General/LogoSlider.vue';
 import IntroAnimation from '@/components/IntroAnimation.vue';
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
-function initAutoplayVideos(selector = 'video[autoplay]') {
-  const enableAutoplay = () => {
-    const videos = document.querySelectorAll(selector);
-    videos.forEach(video => {
-      // Video-elementen hebben de play() methode, dus gewoon aanroepen
-      video.play().catch(err => {
-        console.warn('Autoplay blocked for video:', video, err);
-      });
-    });
-
-    window.removeEventListener('click', enableAutoplay);
-    window.removeEventListener('touchstart', enableAutoplay);
-    window.removeEventListener('scroll', enableAutoplay);
-  };
-
-  window.addEventListener('click', enableAutoplay);
-  window.addEventListener('touchstart', enableAutoplay);
-  window.addEventListener('scroll', enableAutoplay);
-}
-
-onMounted(() => {
-  initAutoplayVideos() // pakt alle <video autoplay> elementen op de pagina
-})
 
 </script>
 
 <template>
     <BaseLayout>
-        <template #head>
+        <Head>
             <title>ClickTok - Full Service TikTok Agency | Van Merkwaarden naar Virale Content</title>
             <meta name="description" content="ClickTok helpt merken groeien op TikTok met virale short-form content die past bij je merkwaarden. Van organic campaigns tot UGC creatie - alles onder één dak.">
             <meta name="keywords" content="TikTok marketing, virale content, short-form video, TikTok agency Nederland, social media marketing, UGC creatie, organic campaigns, merkstrategie TikTok">
-        </template>
+        </Head>
 
-        <template #smooth>
-            <IntroAnimation />
-            <Header />
-            <Hero />
-            <div class="logo-slider-mobile padding-top">
-                <TypeRevealTitle>Trusted by</TypeRevealTitle>
-                <LogoSlider />
-            </div>
+        <IntroAnimation />
+        <Header />
+        <Hero />
+        <div class="logo-slider-mobile padding-top">
+            <TypeRevealTitle>Trusted by</TypeRevealTitle>
+            <LogoSlider />
+        </div>
 
-            <section class="padding-top">
-                <div class="container relative-container">
-                    <BlurGlow
+        <section class="padding-top">
+            <div class="container relative-container">
+                <!-- <BlurGlow
 top="0" left="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
-                    <TypeRevealTitle>
-                        We help brands stay ahead through <br>viral short-form content
-                    </TypeRevealTitle>
-                    <BlurGlow
+            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
+                <TypeRevealTitle>
+                    We help brands stay ahead through <br>viral short-form content
+                </TypeRevealTitle>
+                <!-- <BlurGlow
 top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
-                </div>
-            </section>
-
-            <div class="section-padding">
-                <Cases :show-first-two="true" :show-last-two="false" /> 
+            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
             </div>
+        </section>
 
-            <LetTheNumbersSpeak />
+        <div class="section-padding">
+            <Cases :show-first-two="true" :show-last-two="false" /> 
+        </div>
 
-            <RevealingTypes />
+        <LetTheNumbersSpeak />
 
-            <StayAhead  :lazy-loading="true" />
+        <RevealingTypes  />
 
-            <Marquee />
-            <Services />
-            <div class="padding-top">
-                <Cases :show-first-two="false" :show-last-two="true" /> 
-            </div>
-            <Reviews />
-            <AboutCarousel />
+        <StayAhead  :lazy-loading="true" />
 
-            <Contact />
+        <Marquee />
+        <Services />
+        <div class="padding-top">
+            <Cases :show-first-two="false" :show-last-two="true" /> 
+        </div>
+        <Reviews />
+        <AboutCarousel />
 
-            <Footer />
-        </template>
+        <Contact />
 
-        <template #static/>
+        <Footer />
     </BaseLayout>
 </template>
 

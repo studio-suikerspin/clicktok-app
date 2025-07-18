@@ -71,7 +71,7 @@ const images = [
                     :class="`${image.class} floating-image__wrap border-radius`"
                     :style="`--top: ${image.top}; --right: ${image.right}; --bottom: ${image.bottom}; --left: ${image.left}; --scale: ${image.scale}`"
                 >
-                    <img class="floating-image" :src="image.src" alt="An image on the cases page" />
+                    <img class="floating-image" :src="image.src" alt="An image on the cases page" >
                 </div>
             </div>
         </div>

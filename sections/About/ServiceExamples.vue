@@ -201,8 +201,8 @@ onMounted(() => {
 <template>
   <div class="container gradient-blur-wrapper">
 
-    <GradientBlur :width="{ default: '40vw', sm: '50vw' }" :height="{ default: '40vh', sm: '40vh' }" :left="{ default: '-20%', sm: '20%' }" :top="{ default: '30%', sm: '0' }"/>
-    <GradientBlur :width="{ default: '40vw', sm: '50vw' }" :height="{ default: '40vh', sm: '40vh' }" :right="{ default: '0%', sm: '20%' }" :bottom="{ default: '10%', sm: '50%' }"/>
+    <!-- <GradientBlur :width="{ default: '40vw', sm: '50vw' }" :height="{ default: '40vh', sm: '40vh' }" :left="{ default: '-20%', sm: '20%' }" :top="{ default: '30%', sm: '0' }"/>
+    <GradientBlur :width="{ default: '40vw', sm: '50vw' }" :height="{ default: '40vh', sm: '40vh' }" :right="{ default: '0%', sm: '20%' }" :bottom="{ default: '10%', sm: '50%' }"/> -->
 
     <div class="service-examples__title">
       <h2 class="title-font">We <span class="highlight">implement</span> this in everything we do</h2>

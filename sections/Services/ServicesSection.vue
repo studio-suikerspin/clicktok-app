@@ -249,9 +249,9 @@ const toggleItem = (itemId: number) => {
                   </div>
                 </div>
               </div>
-              <div class="service__content_second" v-if="service.video">
+              <div v-if="service.video" class="service__content_second">
                 <div class="service__content_video">
-                  <VideoStream :src="service.video" webkit-playsinline autoplay muted loop playsinline loading="lazy"/>
+                  <VideoStream :src="service.video" webkit-playsinline controls muted loop playsinline />
                 </div>
                 <div class="service__content_cta" >
                   <Button variant="white" :href="service.ctaHref" :title="service.ctaText">
@@ -358,7 +358,7 @@ const toggleItem = (itemId: number) => {
   justify-content: center;
   gap: 80px;
   padding: 40px;
-  background-image: url('/images/gradient-vierkant-min.webp');
+  background-image: url('https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

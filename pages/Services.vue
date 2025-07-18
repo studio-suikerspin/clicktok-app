@@ -59,22 +59,20 @@ onMounted(() => {
 
 <template>
   <BaseLayout>
-      <template #head>
+      <Head>
           <title>ClickTok - Services</title>
-      </template>
+      </Head>
 
-      <template #smooth>
-          <Header />
-          <HeroSubPages title="Services" />
+      <Header />
+      <HeroSubPages title="Services" />
 
-        <div class="services__accordion padding-bottom">
-          <div class="services__container">
-            <ServicesSection />
-          </div>
-        </div>
-        
-        <Footer />
-      </template>
+    <div class="services__accordion padding-bottom">
+      <div class="services__container">
+        <ServicesSection />
+      </div>
+    </div>
+    
+    <Footer />
   </BaseLayout>
 </template>
 

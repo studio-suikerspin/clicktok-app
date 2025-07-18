@@ -57,11 +57,10 @@ const contactForms = [
 
 <template>
   <BaseLayout>
-    <template #head>
+    <Head>
       <title>ClickTok - Contact</title>
-    </template>
+    </Head>
 
-    <template #smooth>
       <div class="contact-hero">
         <Header />
         
@@ -83,7 +82,7 @@ const contactForms = [
             />
           </div>
           <div class="logo-flex-wrapper">
-            <LogoSlider variant="bw" />
+            <LogoSlider />
           </div>
         </div>
 
@@ -100,7 +99,6 @@ const contactForms = [
       </div>
 
       <Footer />
-    </template>
   </BaseLayout>
 </template>
 

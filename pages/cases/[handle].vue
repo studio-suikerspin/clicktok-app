@@ -29,130 +29,73 @@ if (!item) {
 </script>
 
 <template>
-  <BaseLayout>
-    <template #head>
+  <BaseLayout class="case-detail">
+    <Head>
       <title>ClickTok - Case {{ item.client }}</title>
-    </template>
+    </Head>
 
-    <template #smooth>
       <MainHeader />
       <CaseDetailHero :project="item" :is-detail-page="true" />
 
       <CaseSteps :project="item" />
 
+
       <section
         v-if="item.brand_value?.title || item.brand_values?.length"
-        class="tabbed-content"
+        class="tabbed-content padding-top"
       >
         <div class="container">
-          <TabbedContent v-if="item.brand_values" :default-index="0">
-            <Tabs>
-              <Tab
-                v-for="(brand_value, key) in item.brand_values"
-                :key="key"
-                :index="key"
-                :number="key === 0 ? '01' : `0${key + 1}`"
-                :title="brand_value.title"
-              />
-            </Tabs>
-
-            <TabsContent>
-              <TabContent
-                v-for="(brand_value, key) in item.brand_values"
-                :key="key"
-                :index="key"
-              >
-                <StayAhead
+          <div class="tabbed-content__inner">
+            <div class="tabbed-content__title">
+              <SectionTitle title="What led to these format(s)" />
+            </div>
+            <TabbedContent v-if="item.brand_values" :default-index="0">
+              <Tabs>
+                <Tab
+                  v-for="(brand_value, key) in item.brand_values"
+                  :key="key"
+                  :index="key"
+                  :number="key === 0 ? '01' : `0${key + 1}`"
                   :title="brand_value.title"
-                  variant="center-title"
-                  :animateOnScroll="false"
-                  :showVideoControls="true"
-                  :slides="[
-                    {
-                      videoId: '7457929797402922262',
-                      video: brand_value.video,
-                      blocks: [
-                        {
-                          title: 'Brand value',
-                          subtitle: 'Surprise with ease',
-                          secondTitle: brand_value.content,
-                        },
-                        {
-                          title: 'Associaties',
-                          content: brand_value.associaties,
-                          reviews: [
-                            {
-                              name: 'Nubikk - Marit Smits - CEO',
-                              review:
-                                'No joke, elke video van hen presteert beter dan onze vorige topvideo.',
-                              avatar:
-                                'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light',
-                            },
-                            {
-                              name: 'Nubikk - Eddie de Meer - CEO',
-                              review:
-                                'We werkten al een tijdje aan onze socials maar het bleef hangen… totdat ClickTok instapte. Ze kwamen direct met ideeën die bij ons pasten en écht werkten. Onze eerste video ging viraal en we zagen meteen effect in onze sales. Dit is geen toeval, dit is vakmanschap.',
-                              avatar:
-                                'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairSides&accessoriesType=Blank&hairColor=Brown&facialHairType=BeardMedium&clotheType=BlazerShirt&clotheColor=Navy&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light',
-                            },
-                          ],
-                        },
-                      ],
-                    },
-                  ]"
                 />
-              </TabContent>
-            </TabsContent>
-          </TabbedContent>
+              </Tabs>
 
-          <StayAhead
-            v-else
-            title="What led to these <span>formats</span>"
-            :subtitle="item.hasOwnProperty('excerpt') ? item.excerpt : ''"
-            variant="center-title"
-            :animate-on-scroll="false"
-            :show-video-controls="true"
-            :slides="[
-              {
-                videoId: '7457929797402922262',
-                video: item.brand_value.video,
-                blocks: [
-                  {
-                    title: 'Brand value',
-                    subtitle: 'Surprise with ease',
-                    secondTitle: 'Hieromheen is het format gebouwd',
-                    content: item.brand_value.content,
-                  },
-                  {
-                    title: 'Associaties',
-                    content: item.brand_value.associaties,
-                    reviews: [
-                      {
-                        name: 'Nubikk - Marit Smits - CEO',
-                        review:
-                          'No joke, elke video van hen presteert beter dan onze vorige topvideo.',
-                        avatar:
-                          'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortCurly&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=Hoodie&clotheColor=White&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light',
-                      },
-                      {
-                        name: 'Nubikk - Eddie de Meer - CEO',
-                        review:
-                          'We werkten al een tijdje aan onze socials maar het bleef hangen… totdat ClickTok instapte. Ze kwamen direct met ideeën die bij ons pasten en écht werkten. Onze eerste video ging viraal en we zagen meteen effect in onze sales. Dit is geen toeval, dit is vakmanschap.',
-                        avatar:
-                          'https://avataaars.io/?avatarStyle=Circle&topType=ShortHairSides&accessoriesType=Blank&hairColor=Brown&facialHairType=BeardMedium&clotheType=BlazerShirt&clotheColor=Navy&eyeType=Default&eyebrowType=Default&mouthType=Default&skinColor=Light',
-                      },
-                    ],
-                  },
-                ],
-              },
-            ]"
-          />
+              <TabsContent>
+                <TabContent
+                  v-for="(brand_value, key) in item.brand_values"
+                  :key="key"
+                  :index="key"
+                >
+                  <StayAhead
+                    :show-title="false"
+                    brand-value="Brand value"
+                    :main-title="brand_value.value"
+                    :description="brand_value.content"
+                    bottom-title="Hieromheen is het format gebouwd"
+                    :video-src="brand_value.video"
+                    :associaties="brand_value.associaties"
+                  />
+                </TabContent>
+              </TabsContent>
+            </TabbedContent>
+
+            <StayAhead
+              v-else-if="item.brand_value && item.brand_value.value"
+              :show-title="false"
+              brand-value="Brand value"
+              :main-title="item.brand_value.value"
+              bottom-title="Hieromheen is het format gebouwd"
+              :description="item.brand_value.content"
+              :video-src="item.brand_value.video"
+              :associaties="item.brand_value.associaties"
+            />
+          </div>
         </div>
       </section>
 
-      <LetTheNumbersSpeak class="padding-bottom" />
+      <LetTheNumbersSpeak class="padding-top" />
 
-      <section v-if="item.reference.content" class="reference">
+      <section v-if="item.reference.content" class="reference padding-top">
         <div class="container">
           <div class="reference__inner">
             <type-reveal-title>This is what our client says</type-reveal-title>
@@ -162,7 +105,7 @@ if (!item) {
                 v-if="item.reference.content"
                 :reference="item.reference"
               />
-              <div class="fun-fact border-radius">
+              <div v-if="item.detail_large_stat" class="fun-fact border-radius">
                 <div class="fun-fact__title">Fun fact</div>
                 <div class="fun-fact__content">
                   {{ item.detail_large_stat.text }}
@@ -173,13 +116,12 @@ if (!item) {
         </div>
       </section>
 
-      <div class="section-padding">
-        <LogoSlider variant="bw" />
+      <div class="padding-top-small">
+        <LogoSlider />
       </div>
 
-      <Contact />
+      <Contact class="padding-top" />
       <Footer />
-    </template>
   </BaseLayout>
 </template>
 
@@ -188,6 +130,22 @@ if (!item) {
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.padding-top-small{
+  padding-top: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .padding-top-small{
+    padding-top: 80px;
+  }
+}
+
+.tabbed-content__inner{
+  max-width: 1250px;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .fun-fact {
@@ -270,19 +228,16 @@ if (!item) {
     padding-block: 80px;
 } */
 
-.tabbed-content {
-  padding-block: 160px;
-}
-
 .reference__inner {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
 }
 
 @media (max-width: 767px) {
   .tabbed-content {
-    padding-block: 100px;
+    padding-block: 50px;
+    padding-bottom: 0;
   }
 
   .numbers {
@@ -303,4 +258,16 @@ if (!item) {
     padding-bottom: 100px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .reference__inner {
+    gap: 80px;
+  }
+}
+
+
+.tabbed-content__title {
+  margin-bottom: 40px;
+}
+
 </style>

@@ -1,28 +1,8 @@
 <script setup>
 import SectionTitle from '@/components/SectionTitle.vue'
-import gsap from 'gsap'
-import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 
 const selectedService = ref(0)
-const imageRef = ref(null)
-const videoRefs = ref([])
-let videoObserver = null
-
-const setupVideoObserver = () => {
-    videoObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const video = entry.target
-                if (entry.isIntersecting) {
-                    // video.play().catch(console.warn)
-                } else {
-                    video.pause()
-                }
-            })
-        },
-        { threshold: 0.3 },
-    )
-}
 
 const services = [
     {
@@ -30,21 +10,24 @@ const services = [
         title: 'Organic Campaign',
         description:
             'Met een organic campaign bouwen we aan duurzame zichtbaarheid zonder advertentiebudget.<br><br> We ontwikkelen <span>formats vanuit jouw merkwaarden</span>, om zo een <span>herkenbaar merkgevoel</span> over te brengen dat blijft hangen én tot actie aanzet. In dit proces doen we alles: van <span>concepting</span> en <span>scripting</span> tot <span>shoot, edit</span> en <span>analyse</span>.<br><br> Daarnaast zetten we TikTok’s zoekmachine slim in, niet alleen om je merk vindbaar te maken, maar juist om gebruikers in de overwegingsfase te overtuigen.<br><br> Het doel? Content maken die de juiste associaties oproept en daarmee herkenning en <span>merkvoorkeur</span> opbouwt bij je doelgroep.<br><br> Deze campagnes zijn vaak langlopend en consistent, zodat je merk <span>top-of-mind</span> blijft.',
-        video: 'https://r2.suikerspin.studio/BANNER_ORGANIC_V1.webm',
+        video: 'https://r2.suikerspin.studio/BANNER_ORGANIC_V1.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public',
     },
     {
         number: '02',
         title: 'Paid Advertising',
         description:
             'Met paid advertising zetten we TikTok in als <span>performance</span> kanaal – slim, schaalbaar en gericht op resultaat.<br><br> Van <span>conversiecampagnes</span> voor e-com merken tot leadgen voor personeelswerving: wij zetten je doel om in een strategie die scoort.<br><br> We denken mee in <span>targeting</span>, <span>funnelopbouw</span> en <span>boodschap</span>, en <span>runnen</span> de campagnes van opzet tot <span>optimalisatie</span>.<br><br> De creatives? Die maken we samen met ons inhouse productieteam én een groot netwerk van UGC creators.',
-        video: 'https://r2.suikerspin.studio/keukensale.webm',
+        video: 'https://r2.suikerspin.studio/keukensale.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public',
     },
     {
         number: '03',
         title: '(UGC) Ad Creatie',
         description:
             'Met UGC ad creatives én native brand creatives maken we advertenties die aanvoelen als TikToks - maar gebouwd zijn voor conversie. UGC is geen hype, het werkt. Campagnes met user-generated content leveren gemiddeld tot 29% hogere conversie op. Daarnaast ontwikkelen we ook in-house brand creatives die je merkverhaal vertalen naar performancegerichte content, altijd afgestemd op het platform en je doelgroep. We bouwen op jouw merkwaarden en combineren die met bewezen, conversiegerichte elementen die presteren. Daarbij nemen we het volledige proces uit handen: van conceptontwikkeling en scripting tot creator matching, briefing, editing en oplevering. Dit doen we voor e-com merken, apps en organisaties die leads willen genereren.',
-        video: 'https://r2.suikerspin.studio/keukensale.webm',
+        video: 'https://r2.suikerspin.studio/keukensale.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public',
     },
     {
         number: '04',
@@ -55,36 +38,14 @@ const services = [
     },
 ]
 
-watch(selectedService, () => {
-    gsap.to(imageRef.value, {
-        opacity: 0,
-        duration: 0.3,
-        onComplete: () => {
-            gsap.to(imageRef.value, {
-                opacity: 1,
-                duration: 0.5,
-                ease: 'power2.out',
-            })
-        },
-    })
-})
-
-onMounted(async () => {
+watch(selectedService, async () => {
     await nextTick()
-
-    setupVideoObserver()
-
-    videoRefs.value.forEach((video) => {
-        if (video && videoObserver) {
-            videoObserver.observe(video)
-        }
+    const videos = document.querySelectorAll('video')
+    videos.forEach((v) => {
+        v.pause()
+        v.currentTime = 0
+        v.load()
     })
-})
-
-onUnmounted(() => {
-    if (videoObserver) {
-        videoObserver.disconnect()
-    }
 })
 </script>
 
@@ -115,7 +76,7 @@ onUnmounted(() => {
                                         </div>
                                     </div>
                                     <div class="services__left-item-content" :class="{ hidden: selectedService !== index }">
-                                        <div class="services__left-item-content-text" v-html="service.description"></div>
+                                        <div class="services__left-item-content-text" v-html="service.description"/>
                                         <div class="services__left-item-content-link">
                                             <a href="/services">
                                                 Meer informatie
@@ -123,13 +84,9 @@ onUnmounted(() => {
                                             </a>
                                         </div>
                                         <div class="services__left-item_mobile-video">
-                                            <div class="services__video_wrapper">
+                                            <div v-if="services[selectedService].video" class="services__video_wrapper">
                                                 <video
-                                                :ref="
-                                                    (el) => {
-                                                        if (el) videoRefs.push(el)
-                                                    }
-                                                "
+                                                :key="services[selectedService].video"
                                                 :src="services[selectedService].video"
                                                 preload="metadata"
                                                 autoplay
@@ -137,19 +94,17 @@ onUnmounted(() => {
                                                 muted
                                                 loop
                                                 class="border-radius desktop-video"
+                                                :poster="services[selectedService].poster"
                                                 />
                                                 <video
-                                                :ref="
-                                                    (el) => {
-                                                        if (el) videoRefs.push(el)
-                                                    }
-                                                "
+                                                :key="services[selectedService].video + '-mobile'"
                                                 :src="services[selectedService].video"
                                                 preload="metadata"
                                                 controls="true"
                                                 playsinline
                                                 muted
                                                 class="border-radius mobile-video"
+                                                :poster="services[selectedService].poster"
                                                 />
                                             </div>
                                         </div>
@@ -161,11 +116,7 @@ onUnmounted(() => {
                         <div class="services__right border-radius">
                             <div v-if="services[selectedService].video" class="services__video_wrapper">
                                 <video
-                                    :ref="
-                                        (el) => {
-                                            if (el) videoRefs.push(el)
-                                        }
-                                    "
+                                    :key="services[selectedService].video + '-side'"
                                     :src="services[selectedService].video"
                                     preload="metadata"
                                     playsinline
@@ -174,6 +125,8 @@ onUnmounted(() => {
                                     controls="true"
                                     webkit-playsinline
                                     class="border-radius"
+                                    :poster="services[selectedService].poster"
+                                    @mouseover="(e) => playVideoOnMouseOver(e.target)"
                                 />
                             </div>
                         </div>
@@ -212,6 +165,8 @@ onUnmounted(() => {
     color: var(--color-white);
     gap: 12px;
     height: auto;
+    /* overflow: hidden; */
+    position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -362,7 +317,7 @@ onUnmounted(() => {
 
     max-height: 600px;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     aspect-ratio: 9/16;
 }
 

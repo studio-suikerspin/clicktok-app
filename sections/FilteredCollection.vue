@@ -48,6 +48,15 @@ const handleFilter = async (filter) => {
     animateCards()
 }
 
+const getFirstWordArray = (array) => {
+  const firstWordArray = []
+  array.forEach(element => {
+    firstWordArray.push(element.split(' ')[0])
+  });
+
+  return firstWordArray
+}
+
 const isActive = (filter) => {
     return activeFilter.value === filter
 }
@@ -89,7 +98,7 @@ onMounted(() => {
 
             <div ref="collection" class="collection">
                 <template v-for="(item, key) in filteredCases" v-if="filteredCases.length" :key="key">
-                    <CaseCard :client="item.client" :tags="item.tags" :featured_video="item.featured_video" :handle="item.handle" :autoplay="true" />
+                    <CaseCard :client="item.client" :tags="getFirstWordArray(item.tags)" :featured_video="item.featured_video" :featured_image="item.featured_image" :handle="item.handle" :autoplay="$viewport.isGreaterThan('tablet')" :controls="$viewport.isLessThan('tablet')"/>
                 </template>
 
                 <template v-else>

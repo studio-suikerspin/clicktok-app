@@ -3,9 +3,12 @@
     import Button from '@/components/ui/Button.vue';
     import 'swiper/css';
     import 'swiper/css/autoplay';
-    import { VideoStream } from 'stream-vue'
 
     defineProps({
+        showTitle: {
+            type: Boolean,
+            default: true
+        },
         title: {
             type: String,
             default: "(Y)our way to stay ahead"
@@ -40,7 +43,11 @@
         },
         videoSrc: {
             type: String,
-            default: "67fb71ffddf82e449525beb1edec007a"
+            default: "https://r2.suikerspin.studio/BANNER_NUBIKK_V6--SHORT.mp4"
+        },
+        poster: {
+            type: String,
+            default: "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/92dbbd28-1e3b-420e-7cc4-881437257400/public"
         },
         associaties: {
             type: Array,
@@ -67,7 +74,7 @@
     <section class="stay__ahead">
         <div class="container">
             <div class="stay__ahead-inner">
-                <SectionTitle :title="title" :subtitle="subtitle" />
+                <SectionTitle v-if="showTitle" :title="title" :subtitle="subtitle" />
                 <div class="stay__ahead__block border-radius">
                     <div class="stay__ahead__content">
                         <div class="stay__ahead__content_text">
@@ -84,16 +91,17 @@
                             </div>
                         </div>
                         <div class="stay__ahead__content_video">                            
-                            <VideoStream
+                            <video
                               :src="videoSrc"
                               playsinline
                               muted
                               loop
                               preload="metadata"
                               webkit-playsinline
-                              autoplay
+                              controls
                               class="stay__ahead__content_video_stream border-radius"
-                              loading="lazy"
+                              :poster="poster"
+                              @mouseover="(e) => playVideoOnMouseOver(e.target)"
                             />                            
                         </div>
                     </div>
@@ -106,25 +114,13 @@
                         </div>
                         <div class="stay__ahead__associaties">
                             <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">                                                                
-                                <img :src="associatie.src" :alt="associatie.alt" loading="lazy" />
+                                <img :src="associatie.src" :alt="associatie.alt" loading="lazy" >
                             </div>               
                                          
                         </div>
                     </div>
                 </div>
-                <!-- <div class="stay__ahead__associaties-wrapper border-radius">
-                    <div class="stay__ahead__associaties-wrapper-title">
-                        <div class="title">Associaties</div>
-                        <div class="text">
-                            Content met de juiste associaties doet meer dan opvallen; het bouwt herkenning, vertrouwen en voorkeur op.
-                        </div>
-                    </div>
-                    <div class="stay__ahead__associaties">
-                        <div v-for="(associatie, index) in associaties" :key="`duplicate-${index}`" class="stay__ahead__associaties_inner_item">
-                            <img :src="associatie.src" :alt="associatie.alt" />
-                        </div>
-                    </div>
-                </div> -->
+              
             </div>
         </div>
     </section>
@@ -152,7 +148,7 @@
     justify-content: center;
     max-width: 1250px;
     padding: 40px;
-    background-image: url('/images/gradient-ruis-vierkant-min.webp');
+    background-image: url('https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public');
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
@@ -272,6 +268,11 @@
     align-items: center;
     justify-content: center; */
     flex: 2;
+    width: 100%;
+    max-height: 600px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    position: relative;
     
     /* max-height: 600px;
     width: 100%;
@@ -281,13 +282,10 @@
 
 
 .stay__ahead__content_video_stream{
-    will-change: transform;
-    transform: translateZ(0);
-    overflow: hidden;
-
-    aspect-ratio: 9 / 16;
-    max-height: 600px;
-    margin-inline: auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← belangrijk */
+    display: block;
 }
 
 

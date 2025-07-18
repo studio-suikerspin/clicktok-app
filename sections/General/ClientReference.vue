@@ -9,7 +9,7 @@ const { reference } = defineProps({
 
 <template>
     <section class="client-reference">
-        <GradientBlur
+        <!-- <GradientBlur
             :width="{ default: '40vw', sm: '40vw' }"
             :height="{ default: '40vh', sm: '40vh' }"
             :left="{ default: '2%', sm: '40%' }"
@@ -20,7 +20,7 @@ const { reference } = defineProps({
             :height="{ default: '40vh', sm: '40vh' }"
             :left="{ default: '60%', sm: '40%' }"
             :top="{ default: '5%', sm: '-3%' }"
-        />
+        /> -->
 
         <div class="client-reference__inner container">
             <ClientReference

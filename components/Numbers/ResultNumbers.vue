@@ -40,16 +40,16 @@ const parsedNumber = computed(() => {
 });
 
 const setupScrollTrigger = () => {
-    // if (!props.trigger) return; // Don't create ScrollTrigger if disabled
+    if (!numberRef.value) return;
 
     ScrollTrigger.create({
-        trigger: props.trigger ? props.trigger : numberRef.value,
+        trigger: numberRef.value,
         start: 'top 80%',
         onEnter: () => {
             if (!hasAnimatedInitial.value) {
                 hasAnimatedInitial.value = true
                 setTimeout(() => {
-                    animateNumbers(0)
+                    animateNumbers()
                 }, 300)
             }
         },
@@ -57,7 +57,7 @@ const setupScrollTrigger = () => {
             if (!hasAnimatedInitial.value) {
                 hasAnimatedInitial.value = true
                 setTimeout(() => {
-                    animateNumbers(0)
+                    animateNumbers()
                 }, 300)
             }
         }

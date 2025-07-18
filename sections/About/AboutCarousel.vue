@@ -42,13 +42,18 @@ import { onMounted } from 'vue';
       title: 'Resultaatgericht',
       subtitle: 'We maken geen content voor de views, maar voor wat erna komt. Vanmerkherkenning tot conversie: elk format is creatief sterk én stuurt op resultaat',
     },
+    {
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6af13110-89b8-4563-d983-165531828200/public',
+      title: 'Gebouwd op merkbeleving',
+      subtitle: 'Elke video die we maken begint bij het gevoel dat je als merk wilt achterlaten. We bouwen formats op basis van merkwaarden, zodat je content niet alleen een bereik scoort, maar de merkbeleving versterkt bij elke weergave.',
+    },
   ];
 </script>
 
 <template>
 <div class="about padding-bottom gradient-blur-wrapper">
-  <GradientBlur :width="{ default: '450px', sm: '60vw' }" :height="{ default: '40%', sm: '50vh' }" :right="{ default: '5%', sm: '10%' }" :top="{ default: '40%', sm: '20%' }" class="big__text_blur first"  />
-  <GradientBlur :width="{ default: '485px', sm: '70vw' }" :height="{ default: '40%', sm: '50vh' }" :left="{ default: '5%', sm: '10%' }" :top="{ default: '5%', sm: '20%' }" class="big__text_blur second"  />
+  <!-- <GradientBlur :width="{ default: '450px', sm: '60vw' }" :height="{ default: '40%', sm: '50vh' }" :right="{ default: '5%', sm: '10%' }" :top="{ default: '40%', sm: '20%' }" class="big__text_blur first"  />
+  <GradientBlur :width="{ default: '485px', sm: '70vw' }" :height="{ default: '40%', sm: '50vh' }" :left="{ default: '5%', sm: '10%' }" :top="{ default: '5%', sm: '20%' }" class="big__text_blur second"  /> -->
   <div class="container">
     <div class="about__title">
       <SectionTitle title="About us" link="/about" link-title="Lees meer" />
@@ -57,7 +62,7 @@ import { onMounted } from 'vue';
    <swiper
     class="about__swiper"
     :modules="modules"
-    :slides-per-view="4"
+    :slides-per-view="3"
     :space-between="30"
     :loop="true"
     :autoplay="baseAutoplay"
@@ -73,6 +78,7 @@ import { onMounted } from 'vue';
         slidesPerView: 1.2,
         autoplay: false,
         speed: 1000,
+        loop: false,
         scrollbar: {
             draggable: true,
             dragSize: 50,
@@ -97,7 +103,7 @@ import { onMounted } from 'vue';
   >
     <SwiperSlide v-for="(slide, index) in slides" :key="slide.image">
       <div class="about__slide-container" :class="[{ 'active': index === 0 }, `item-${index}`]">
-        <img :src="slide.image" :alt="slide.title" loading="lazy" />
+        <img :src="slide.image" :alt="slide.title" loading="lazy" >
         <div class="overlay"/>
         <div class="about__text">
           <div class="title" :class="{ 'active': index === 0 }">{{ slide.title }}</div>

@@ -1,69 +1,95 @@
 <script setup lang="ts">
-import TypeRevealTitle from '@/components/TypeRevealTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
-import { gsap } from 'gsap'
+
+const { gsap } = useGsap()
+
+defineProps({
+    title: {
+        type: String,
+        required: false,
+        default: 'The numbers speak for themselves',
+    },
+})
 
 const numbersSectionRef = ref<HTMLElement | null>(null)
 
 const animateNumbers = () => {
-    const numberElements = document.querySelectorAll('.numbers__result_number')
+    if (!numbersSectionRef.value) return
+    
+    const numberElements = numbersSectionRef.value.querySelectorAll('.numbers__result_number')
 
-    numberElements.forEach((element, index) => {
-        const targetValue = parseFloat(element.textContent || '0')
-
-        gsap.fromTo(element, {
-            textContent: 0,
-        }, {
-            textContent: targetValue,
-            duration: 2,
-            stagger: index * 0.1,
-            ease: "power1.in",
-            snap: { textContent: 1 },
-            onUpdate: function () {
-                element.textContent = numberWithCommas(Math.ceil(this.targets()[0].textContent));
-            },
-            scrollTrigger: numbersSectionRef.value,
-        });
+    numberElements.forEach((element) => {
+        const targetValue = parseFloat(element.getAttribute('data-target') || '0')
+        
+        // Use GSAP TextPlugin for smooth number animation
+        gsap.fromTo(element, 
+            { textContent: 0 },
+            {
+                textContent: targetValue,
+                duration: 2,
+                ease: "power2.out",
+                snap: { textContent: 1 },
+                onUpdate: function() {
+                    const currentValue = Math.round(this.targets()[0].textContent)
+                    element.textContent = numberWithCommas(currentValue)
+                }
+            }
+        )
     })
 }
 
-function numberWithCommas(x) {
+function numberWithCommas(x: number) {
     if (x === Math.floor(x)) {
         return x.toLocaleString('en-US')
     }
 
     return x.toLocaleString('en-US', {
         minimumFractionDigits: 1,
-        maximumFractionDigits: 1
+        maximumFractionDigits: 1,
     })
 }
 
 onMounted(async () => {
-    gsap.ticker.fps(30)
-
     await nextTick()
 
-    animateNumbers()
+    if (!numbersSectionRef.value) return
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    animateNumbers()
+                    observer.disconnect()
+                }
+            })
+        },
+        {
+            threshold: 0.5,
+        }
+    )
+
+    observer.observe(numbersSectionRef.value)
 })
 </script>
-
 
 <template>
     <section ref="numbersSectionRef" class="numbers__speak">
         <div class="container">
             <div class="numbers__speak-inner">
+                <!-- <div class="numbers__speak-title hidden md:block"> -->
                 <div class="numbers__speak-title">
-                    <TypeRevealTitle>The numbers speak for themselves</TypeRevealTitle>
+                  <TypeRevealTitle>{{ title }}</TypeRevealTitle>
                 </div>
+
                 <div class="numbers__speak-results">
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
                             <div class="numbers__result_title">Creators</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">77</span>
+                                <span class="numbers__result_number" data-target="77">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Aantal creators</div>
@@ -73,7 +99,7 @@ onMounted(async () => {
                         <div class="numbers__result">
                             <div class="numbers__result_title">Views</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">88200000</span>
+                                <span class="numbers__result_number" data-target="88200000">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Totaal bereik</div>
@@ -83,7 +109,7 @@ onMounted(async () => {
                         <div class="numbers__result">
                             <div class="numbers__result_title">Campagnes</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number">23</span>
+                                <span class="numbers__result_number" data-target="23">0</span>
                                 +
                             </div>
                             <div class="numbers__result_text">Aantal campagnes</div>
@@ -104,14 +130,14 @@ onMounted(async () => {
                     <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
                         started!</Button>
                 </div>
-
+<!-- 
                 <BlurGlow
 top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                     :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
 
                 <BlurGlow
 top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
-                    :mobile-no-blur-width="'200px'" :mobile-no-blur-height="'200px'" />
+                    :mobile-no-blur-width="'200px'" :mobile-no-blur-height="'200px'" /> -->
             </div>
         </div>
     </section>
@@ -156,8 +182,8 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
 
 @media(min-width: 992px) {
     .numbers__speak-results {
-        gap: 24px;
-        flex-direction: row;
+      gap: 24px;
+      flex-direction: row;
     }
 }
 

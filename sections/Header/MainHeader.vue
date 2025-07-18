@@ -93,8 +93,7 @@ onUnmounted(() => {
 
 .header.is-scrolling .header__inner{
     /* background: rgba(38, 38, 38, 0.95); */
-    background: #1e193a8e;
-    backdrop-filter: blur(10px);
+    background: rgba(30, 25, 58, 0.9);
     border-radius: 100px;
     padding: 12px 32px;
     width: 1200px;
@@ -180,6 +179,9 @@ onUnmounted(() => {
 }
 
 .header__menu-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 32px;
     color: var(--off-white);
 }

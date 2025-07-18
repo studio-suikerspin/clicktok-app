@@ -9,7 +9,6 @@
 <script setup lang="ts">
 import { ref, onMounted, computed, nextTick, readonly } from 'vue'
 import { gsap } from 'gsap'
-import { Draggable } from 'gsap/Draggable'
 
 interface Props {
     effect?: 'slide' | 'fade'
@@ -102,7 +101,6 @@ const goToSlide = (index: number) => animateToSlide(index)
 
 
 onMounted(async () => {
-    gsap.registerPlugin(Draggable);
     await nextTick()
 
     const slides = getSlides()

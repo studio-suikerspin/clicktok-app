@@ -3,17 +3,13 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onMounted, ref, nextTick } from 'vue'
 
+import { playVideoOnMouseOver } from '@/composables/videoPlayOnHover'
+
 import Carousel from '@/components/Carousel.vue'
 import CarouselControls from '@/components/CarouselControls.vue'
 
-import GradientBlur from '@/components/GradientBlur.vue'
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
-import BlurGlow from '@/components/blur/Blurglow.vue'
-import { VideoStream } from 'stream-vue'
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger)
 
 const props = defineProps({
     showFirstTwo: {
@@ -30,7 +26,8 @@ const props = defineProps({
 
 const cases = [
     {
-        video: '480bbad9d3fd24382153acb05611a117',
+        video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3--SHORT.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/fd985156-cef9-487d-96f4-e3e12ceb1d00/public',
         title: 'Nubikk',
         label: 'Organisch',
         subtitle: 'Not just viral',
@@ -52,7 +49,8 @@ const cases = [
         ],
     },
     {
-        video: '0799a169b1a02f89535f72f7442a88a9',
+        video: 'https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3f94af6f-79b9-43f1-d67b-e1e76448c400/public',
         title: 'Happn',
         subtitle: 'Culture First Content',
         label: 'UGC Ad Creatie',
@@ -64,7 +62,8 @@ const cases = [
 
 const casesSecond = [
     {
-        video: '62c16ea3db18cef4aa975dd47310422b',
+        video: 'https://r2.suikerspin.studio/BANNER_DOGMAN_V1.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/897b0cba-16cb-4e4a-f0f5-4fc4eaebe900/public',
         title: 'Dogman Video Game',
         label: 'Creator collaborations',
         subtitle: 'Direct Activation',
@@ -86,7 +85,8 @@ const casesSecond = [
         ],
     },
     {
-        video: '67a755e5d6f763df02a63e3ed97e32f2',
+        video: 'https://r2.suikerspin.studio/BANNER_MOBIELNL_V1--SHORT.mp4',
+        poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e27b891e-7973-4c00-e0f6-25aed8371d00/public',
         title: 'mobiel.nl',
         label: 'UGC Ad Creatie',
         subtitle: 'Built on Association',
@@ -96,31 +96,11 @@ const casesSecond = [
     },
 ]
 
-const videoRefs = ref<HTMLVideoElement[]>([])
 const casesCarousel = ref()
 const detailsCarousel = ref()
 const currentSlideIndex = ref(0)
 const sectionRef = ref<HTMLElement>()
-let videoObserver: IntersectionObserver | null = null
 const hasAnimatedInitial = ref(false)
-
-const setupVideoObserver = () => {
-    videoObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                const video = entry.target as HTMLVideoElement
-                const videoIndex = videoRefs.value.indexOf(video)
-
-                if (entry.isIntersecting && videoIndex === currentSlideIndex.value) {
-                    // video.play().catch(console.warn)
-                } else {
-                    // video.pause()
-                }
-            })
-        },
-        { threshold: 0.3 },
-    )
-}
 
 const setupScrollTrigger = () => {
     ScrollTrigger.create({
@@ -143,19 +123,6 @@ const setupScrollTrigger = () => {
             }
         }
     })
-}
-
-const playActiveVideo = (slideIndex: number) => {
-    // Pause all videos first
-    videoRefs.value.forEach((video) => {
-        // if (video) video.pause()
-    })
-
-    // Play only the active video
-    const activeVideo = videoRefs.value[slideIndex]
-    if (activeVideo) {
-        activeVideo.play().catch(console.warn)
-    }
 }
 
 const animateNumbers = (slideIndex: number | null = null) => {
@@ -197,14 +164,6 @@ const animateNumbers = (slideIndex: number | null = null) => {
 
 const handleSlideChange = (slideIndex: number) => {
     currentSlideIndex.value = slideIndex
-    // playActiveVideo(slideIndex)
-
-    // Trigger intersection observer check for the new active video
-    // const activeVideo = videoRefs.value[slideIndex]
-    // if (activeVideo && videoObserver) {
-    //     videoObserver.unobserve(activeVideo)
-    //     videoObserver.observe(activeVideo)
-    // }
 
     setTimeout(() => {
         animateNumbers(slideIndex)
@@ -213,29 +172,19 @@ const handleSlideChange = (slideIndex: number) => {
 
 onMounted(async () => {
     await nextTick()
-    // setupVideoObserver()
     setupScrollTrigger()
-
-    // videoRefs.value.forEach((video) => {
-    //     if (video && videoObserver) {
-    //         videoObserver.observe(video)
-    //     }
-    // })
-
-    setTimeout(() => {
-        // playActiveVideo(0)
-    }, 500)
 })
 </script>
 
 <template>
-    <section ref="sectionRef" class="cases">
+    <section ref="sectionRef" class="cases overflow-hidden">
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />
-                <BlurGlow
+                <!-- <BlurGlow
 top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" />
+                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
+                <img src="/images/background__blur-min.webp" class="background__blur" />
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">
@@ -280,16 +229,17 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
                             <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-card">
-                              <VideoStream
+                              <video
                               class="case-card__video border-radius"
                               :src="item.video"
+                              :poster="item.poster"
                               playsinline
                               muted
                               loop
                               preload="metadata"
                               webkit-playsinline
-                              :autoplay="index === 0"
-                              :controls="index === 1"
+                              :controls="true"
+                              @mouseover="(e) => playVideoOnMouseOver(e.target)"
                             />
                           </div>
                         </Carousel>
@@ -300,12 +250,12 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                 <CarouselControls :targets="[casesCarousel, detailsCarousel]" class="cases-controls" />
             </div>
 
-            <GradientBlur
+            <!-- <GradientBlur
                 :width="{ default: '40%', sm: '30%' }"
                 :height="{ default: '40%', sm: '30%' }"
                 :top="{ default: '50%', sm: '50%' }"
                 :left="{ default: '20%', sm: '50%' }"
-            />
+            /> -->
         </div>
     </section>
 </template>
@@ -476,12 +426,8 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
     aspect-ratio: 9 / 16;
     max-height: 600px;
     margin-inline: auto;
-}
 
-.case-card__video stream {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+    object-fit: cover;
 }
 
 @media (max-width: 767px) {
@@ -572,4 +518,22 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
         margin-right: -24px;
     }
 }
+
+.background__blur {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    width: 650px;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media(max-width: 767px){
+    .background__blur {
+        top: 15%;
+        width: 350px;
+        height: 400px;
+    }
+}
+
 </style>

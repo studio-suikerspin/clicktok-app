@@ -32,7 +32,10 @@ const team = ref([
 <template>
   <div class="team padding-bottom">
     <div class="container gradient-blur-wrapper">
-      <GradientBlur :width="{ default: '50vw', sm: '60vw' }" :height="{ default: '50vh', sm: '80vh' }" :top="{ default: '20%', sm: '40%' }" :left="{ default: '40%', sm: '20%' }"/>
+      <!-- <GradientBlur :width="{ default: '50vw', sm: '60vw' }" :height="{ default: '50vh', sm: '80vh' }" :top="{ default: '20%', sm: '40%' }" :left="{ default: '40%', sm: '20%' }"/> -->
+       <div class="section-title__wrapper">
+        <SectionTitle title="With this team" />
+       </div>
       <Swiper
         :slides-per-view="1.2"
         :space-between="20"
@@ -45,7 +48,7 @@ const team = ref([
         <SwiperSlide v-for="member in team" :key="member.name">
           <div class="team__item">
             <div class="team__item_image">
-              <img :src="member.image" :alt="member.name"/>
+              <img :src="member.image" :alt="member.name">
             </div>
             <div class="team__item_content">
               <div class="team__item_name">
@@ -63,8 +66,20 @@ const team = ref([
 </template>
 
 <style scoped>
+.section-title__wrapper{
+  margin-bottom: 80px;
+}
+
+@media(max-width: 768px) {
+  .section-title__wrapper{
+    margin-bottom: 40px;
+  }
+}
+
 .team {
   width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
 }
 
 .team__item {

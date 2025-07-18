@@ -9,9 +9,6 @@
     }
 }
 
-#smooth-content {
-    will-change: transform;
-}
 
 :root {
     --off-white: #FDFDFD;
@@ -42,6 +39,12 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+@media(max-width: 767px){
+    body {
+        overflow-x: hidden;
+    }
 }
 
 .title-font {
