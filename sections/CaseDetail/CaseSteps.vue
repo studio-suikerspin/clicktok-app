@@ -65,6 +65,7 @@ onMounted(() => {
           <div class="card border-radius card--gradient">
             <div class="card__title">De vraag</div>
             <div class="card__content">{{ project.problem }}</div>
+            <img src="/images/background__blur-min.webp" class="background__blur_steps" />
           </div>
           <div class="card border-radius">
             <video
@@ -98,6 +99,7 @@ onMounted(() => {
           <div class="card border-radius card--gradient">
             <div class="card__title">Wie is de klant?</div>
             <div class="card__content">{{ project.about }}</div>
+            <img src="/images/background__blur-2.webp" class="background__blur_steps" />
           </div>
           <div class="card border-radius">
             <video
@@ -119,6 +121,7 @@ onMounted(() => {
           <div class="card border-radius card--gradient">
             <div class="card__title">De oplossing</div>
             <div class="card__content">{{ project.solution }}</div>
+            <img src="/images/background__blur3.webp" class="background__blur_steps" />
           </div>
         </div>
       </div>
@@ -172,6 +175,7 @@ onMounted(() => {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  z-index: 2;
 }
 
 .card__content {
@@ -181,6 +185,7 @@ onMounted(() => {
   font-style: normal;
   font-weight: 400;
   line-height: 140%; /* 22.4px */
+  z-index: 2;
 }
 
 .card img {
@@ -305,4 +310,20 @@ onMounted(() => {
     padding-block: 40px;
   }
 }
+
+.steps__card-wrap .card{
+  position: relative;
+}
+
+.background__blur_steps{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 500px;
+  object-fit: cover;
+  opacity: 60%;
+  z-index: 1;
+}
+
 </style>

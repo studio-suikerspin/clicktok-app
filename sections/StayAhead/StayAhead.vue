@@ -1,6 +1,7 @@
 <script setup>
     import SectionTitle from '@/components/SectionTitle.vue';
     import Button from '@/components/ui/Button.vue';
+    import ButtonAnimated from '@/components/ui/ButtonAnimated.vue';
     import 'swiper/css';
     import 'swiper/css/autoplay';
 
@@ -87,7 +88,8 @@
                                 <div class="general__text">{{ description }}</div>
                             </div>
                             <div class="stay__ahead__content_text_bottom">
-                                <Button :href="buttonHref" :title="buttonText" variant="white">{{ buttonText }}</Button>
+                                <!-- <Button :href="buttonHref" :title="buttonText" variant="white">{{ buttonText }}</Button> -->
+                                <ButtonAnimated text="Let's get started!" href="/contact" variant="white" :full-width="false" />
                             </div>
                         </div>
                         <div class="stay__ahead__content_video">                            

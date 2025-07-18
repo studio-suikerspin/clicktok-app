@@ -3,12 +3,16 @@ const props = defineProps({
   text: String,
   href: String,
   variant: String,
+  fullWidth: {
+    type: Boolean,
+    default: true
+  }
 })
 </script>
 
 <template>
   <div class="btn-group">
-    <div class="btn-group__col">
+    <div :class="`btn-group__col ${fullWidth ? 'full-width' : ''}`">
       <a :href="href" :class="`btn-bounce ${variant || ''}`">
         <div class="btn-bounce-bg"></div>
         <div class="btn-bounce-text__wrap">
@@ -33,18 +37,29 @@ const props = defineProps({
   display: flex;
 }
 
+.btn-group__col.full-width{
+  width: 100%;
+}
+
 .btn-bounce {
   color: var(--accent-dark-purple);
   font-weight: 600;
   font-size: 16px;
   font-style: italic;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   font-size: 1em;
   text-decoration: none;
   position: relative;
   display: inline-block;
   width: 100%;
+}
+
+@media(max-width: 767px){
+  .btn-bounce-text__wrap{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }
 
 /* Default variant (filled) */
@@ -53,8 +68,8 @@ const props = defineProps({
   font-weight: 600;
   font-size: 16px;
   font-style: italic;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
   text-decoration: none;
   position: relative;
   display: inline-block;

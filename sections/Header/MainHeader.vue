@@ -3,6 +3,7 @@ import { onMounted, onUnmounted } from 'vue'
 
 //Components
 import Button from '@/components/ui/Button.vue'
+import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 import MobileMenu from './MobileMenu.vue'
 
 // Stores
@@ -52,7 +53,8 @@ onUnmounted(() => {
             </nav>
 
             <!-- <Button variant="blue" href="/contact" classes="header__cta" title="ClickTok - Contact"> Start een project </Button> -->
-            <Button href="/contact" title="Start een project"  variant="blue" classes="header__cta">Start een project</Button>
+            <!-- <Button href="/contact" title="Start een project"  variant="blue" classes="header__cta">Start een project</Button> -->
+            <ButtonAnimated text="Start een project" href="/contact" variant="blue" class="header__cta" />
 
             <a class="header__menu-trigger" href="javascript:;" title="Open menu" @click="mobileMenu.toggle()">
                 <i class="bx bx-menu"/>

@@ -5,9 +5,7 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 
 <template>
     <div data-css-marquee="" class="marquee-css section-padding">
-        <!-- <BlurGlow
-top="" left="40%" :width="'400px'" :height="'45%'" :mobile-no-blur="true"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
+      <img src="/images/background__blur-2.webp" class="background__blur_marquee" />
         <div data-css-marquee-list="" class="marquee-css__list">
             <div class="marquee-css__item">
                 <h2>We create formats that elevate your brand's voice.</h2>
@@ -100,6 +98,16 @@ top="" left="40%" :width="'400px'" :height="'45%'" :mobile-no-blur="true"
   .marquee-css__item {
     padding-right: 1.5em;
   }
+}
+
+.background__blur_marquee{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 60%;
 }
 </style>
 

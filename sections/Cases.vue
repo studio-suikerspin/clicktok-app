@@ -10,6 +10,7 @@ import CarouselControls from '@/components/CarouselControls.vue'
 
 import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
+import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 
 const props = defineProps({
     showFirstTwo: {
@@ -181,10 +182,7 @@ onMounted(async () => {
         <div class="gradient-blur-wrapper container">
             <div class="cases__inner">
                 <SectionTitle title="Cases" link="/cases" link-title="Bekijk meer" />
-                <!-- <BlurGlow
-top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
-                :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
-                <img src="/images/background__blur-min.webp" class="background__blur" />
+                <img src="/images/background__blur-min.webp" class="background__blur_cases" />
 
                 <div class="cases-slider">
                     <div class="cases-slider__carousels ">
@@ -209,8 +207,10 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
                                         </div>
 
                                         <div class="case-detail__buttons">
-                                            <Button variant="outline" classes="w-fit" :href="item.caseLink"> Bekijk case </Button>
-                                            <Button variant="white" href="/contact" class="blue-btn">Let's get started!</Button>
+                                            <!-- <Button variant="outline" classes="w-fit" :href="item.caseLink"> Bekijk case </Button>
+                                            <Button variant="white" href="/contact" class="blue-btn">Let's get started!</Button> -->
+                                            <ButtonAnimated text="Bekijk case" :href="item.caseLink" variant="secondary" />
+                                            <ButtonAnimated text="Let's get started!" href="/contact" variant="white" />
                                         </div>
                                     </div>
 
@@ -519,17 +519,18 @@ top="" left="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="false"
     }
 }
 
-.background__blur {
+.background__blur_cases {
     position: absolute;
     top: 20%;
     left: 0;
     width: 650px;
     height: 100%;
     object-fit: cover;
+    opacity: 60%;
 }
 
 @media(max-width: 767px){
-    .background__blur {
+    .background__blur_cases {
         top: 15%;
         width: 350px;
         height: 400px;

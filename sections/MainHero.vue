@@ -2,7 +2,7 @@
 // Components
 import Button from '@/components//ui/Button.vue'
 import LogoSlider from '@/sections/General/LogoSlider.vue'
-
+import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 </script>
 
 <template>
@@ -124,8 +124,10 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                             activatie en conversie</span>.
                         </div>
                         <div class="hero__cta_wrapper">
-                            <Button variant="white" href="/contact" class="hero__cta">Let's get started!</Button>
-                            <Button variant="outline" href="/cases" class="hero__cta">Bekijk cases</Button>
+                            <!-- <Button variant="white" href="/contact" class="hero__cta">Let's get started!</Button>
+                            <Button variant="outline" href="/cases" class="hero__cta">Bekijk cases</Button> -->
+                            <ButtonAnimated text="Let's get started!" href="/contact" variant="white" />
+                            <ButtonAnimated text="Bekijk cases" href="/cases" variant="secondary" />
                         </div>
                     </div>
 
@@ -137,8 +139,10 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
                 <LogoSlider />
             </div>
 
-            <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
-            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient">
+            <!-- <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
+            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient"> -->
+            <img class="background-gradient" src="/images/gradient-background1.webp" alt="Background gradient">
+            <img class="background-gradient mobile" src="/images/gradient-background2.webp" alt="Background gradient">
         </div>
     <!-- </div> -->
 </template>
@@ -154,10 +158,6 @@ import LogoSlider from '@/sections/General/LogoSlider.vue'
     z-index: 3;
     overflow-x: hidden; /* voorkomt scrollbars bij mask */
     padding: 200px 30px 70px;
-    /* padding-bottom: 70px; */
-
-    /* mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%); */
 }
 
 .hero .background-gradient {

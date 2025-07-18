@@ -86,8 +86,8 @@ const contactForms = [
           </div>
         </div>
 
-        <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
-        <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient">
+        <img class="background-gradient" src="/images/gradient-background1.webp" alt="Background gradient">
+        <img class="background-gradient mobile" src="/images/gradient-background2.webp" alt="Background gradient">
       </div>
       <div class="contactpage__offices padding-top">
         <div class="container">

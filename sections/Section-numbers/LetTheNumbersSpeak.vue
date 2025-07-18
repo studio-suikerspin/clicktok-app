@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue'
 import BlurGlow from '@/components/blur/Blurglow.vue'
+import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
 
@@ -79,6 +80,7 @@ onMounted(async () => {
     <section ref="numbersSectionRef" class="numbers__speak">
         <div class="container">
             <div class="numbers__speak-inner">
+                <img src="/images/background__blur-min.webp" class="background__blur_numbers" />
                 <!-- <div class="numbers__speak-title hidden md:block"> -->
                 <div class="numbers__speak-title">
                   <TypeRevealTitle>{{ title }}</TypeRevealTitle>
@@ -127,8 +129,9 @@ onMounted(async () => {
                     </div> -->
                 </div>
                 <div class="numbers__speak-cta">
-                    <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
-                        started!</Button>
+                    <!-- <Button variant="outline" href="/contact" class="numbers__speak-cta-button">Let's get
+                        started!</Button> -->
+                    <ButtonAnimated text="Let's get started!" href="/contact" variant="secondary" />
                 </div>
 <!-- 
                 <BlurGlow
@@ -156,6 +159,7 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
     gap: 40px;
     position: relative;
     z-index: 2;
+    overflow: hidden;
 }
 
 .numbers__speak-title {
@@ -253,5 +257,17 @@ top="" right="10px" :width="'400px'" :height="'55%'" :mobile-no-blur="true"
     .numbers__result_number-wrapper span {
         font-size: 48px;
     }
+}
+
+.background__blur_numbers{
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 570px;
+    height: 800px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-inline: auto;
+    opacity: 60%;
 }
 </style>

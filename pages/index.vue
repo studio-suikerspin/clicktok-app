@@ -41,17 +41,12 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
             <LogoSlider />
         </div>
 
-        <section class="padding-top">
+        <section class="padding-top blur-wrapper">
+            <img src="/images/background__blur3.webp" class="background__blur_home" />
             <div class="container relative-container">
-                <!-- <BlurGlow
-top="0" left="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
                 <TypeRevealTitle>
                     We help brands stay ahead through <br>viral short-form content
                 </TypeRevealTitle>
-                <!-- <BlurGlow
-top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
-            :mobile-no-blur-width="'400px'" :mobile-no-blur-height="'50%'" /> -->
             </div>
         </section>
 
@@ -88,9 +83,26 @@ top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
     position: relative;
 }
 
+.blur-wrapper{
+    position: relative;
+}
+
+.background__blur_home{
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    width: 450px;
+    height: 500px;
+    object-fit: cover;
+    margin-inline: auto;
+}
+
 @media(max-width: 992px){
     .logo-slider-mobile{
         display: block;
+    }
+    .background__blur_home{
+        top: 0;
     }
 }
 </style>
