@@ -1,9 +1,9 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.NUXT_RESEND_API_KEY)
-const resendEmail = process.env.NUXT_TO_EMAIL ? process.env.NUXT_TO_EMAIL : 'info@suikerspin.studio'
-
 export default defineEventHandler(async (event) => {
+  const resend = new Resend(process.env.NUXT_RESEND_API_KEY)
+  const resendEmail = process.env.NUXT_TO_EMAIL ? process.env.NUXT_TO_EMAIL : 'info@suikerspin.studio'
+
   try {
     const body = await readBody(event);
     let html = `<html>
