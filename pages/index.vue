@@ -65,10 +65,6 @@ top="0" right="10px" :width="'400px'" :height="'280px'" :mobile-no-blur="true"
 
         <StayAhead  :lazy-loading="true" />
 
-        <!-- <div class="padding-top">
-            <LetTheNumbersSpeak />
-        </div> -->
-
         <Marquee />
         <Services />
         <div class="padding-top">
