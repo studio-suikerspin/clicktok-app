@@ -93,6 +93,10 @@ const numbersData = [
   gap: 40px;
 }
 
+.relative-container{
+  position: relative;
+}
+
 @media(max-width: 768px) {
     .about__offices,
     .about__logo_slider{
