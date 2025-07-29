@@ -63,7 +63,7 @@ watch(
                     </a>
                     <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/services')">
                         <div class="dot"/>
-                        Diensten
+                        Services
                     </a>
                     <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/cases')">
                         <div class="dot"/>
@@ -71,7 +71,7 @@ watch(
                     </a>
                     <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/about')">
                         <div class="dot"/>
-                        Over ons
+                        About us
                     </a>
                     <a  :class="`mobile-menu__item`" @click="mobileMenu.navigate('/contact')">
                         <div class="dot"/>
@@ -104,7 +104,7 @@ watch(
 
 .mobile-menu__background {
     background-color: #000;
-    background-image: url('/images/gradient-vierkant-mobile-min.webp');
+    background-image: url('/images/gradient-background2.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

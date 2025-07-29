@@ -48,7 +48,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
               
                 <div class="hero__floating_image with-hover third border-radius floating-animation-2">
                     <div class="hero__floating_image_wrapper">
-                        <video 
+                        <!-- <video 
                           preload="none" 
                           webkit-playsinline 
                           playsinline 
@@ -60,6 +60,19 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
                           <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
+                        </video> -->
+                        <video 
+                          preload="none" 
+                          webkit-playsinline 
+                          playsinline 
+                          muted
+                          loop 
+                          class="hero__floating_image_video"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6c38b2d8-966d-4f8d-337e-baf167191f00/public"
+                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
+                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
+                        >
+                          <source src="https://r2.suikerspin.studio/homepagebannerlinksondermobiel.nl.mp4">
                         </video>
                     </div>
                 </div>
