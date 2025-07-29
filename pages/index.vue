@@ -51,7 +51,7 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
         </section>
 
         <div class="section-padding">
-            <Cases :show-first-two="true" :show-last-two="false" /> 
+            <Cases /> 
         </div>
 
         <LetTheNumbersSpeak />
@@ -62,9 +62,9 @@ import BlurGlow from '@/components/blur/Blurglow.vue'
 
         <Marquee />
         <Services />
-        <div class="padding-top">
+        <!-- <div class="padding-top">
             <Cases :show-first-two="false" :show-last-two="true" /> 
-        </div>
+        </div> -->
         <Reviews />
         <AboutCarousel />
 

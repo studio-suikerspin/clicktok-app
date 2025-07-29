@@ -12,19 +12,6 @@ import SectionTitle from '@/components/SectionTitle.vue'
 import Button from '@/components/ui/Button.vue'
 import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 
-const props = defineProps({
-    showFirstTwo: {
-        type: Boolean,
-        required: false,
-        default: false,
-    },
-    showLastTwo: {
-        type: Boolean,
-        required: false,
-        default: false,
-    },
-})
-
 const cases = [
     {
         video: 'https://r2.suikerspin.studio/BANNER_NUBIKK_V3--SHORT.mp4',
@@ -58,10 +45,7 @@ const cases = [
         content: 'Voor Happn ontwikkelden we native UGC ad creatives die aanvoelen als echte TikToks, maar gebouwd zijn voor conversie.',
         caseLink: '/cases/happn',
         stats: [],
-    }
-]
-
-const casesSecond = [
+    },
     {
         video: 'https://r2.suikerspin.studio/BANNER_DOGMAN_V1.mp4',
         poster: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/897b0cba-16cb-4e4a-f0f5-4fc4eaebe900/public',
@@ -138,9 +122,7 @@ const animateNumbers = (slideIndex: number | null = null) => {
     numberElements.forEach((element, index) => {
         const dataNumber = element.getAttribute('data-number')
         
-        // Determine which array to use based on the current carousel content
-        const currentCases = props.showFirstTwo ? cases : casesSecond
-        const targetValue = slideIndex !== null ? currentCases[slideIndex].stats[index]?.stat || 0 : parseInt(dataNumber || '0')
+        const targetValue = slideIndex !== null ? cases[slideIndex].stats[index]?.stat || 0 : parseInt(dataNumber || '0')
 
         gsap.fromTo(
             element,
@@ -194,7 +176,7 @@ onMounted(async () => {
                             class="details-carousel"
                             @slide-change="handleSlideChange"
                         >
-                            <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-detail h-full">
+                            <div v-for="(item, index) in cases" :key="index" class="case-detail h-full">
                                 <div class="case-detail__inner">
                                     <div class="case-detail__top">
                                         <div class="case-detail__details">
@@ -228,7 +210,7 @@ onMounted(async () => {
                         </Carousel>
 
                         <Carousel ref="casesCarousel" class="cases-carousel" wrapper-classes="cases-carousel__wrapper" :slides-to-show="2.2">
-                            <div v-for="(item, index) in showFirstTwo ? cases : casesSecond" :key="index" class="case-card">
+                            <div v-for="(item, index) in cases" :key="index" class="case-card">
                               <video
                               class="case-card__video border-radius"
                               :src="item.video"

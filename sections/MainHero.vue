@@ -119,7 +119,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                         <h1 class="hero__title">TikTok Agency</h1>
                         <div class="hero__subtitle">
                             <span class="first-span">Gefocust op merkbeleving die blijft
-                            hangen.</span> We bouwen formats vanuit <span class="thick-span">merkwaarden</span> om het juiste gevoel over
+                            hangen.</span> <br /> We bouwen formats vanuit <span class="thick-span">merkwaarden</span> om het juiste gevoel over
                             te brengen, sterke <span class="thick-span">associaties</span> te creëren en zo te zorgen voor <span class="thick-span">herkenning,
                             activatie en conversie</span>.
                         </div>

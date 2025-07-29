@@ -180,7 +180,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px;
+    /* padding: 0 40px; */
     gap: 80px;
     width: 100%;
 }
@@ -305,7 +305,7 @@
     gap: 40px;
     max-width: 1080px;
     width: 100%;
-    padding: 0 40px;
+    /* padding: 0 40px; */
     /* background-image: url('/images/gradient-ruis-vierkant-min.webp');
     background-size: cover;
     background-position: center;
@@ -357,6 +357,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 @media(max-width: 992px){
