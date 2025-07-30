@@ -39,8 +39,8 @@ const logos = [
     title: 'Logo 1',
   },
   {
-    image: '/images/logos/logo10.webp',
-    title: 'Logo 10',
+    image: '/images/logos/de-beren-logo.png',
+    title: 'De Beren',
   },
   {
     image: '/images/logos/logo-mad-science.png',

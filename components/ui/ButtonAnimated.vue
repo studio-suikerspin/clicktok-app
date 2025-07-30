@@ -112,6 +112,7 @@ const props = defineProps({
   z-index: 1;
   display: block;
   position: relative;
+  text-align: center;
 }
 
 .btn-bounce-text__wrap {

@@ -282,7 +282,7 @@ watch(selectedService, async () => {
 }
 
 .services__left-item-content-text span{
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .services__left-item-content-link {

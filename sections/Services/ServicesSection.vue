@@ -2,6 +2,7 @@
 import Button from '@/components/ui/Button.vue'
 import { ref, nextTick } from 'vue'
 import { VideoStream } from 'stream-vue'
+import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
 
 // Service data object
 const servicesData = [
@@ -32,7 +33,7 @@ const servicesData = [
     ],
     logos: [
     { src: '/images/logos/jumbo-logo.svg', alt: 'Jumbo logo' },
-      { src: '/images/logos/logo10.webp', alt: 'Logo 10' },
+      { src: '/images/logos/de-beren-logo.png', alt: 'Logo 10' },
       { src: '/images/logos/logo-keukensale.png', alt: 'Keukensale logo' },
       { src: '/images/logos/nubikk.svg', alt: 'Nubikk logo' }
     ],
@@ -79,9 +80,9 @@ const servicesData = [
     id: 3,
     number: '03',
     subtitle: 'UGC ad creatie voor authentieke connectie',
-    title: 'UGC Ad Creatie',
+    title: '(UGC) Ad Creatie',
     whyTitle: 'Waarom UGC ad creatives inzetten?',
-    whyText: 'UGC staat voor User Generated Content: video’s gemaakt door echte mensen, niet door merken. En juist dat maakt het zo krachtig op TikTok. UGC ad creatives zijn dé sleutel tot vertrouwen én conversie. 84% van de consumenten vertrouwt content van anderen meer dan van merken zelf, en campagnes met UGC leveren gemiddeld tot 29% hogere conversie op. Zo krijg je het beste van twee werelden: geloofwaardige content die niet alleen opvalt, maar ook presteert.',
+    whyText: 'Met UGC ad creatives én native brand creatives maken we advertenties die aanvoelen als TikToks - maar gebouwd zijn voor conversie. UGC is geen hype, het werkt. Campagnes met user-generated content leveren gemiddeld tot 29% hogere conversie op. Daarnaast ontwikkelen we ook in-house brand creatives die je merkverhaal vertalen naar performancegerichte content, altijd afgestemd op het platform en je doelgroep. We bouwen op jouw merkwaarden en combineren die met bewezen, conversiegerichte elementen die presteren. Daarbij nemen we het volledige proces uit handen: van conceptontwikkeling en scripting tot creator matching, briefing, editing en oplevering. Dit doen we voor e-com merken, apps en organisaties die leads willen genereren.',
     whatTitle: 'Wat doen wij?',
     steps: [
       {
@@ -248,16 +249,16 @@ const toggleItem = (itemId: number) => {
                     </div>
                   </div>
                 </div>
+                <div v-if="!service.video" class="service__content_cta_without_video">
+                  <ButtonAnimated text="Let's get started!" href="/contact" variant="white" />
+                </div>
               </div>
               <div v-if="service.video" class="service__content_second">
                 <div class="service__content_video">
                   <VideoStream :src="service.video" webkit-playsinline controls muted loop playsinline />
                 </div>
                 <div class="service__content_cta" >
-                  <Button variant="white" :href="service.ctaHref" :title="service.ctaText">
-                    {{ service.ctaText }}
-                  </Button>
-                  
+                  <ButtonAnimated text="Let's get started!" href="/contact" variant="white" />
                 </div>
               </div>
             </div>
@@ -349,6 +350,17 @@ const toggleItem = (itemId: number) => {
   }
   .service__accordion-item_title{
     gap: 8px;
+  }
+}
+
+/* CTA without video */
+.service__content_cta_without_video{
+  width: fit-content;
+}
+
+@media(max-width: 767px){
+  .service__content_cta_without_video{
+    width: 100%;
   }
 }
 
