@@ -28,7 +28,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
-                          <source src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.mp4">
+                          <source src="https://r2.suikerspin.studio/bannerhomepagenubikk.mp4">
                         </video>
                         <video 
                           preload="none" 
@@ -40,7 +40,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           class="hero__floating_image_video mobile"
                           poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
                         >
-                          <source src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.mp4">
+                          <source src="https://r2.suikerspin.studio/bannerhomepagenubikk.mp4">
                         </video>
                     </div>
                 </div>
@@ -74,6 +74,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                         >
                           <source src="https://r2.suikerspin.studio/homepagebannerlinksondermobiel.nl.mp4">
                         </video>
+                        
                     </div>
                 </div>
 
@@ -87,11 +88,11 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           muted
                           loop 
                           class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/eb2e2102-a180-49a7-7eb4-bbf537679400/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/683a7362-5b35-4234-6031-ada60fc65300/public"
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
-                          <source src="https://r2.suikerspin.studio/keukensale.mp4">
+                          <source src="https://r2.suikerspin.studio/homepagebannerrechtsboven.mp4">
                         </video>
                     </div>
                 </div>
@@ -105,11 +106,11 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           muted
                           loop 
                           class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3f94af6f-79b9-43f1-d67b-e1e76448c400/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public"
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
-                          <source src="https://r2.suikerspin.studio/BANNER_HAPPN_V2.mp4">
+                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
                         </video>
                         <video 
                           preload="none" 
@@ -119,9 +120,9 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           loop 
                           autoplay
                           class="hero__floating_image_video mobile"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/3f94af6f-79b9-43f1-d67b-e1e76448c400/public"
+                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public"
                         >
-                          <source src="https://r2.suikerspin.studio/BANNER_NUBIKK_V1.mp4">
+                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
                         </video>
                     </div>
                 </div>

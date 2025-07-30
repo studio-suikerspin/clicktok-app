@@ -38,12 +38,12 @@ import { onMounted } from 'vue';
       subtitle: 'Alles wat we doen is gericht op TikTok en dát doen we volledig in-house. Van strategie tot scripting, productie en analyse: één team, één focus, één kanaal. Daardoor schakelen we snel, houden we de kwaliteit hoog en kunnen we zorgen voor het best mogelijke resultaat.',
     },
     {
-      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/603d7323-b59f-4b1e-578a-95fe8d7b8d00/public',
       title: 'Resultaatgericht',
       subtitle: 'We maken geen content voor de views, maar voor wat erna komt. Vanmerkherkenning tot conversie: elk format is creatief sterk én stuurt op resultaat',
     },
     {
-      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6af13110-89b8-4563-d983-165531828200/public',
+      image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public',
       title: 'Gebouwd op merkbeleving',
       subtitle: 'Elke video die we maken begint bij het gevoel dat je als merk wilt achterlaten. We bouwen formats op basis van merkwaarden, zodat je content niet alleen een bereik scoort, maar de merkbeleving versterkt bij elke weergave.',
     },
