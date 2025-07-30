@@ -79,6 +79,7 @@ const contactForms = [
               :is-creator="selectedCaseIndex === 1"
               :form-type="contactForms[selectedCaseIndex].type"
               :no-background="true"
+              :contact-page="true"
             />
           </div>
           <div class="logo-flex-wrapper">
@@ -89,14 +90,14 @@ const contactForms = [
         <img class="background-gradient" src="/images/gradient-background1.webp" alt="Background gradient">
         <img class="background-gradient mobile" src="/images/gradient-background2.webp" alt="Background gradient">
       </div>
-      <div class="contactpage__offices padding-top">
+      <!-- <div class="contactpage__offices padding-top">
         <div class="container">
           <div class="offices__inner">
             <SectionTitle title="Offices" />
             <Offices :show-text="true" />
           </div>
         </div>
-      </div>
+      </div> -->
 
       <Footer />
   </BaseLayout>

@@ -38,6 +38,10 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  contactPage:{
+    type: Boolean,
+    default: false,
+  }
 });
 
 let animationInterval;
@@ -204,7 +208,7 @@ onUnmounted(() => {
               </form>
             </div>
           </div>
-          <div class="contact__right">
+          <div class="contact__right" :class="{'contact__right--contact-page': contactPage}">
             <div class="image__wrapper active">
               <img
                 src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/31e2839c-2fab-4b91-ac59-2fb31b660000/public"
@@ -278,7 +282,7 @@ onUnmounted(() => {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 80px 40px;
+  padding: 40px;
   overflow: hidden;
   color: var(--off-white);
 
@@ -433,6 +437,16 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 0 40px;
+}
+
+.contact__right--contact-page .image__wrapper{
+  max-height: 615px;
+}
+
+@media(max-width: 767px){
+  .contact__right--contact-page{
+    display: none;
+  }
 }
 
 .image__wrapper {
