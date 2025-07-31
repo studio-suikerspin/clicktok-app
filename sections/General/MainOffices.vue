@@ -15,7 +15,7 @@ const offices = ref([
     address: "Keizersgracht 520 <br /> 1017EK, Amsterdam",
     text: "Ons kantoor in Amsterdam is de creatieve hub waar ideeën tot leven komen. Gevestigd in het bruisende hart van de stad, combineren we hier strategisch denken met artistieke energie. Het is de plek waar we samenwerken, experimenteren en onze beste concepten ontwikkelen.",
     image:
-      "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/0383eebd-cfee-4df7-60c8-73314a8ead00/public",
+      "https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/0669e6c6-2e2a-4371-408e-f9e9bd7d0c00/public",
   },
   {
     title: "’s-Hertogenbosch",

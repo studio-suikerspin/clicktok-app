@@ -12,6 +12,7 @@ import RevealingTypes from '@/sections/RevealingTypes.vue'
 import StayAhead from '@/sections/StayAhead/StayAhead.vue'
 import LetTheNumbersSpeak from '@/sections/Section-numbers/LetTheNumbersSpeak.vue';
 import LogoSlider from '@/sections/General/LogoSlider.vue';
+import HeroWithImages from '@/sections/HeroWithImages.vue';
 import { VideoStream } from 'stream-vue'
 
 const numbersData = [
@@ -40,7 +41,8 @@ const numbersData = [
       </Head>
 
       <Header />
-      <HeroSubPages title="About us" />
+      <!-- <HeroSubPages title="About us" /> -->
+       <HeroWithImages title="About us" />
 
       <RevealingTypes title-first="You want more than views." title-second="You want people to resonate with your brand." title-third="We make content that makes this happen." :section-padding="false" />
       
@@ -55,7 +57,7 @@ const numbersData = [
       </div> -->
 
       <div class="section-padding">
-        <LetTheNumbersSpeak title="And we do it well" />
+        <LetTheNumbersSpeak title="We do it well" />
       </div>
 
       <SectionTeam />
