@@ -322,8 +322,12 @@ onMounted(() => {
   width: 600px;
   height: 500px;
   object-fit: cover;
-  opacity: 60%;
   z-index: 1;
+  opacity: 0.6;
+}
+
+.background__blur_steps:last-child{
+  opacity: unset;
 }
 
 </style>

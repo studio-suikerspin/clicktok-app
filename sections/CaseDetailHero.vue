@@ -45,6 +45,7 @@ onMounted(() => animateNumbers());
 
 <template>
   <section class="cases-hero section-padding">
+    <div class="container">
     <div class="hero__inner">
       <div class="hero__content">
         <div v-if="project.client_logo">
@@ -98,6 +99,7 @@ onMounted(() => animateNumbers());
         :is-detail-page="isDetailPage"
       />
     </div>
+  </div>
 
     <img
       class="background-gradient"
@@ -142,11 +144,11 @@ onMounted(() => animateNumbers());
   align-items: center;
   gap: 80px;
 
-  padding-inline: 16px;
 
-  max-width: 1200px;
+  max-width: 100%;
   margin-inline: auto;
 }
+
 
 .hero__logo {
   max-height: 40px;

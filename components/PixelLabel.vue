@@ -1,15 +1,20 @@
 <script setup lang="ts">
 const { text } = defineProps({
     text: String,
-    classes: String
+    classes: String,
+    withGradient: {
+        type: Boolean,
+        default: false,
+    },
 })
 </script>
 
 <template>
     <div class="pixel-label {{ classes }}">
-        <span class="pixel-label__text">{{ text }}</span>
+        <span class="pixel-label__text" :class="{ 'with-gradient': withGradient }">{{ text }}</span>
          <!-- <NuxtImg src="/images/PIXEL__PIXEL_WIT.png" /> -->
-         <img src="/images/PIXEL__PIXEL_WIT.png" >
+         <img v-if="!withGradient" src="/images/PIXEL__PIXEL_WIT.png" >
+         <img v-else src="/images/PIXEL__PIXEL_GRADIENT.png" >
     </div>
 </template>
 
@@ -51,5 +56,9 @@ img {
     color: var(--accent-dark-purple);
 
     text-wrap: nowrap;
+}
+
+.pixel-label__text.with-gradient {
+    color: var(--off-white);
 }
 </style>

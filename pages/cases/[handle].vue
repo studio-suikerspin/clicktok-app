@@ -73,6 +73,7 @@ if (!item) {
                     :description="brand_value.content"
                     bottom-title="Hieromheen is het format gebouwd"
                     :video-src="brand_value.video"
+                    :poster="brand_value.poster"
                     :associaties="brand_value.associaties"
                   />
                 </TabContent>
@@ -87,16 +88,21 @@ if (!item) {
               bottom-title="Hieromheen is het format gebouwd"
               :description="item.brand_value.content"
               :video-src="item.brand_value.video"
+              :poster="item.brand_value.poster"
               :associaties="item.brand_value.associaties"
             />
           </div>
         </div>
       </section>
 
-      <LetTheNumbersSpeak class="padding-top" />
+      <template v-if="item.detail_stats">
+        <LetTheNumbersSpeak class="padding-top" :first-number="item.detail_stats[0].number" :first-number-text="item.detail_stats[0].title" :first-number-subtitle="item.detail_stats[0].subtitle" :second-number="item.detail_stats[1].number" :second-number-text="item.detail_stats[1].title" :second-number-subtitle="item.detail_stats[1].subtitle" :third-number="item.detail_stats[2].number" :third-number-text="item.detail_stats[2].title" :third-number-subtitle="item.detail_stats[2].subtitle" />
+      </template>
 
       <section v-if="item.reference.content" class="reference padding-top">
-        <div class="container">
+        <div class="container relative-container">
+          <img src="/images/background__blur-min.webp" class="background__blur_client-reference" />
+          <img src="/images/background__blur-min.webp" class="background__blur_client-reference_second" />
           <div class="reference__inner">
             <type-reveal-title>This is what our client says</type-reveal-title>
 
@@ -232,6 +238,8 @@ if (!item) {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  z-index: 2;
+  position: relative;
 }
 
 @media (max-width: 767px) {
@@ -268,6 +276,32 @@ if (!item) {
 
 .tabbed-content__title {
   margin-bottom: 40px;
+}
+
+.relative-container {
+  position: relative;
+}
+
+.background__blur_client-reference,
+.background__blur_client-reference_second,
+.background__blur_client-reference_third{
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 570px;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;    
+    opacity: 60%;
+    z-index: 1;
+}
+
+.background__blur_client-reference_second{
+  right: 10%;
+  left: unset;
+  bottom: 0;
+  top: unset;
+  height: 50%;
 }
 
 </style>

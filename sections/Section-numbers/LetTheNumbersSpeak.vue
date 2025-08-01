@@ -13,6 +13,51 @@ defineProps({
         required: false,
         default: 'The numbers speak for themselves',
     },
+    firstNumber: {
+        type: Number,
+        required: false,
+        default: 77,
+    },
+    firstNumberText: {
+        type: String,
+        required: false,
+        default: 'Creators',
+    },
+    firstNumberSubtitle: {
+        type: String,
+        required: false,
+        default: 'Aantal creators',
+    },
+    secondNumber: {
+        type: Number,
+        required: false,
+        default: 88200000,
+    },
+    secondNumberText: {
+        type: String,
+        required: false,
+        default: 'Views',
+    },
+    secondNumberSubtitle: {
+        type: String,
+        required: false,
+        default: 'Totaal bereik',
+    },
+    thirdNumber: {
+        type: Number,
+        required: false,
+        default: 23,
+    },
+    thirdNumberText: {
+        type: String,
+        required: false,
+        default: 'Campagnes',
+    },
+    thirdNumberSubtitle: {
+        type: String,
+        required: false,
+        default: 'Aantal campagnes',
+    },
 })
 
 const numbersSectionRef = ref<HTMLElement | null>(null)
@@ -90,32 +135,32 @@ onMounted(async () => {
                 <div class="numbers__speak-results">
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
-                            <div class="numbers__result_title">Creators</div>
+                            <div class="numbers__result_title">{{ firstNumberText }}</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number" data-target="77">0</span>
+                                <span class="numbers__result_number" :data-target="firstNumber">0</span>
                                 +
                             </div>
-                            <div class="numbers__result_text">Aantal creators</div>
+                            <div class="numbers__result_text">{{ firstNumberSubtitle }}</div>
                         </div>
                     </div>
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
-                            <div class="numbers__result_title">Views</div>
+                            <div class="numbers__result_title">{{ secondNumberText }}</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number" data-target="88200000">0</span>
+                                <span class="numbers__result_number" :data-target="secondNumber">0</span>
                                 +
                             </div>
-                            <div class="numbers__result_text">Totaal bereik</div>
+                            <div class="numbers__result_text">{{ secondNumberSubtitle }}</div>
                         </div>
                     </div>
                     <div class="numbers__speak-results-item">
                         <div class="numbers__result">
-                            <div class="numbers__result_title">Campagnes</div>
+                            <div class="numbers__result_title">{{ thirdNumberText }}</div>
                             <div class="numbers__result_number-wrapper">
-                                <span class="numbers__result_number" data-target="23">0</span>
+                                <span class="numbers__result_number" :data-target="thirdNumber">0</span>
                                 +
                             </div>
-                            <div class="numbers__result_text">Aantal campagnes</div>
+                            <div class="numbers__result_text">{{ thirdNumberSubtitle }}</div>
                         </div>
                     </div>
                     <!-- <div class="numbers__speak-results-item">

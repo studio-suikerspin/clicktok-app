@@ -35,8 +35,8 @@ onMounted(() => {
 
 <template>
   <div
-    onmouseenter="this.querySelector('video').play();"
-    onmouseleave="this.querySelector('video').pause(); this.querySelector('video').currentTime = 0;"
+    :onmouseenter="!props.isDetailPage ? 'this.querySelector(\'video\').play();' : null"
+    :onmouseleave="!props.isDetailPage ? 'this.querySelector(\'video\').pause(); this.querySelector(\'video\').currentTime = 0;' : null"
     :class="[
       'case-card border-radius',
       { 'is-detail-page': props.isDetailPage },
@@ -49,13 +49,13 @@ onMounted(() => {
       :style="`${props.tags_position === 'right' ? 'right: -10px;' : 'left: -30px;'}`"
     >
       <li v-for="(tag, key) in props.tags" :key="key">
-        <PixelLabel :text="tag" />
+        <PixelLabel :text="tag" :with-gradient="true" />
       </li>
     </ul>
     <div class="case-card__video-wrap border-radius">
       <div class="case-card__overlay" />
 
-      <div class="case-card__title">{{ props.client }}</div>
+      <div v-if="!props.isDetailPage" class="case-card__title">{{ props.client }}</div>
       <Button
         v-if="props.handle"
         classes="pointer-events-all z-10 relative"
@@ -72,6 +72,7 @@ onMounted(() => {
           'case-card__video',
           props.controls ? '' : 'pointer-events-none',
         ]"
+        :autoplay="props.isDetailPage"
         muted
         loop
         playsinline
