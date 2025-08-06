@@ -1,11 +1,19 @@
 <script setup lang="ts">
+import BaseLayout from '~/layouts/BaseLayout.vue';
+import Footer from '~/sections/General/Footer.vue';
 import MainHeader from '~/sections/Header/MainHeader.vue';
 import TextpageHero from '~/sections/TextpageHero.vue';
 
 </script>
 
 <template>
-  <main>
+  <BaseLayout>
+      <Head>
+        <title>ClickTok - Algemene Voorwaarden</title>
+        <meta name="description" content="ClickTok helpt merken groeien op TikTok met virale short-form content die past bij je merkwaarden. Van organic campaigns tot UGC creatie - alles onder één dak.">
+        <meta name="keywords" content="TikTok marketing, virale content, short-form video, TikTok agency Nederland, social media marketing, UGC creatie, organic campaigns, merkstrategie TikTok">
+    </Head>
+
     <MainHeader/>
     <TextpageHero title="Algemene Voorwaarden" />
 
@@ -586,5 +594,7 @@ import TextpageHero from '~/sections/TextpageHero.vue';
         </div>
       </section>
     </div>
-  </main>
+
+    <Footer />
+  </BaseLayout>
 </template>

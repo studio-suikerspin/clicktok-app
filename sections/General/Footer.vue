@@ -87,8 +87,8 @@ const items = [
                         <div class="footer__bottom_left">
                             <div class="footer__copyright_text">©2025 CLICKTOK™ ALL RIGHTS RESERVED</div>
                             <div class="footer__terms">
-                                <a href="/privacy">Privacy Beleid</a>
-                                <a href="/algemene-voorwaarden">Algemene voorwaarden</a>
+                                <a href="/privacy-policy">Privacy Beleid</a>
+                                <a href="/terms-and-conditions">Algemene voorwaarden</a>
                             </div>
                         </div>
                         <div class="footer__bottom_right">
