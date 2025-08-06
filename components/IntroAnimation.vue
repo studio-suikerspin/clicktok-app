@@ -18,8 +18,8 @@ const animationConfig = {
   },
   chars: {
     duration: 0.3,
-    stagger: 0.1,
-    delay: 0.5,
+    stagger: 0.05,
+    delay: 0.3,
     ease: "expo.inOut",
   },
   fadeOut: {
