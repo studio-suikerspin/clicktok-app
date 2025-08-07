@@ -9,17 +9,17 @@ const team = ref([
   {
     name: 'Feie',
     role: 'Founder',
-    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6b9c87ae-02e6-4058-ef93-bd342abc9900/public',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e1e7b84a-693b-4fc2-ddbe-3903789fd300/public',
   },
   {
     name: 'Jay',
     role: 'Videograaf',
-    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/468bc1a9-35ae-40c2-b3e6-90858a329a00/public',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/ff69ff0b-4133-4159-4452-562bdde5eb00/public',
   },
   {
     name: 'Rens',
     role: 'Allround Creative',
-    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/31e2839c-2fab-4b91-ac59-2fb31b660000/public',
+    image: 'https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/9923fa84-5aeb-460c-fecf-e467e7442900/public',
   },
   {
     name: 'Ciaran',
