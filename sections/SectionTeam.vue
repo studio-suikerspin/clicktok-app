@@ -135,7 +135,7 @@ const team = ref([
 
 @media(max-width: 992px) {
   .team__item {
-    height: 300px;
+    height: 550px;
   }
 }
 </style>
