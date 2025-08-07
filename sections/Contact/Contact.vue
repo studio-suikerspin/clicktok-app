@@ -2,7 +2,6 @@
 import { onMounted, onUnmounted } from "vue";
 
 import Button from "@/components/ui/Button.vue";
-import SectionTitle from "@/components/SectionTitle.vue";
 
 const props = defineProps({
   formType: {
@@ -44,6 +43,8 @@ const props = defineProps({
   }
 });
 
+const toast = useToast()
+
 let animationInterval;
 const form = {
   type: props.formType,
@@ -57,12 +58,21 @@ const form = {
   cv: null,
 };
 
-const submitForm = async () => {
+const submitForm = async (e) => {
   const { data, error } = await $fetch('/api/contact', {
     method: 'POST',
     body: form
   });
   console.log(data, error);
+
+  if (error) {
+    console.error("Could not send email: ", error);
+    toast.error({title: "Oeps!", message: "Er ging iets mis, probeer het later nog eens."});
+    return;
+  }
+
+  toast.success({ title: "Ok!", message: "We nemen z.s.m. contact met je op." });
+  e.target.closest('form').reset();
 }
 
 onMounted(() => {
@@ -202,7 +212,7 @@ onUnmounted(() => {
                   variant="blue"
                   href=""
                   class="contact__form_button"
-                  @click.prevent="() => submitForm()"
+                  @click.prevent="(e) => submitForm(e)"
                   >{{ ctaText }}</Button
                 >
               </form>
