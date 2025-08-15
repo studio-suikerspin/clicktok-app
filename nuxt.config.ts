@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       },
       Syne: [400, 500, 600, 700, 800],
     }
-  }], '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', 'nuxt-viewport', 'nuxt-toast'],
+  }], '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', 'nuxt-viewport', 'nuxt-toast', 'nuxt-gtag'],
   image: {
     quality: 80,
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
@@ -30,4 +30,7 @@ export default defineNuxtConfig({
     host: '0.0.0.0'
   },
   css: ['~/assets/css/main.css', 'boxicons/css/boxicons.min.css'],
+  gtag: {
+    id: 'G-810CQ0CV06'
+  }
 })
