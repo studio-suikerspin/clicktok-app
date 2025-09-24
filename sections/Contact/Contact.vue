@@ -132,6 +132,7 @@ onUnmounted(() => {
                     type="text"
                     name="name"
                     placeholder="Naam"
+                    required
                   >
                   <input
                     v-if="!isCreator && !isSollicitation"
@@ -152,6 +153,7 @@ onUnmounted(() => {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    required
                   >
                   <input
                     v-model="form.phone"
@@ -194,6 +196,7 @@ onUnmounted(() => {
                   v-if="!isSollicitation"
                   v-model="form.message"
                   placeholder="Schrijf hier je bericht"
+                  :required="!isSollicitation"
                 />
 
                 <div class="contact__form_gdpr">
@@ -202,6 +205,7 @@ onUnmounted(() => {
                     type="checkbox"
                     name="gdpr"
                     class="border-radius"
+                    required
                   >
                   <label for="gdpr"
                     >Ik ga akkoord met de
