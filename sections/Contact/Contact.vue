@@ -77,10 +77,6 @@ const form = ref({
 
 const submitForm = async (e) => {
   try {
-    const isValid = FormSchema.parse(form.value);
-
-    if (!isValid) return;
-
     const { data, error } = await $fetch('/api/contact', {
       method: 'POST',
       body: form
@@ -237,11 +233,12 @@ onUnmounted(() => {
                     <a href="/privacy-policy">privacyverklaring</a></label
                   >
                 </div>
-                <button
+                <Button
                   variant="blue"
-                  class="btn btn--blue contact__form_button"
+                  classes="contact__form_button"
+                  :href="'javascript:;'"
                   type="submit"
-                  >{{ ctaText }}</button
+                  >{{ ctaText }}</Button
                 >
               </form>
             </div>

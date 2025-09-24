@@ -4,13 +4,22 @@
         href: String,
         title: String,
         classes: String,
+        type: {
+          type: String,
+          default: 'link',
+          required: false,
+        }
     });
 </script>
 
 <template>
-    <a :href="href" :class="`btn btn--${variant} ${classes}`" :title="title">
+    <a v-if="type === 'link'" :href="href" :class="`btn btn--${variant} ${classes}`" :title="title">
         <slot />
     </a>
+
+    <button v-else :class="`btn btn--${variant} ${classes}`" :title="title" :type="type">
+      <slot />
+    </button>
 </template>
 
 <style>
