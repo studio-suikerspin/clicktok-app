@@ -110,7 +110,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
                           onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
                         >
-                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
+                          <source src="https://r2.suikerspin.studio/VRIENDINNEN_JUMBO.webm">
                         </video>
                         <video 
                           preload="none" 
@@ -122,7 +122,7 @@ import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
                           class="hero__floating_image_video mobile"
                           poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public"
                         >
-                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
+                          <source src="https://r2.suikerspin.studio/VRIENDINNEN_JUMBO.webm">
                         </video>
                     </div>
                 </div>
