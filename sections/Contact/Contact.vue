@@ -1,5 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
+import * as z from 'zod';
+import { toTypedSchema } from '@vee-validate/zod';
 
 import Button from "@/components/ui/Button.vue";
 
@@ -43,36 +45,59 @@ const props = defineProps({
   }
 });
 
+const formRef = ref(null);
+
 const toast = useToast()
 
 let animationInterval;
-const form = {
+
+const FormSchema = toTypedSchema(z.object({
+  type: z.string(),
+  name: z.string().min(1),
+  company: z.string().optional(),
+  username: z.string().optional(),
+  email: z.email(),
+  phone: z.string().optional(),
+  message: z.string().min(10),
+  portfolio: z.file().optional(),
+  cv: z.file().optional(),
+}));
+
+const form = ref({
   type: props.formType,
-  name: null,
-  company: null,
-  username: null,
-  email: null,
-  phone: null,
-  message: null,
-  portfolio: null,
-  cv: null,
-};
+  name: '',
+  company: '',
+  username: '',
+  email: '',
+  phone: '',
+  message: '',
+  portfolio: undefined,
+  cv: undefined,
+});
 
 const submitForm = async (e) => {
-  const { data, error } = await $fetch('/api/contact', {
-    method: 'POST',
-    body: form
-  });
-  console.log(data, error);
+  try {
+    const isValid = FormSchema.parse(form.value);
 
-  if (error) {
-    console.error("Could not send email: ", error);
-    toast.error({title: "Oeps!", message: "Er ging iets mis, probeer het later nog eens."});
-    return;
+    if (!isValid) return;
+
+    const { data, error } = await $fetch('/api/contact', {
+      method: 'POST',
+      body: form
+    });
+    console.log(data, error);
+
+    if (error) {
+      console.error("Could not send email: ", error);
+      toast.error({title: "Oeps!", message: "Er ging iets mis, probeer het later nog eens."});
+      return;
+    }
+
+    toast.success({ title: "Ok!", message: "We nemen z.s.m. contact met je op." });
+    e.target.closest('form').reset();
+  } catch (error) {
+    console.error(error);
   }
-
-  toast.success({ title: "Ok!", message: "We nemen z.s.m. contact met je op." });
-  e.target.closest('form').reset();
 }
 
 onMounted(() => {
@@ -125,7 +150,7 @@ onUnmounted(() => {
               </div>
             </div>
             <div class="contact__left_form">
-              <form class="contact__form">
+              <form ref="formRef" class="contact__form" :validation-schema="FormSchema" @submit.prevent="(e) => submitForm(e)">
                 <div class="contact__form_row">
                   <input
                     v-model="form.name"
@@ -212,12 +237,11 @@ onUnmounted(() => {
                     <a href="/privacy-policy">privacyverklaring</a></label
                   >
                 </div>
-                <Button
+                <button
                   variant="blue"
-                  href=""
-                  class="contact__form_button"
-                  @click.prevent="(e) => submitForm(e)"
-                  >{{ ctaText }}</Button
+                  class="btn btn--blue contact__form_button"
+                  type="submit"
+                  >{{ ctaText }}</button
                 >
               </form>
             </div>

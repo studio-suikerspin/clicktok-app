@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       },
       Syne: [400, 500, 600, 700, 800],
     }
-  }], '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', 'nuxt-viewport', 'nuxt-toast', 'nuxt-gtag'],
+  }], '@nuxt/icon', '@nuxt/image', '@nuxtjs/color-mode', 'nuxt-viewport', 'nuxt-toast', 'nuxt-gtag', '@vee-validate/nuxt'],
   image: {
     quality: 80,
     format: ['avif', 'webp', 'jpeg', 'jpg', 'png', 'gif'],
