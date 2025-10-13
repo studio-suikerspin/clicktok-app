@@ -77,11 +77,10 @@ const form = ref({
 
 const submitForm = async (e) => {
   try {
-    const { data, error } = await $fetch('/api/contact', {
+    const { error } = await $fetch('/api/contact', {
       method: 'POST',
       body: form.value
     });
-    console.log(data, error);
 
     if (error) {
       console.error("Could not send email: ", error);
