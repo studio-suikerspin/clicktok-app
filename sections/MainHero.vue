@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
-import UIButtonAnimated from "@/components/ui/ButtonAnimated.vue";
+import UIButton from "@/components/ui/Button.vue";
 
 import cases from "~/lib/cases";
 </script>
@@ -14,7 +14,7 @@ import cases from "~/lib/cases";
 
     <div class="hero__inner">
       <div class="hero__content">
-        <h1 class="hero__headline">Full service <span>TikTok</span> agency</h1>
+        <h1 class="hero__headline">Full service TikTok agency</h1>
 
         <div class="hero__subtext">
           We bouwen formats vanuit merkwaarden om het juiste gevoel over te
@@ -23,7 +23,10 @@ import cases from "~/lib/cases";
         </div>
 
         <div class="hero__cta-wrap">
-          <UIButtonAnimated href="/contact" text="Start een project" />
+          <UIButton variant="blue" href="/contact">
+            Start een project
+          </UIButton>
+          <UIButton variant="outline" href="/cases">Bekijk cases</UIButton>
         </div>
       </div>
 
@@ -77,7 +80,7 @@ import cases from "~/lib/cases";
       </div>
 
       <div class="hero__mobile-cta">
-        <UIButtonAnimated href="/contact" text="Start een project" />
+        <UIButton variant="white" href="/contact" text="Start een project" />
       </div>
     </div>
   </section>
@@ -136,10 +139,6 @@ import cases from "~/lib/cases";
     max-width: 900px;
     line-height: 100%;
 
-    span {
-      color: var(--accent-blue);
-    }
-
     @media screen and (min-width: 768px) {
       font-size: 4rem;
     }
@@ -165,6 +164,7 @@ import cases from "~/lib/cases";
 
     @media screen and (min-width: 768px) {
       display: flex;
+      gap: 1rem;
     }
   }
 
@@ -212,11 +212,12 @@ import cases from "~/lib/cases";
 
   &__swiper-slide {
     display: flex;
-    aspect-ratio: 3 / 4;
+    aspect-ratio: 3/4;
     height: 100%;
     width: 100%;
     overflow: hidden;
     transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 1rem;
 
     .slide-bg {
       width: 100%;
