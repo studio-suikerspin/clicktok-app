@@ -43,7 +43,8 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
-    "@nuxtjs/google-fonts": "^3.2.0"
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "sass-embedded": "^1.96.0"
   },
   "overrides": {
     "rollup": "4.40.0"

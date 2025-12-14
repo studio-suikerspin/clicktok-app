@@ -1,541 +1,265 @@
 <script setup>
-// Components
-import Button from '@/components//ui/Button.vue'
-import LogoSlider from '@/sections/General/LogoSlider.vue'
-import ButtonAnimated from '@/components/ui/ButtonAnimated.vue'
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+
+import UIButtonAnimated from "@/components/ui/ButtonAnimated.vue";
+
+import cases from "~/lib/cases";
 </script>
 
 <template>
-    <!-- <div class="hero__flex"> -->
-        <div class="hero">
-            
-            
-            <div class="container relative text-container">
+  <section class="hero">
+    <img src="/images/gradient-background1.webp" class="hero__bg" />
 
-                 <!-- left images -->
-                <div class="hero__floating_image with-hover first border-radius floating-animation-1">
-                    <div class="hero__floating_image_wrapper">
-                        <!-- <NuxtImg provider="cloudflare" src="/images/nubikk-shoot-min.webp" alt="Hero floating image" /> -->
-                        <!-- <img src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public" alt="Hero floating image"> -->
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
-                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
-                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
-                        >
-                          <source src="https://r2.suikerspin.studio/bannerhomepagenubikk.mp4">
-                        </video>
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          autoplay
-                          class="hero__floating_image_video mobile"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/299d454d-83ac-4020-6045-05a0669e2800/public"
-                        >
-                          <source src="https://r2.suikerspin.studio/bannerhomepagenubikk.mp4">
-                        </video>
-                    </div>
-                </div>
-                
-              
-                <div class="hero__floating_image with-hover third border-radius floating-animation-2">
-                    <div class="hero__floating_image_wrapper">
-                        <!-- <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/fd776e2d-0111-4b65-daf0-8aab4e322d00/public"
-                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
-                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
-                        >
-                          <source src="https://r2.suikerspin.studio/jumbo-video.mp4">
-                        </video> -->
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/6c38b2d8-966d-4f8d-337e-baf167191f00/public"
-                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
-                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
-                        >
-                          <source src="https://r2.suikerspin.studio/homepagebannerlinksondermobiel.nl.mp4">
-                        </video>
-                        
-                    </div>
-                </div>
+    <div class="hero__inner">
+      <div class="hero__content">
+        <h1 class="hero__headline">Full service <span>TikTok</span> agency</h1>
 
-                <!-- right images -->
-                <div class="hero__floating_image with-hover fourth border-radius floating-animation-3">
-                    <div class="hero__floating_image_wrapper">
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/683a7362-5b35-4234-6031-ada60fc65300/public"
-                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
-                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
-                        >
-                          <source src="https://r2.suikerspin.studio/homepagebannerrechtsboven.mp4">
-                        </video>
-                    </div>
-                </div>
-               
-                <div class="hero__floating_image with-hover sixth border-radius floating-animation-4">
-                    <div class="hero__floating_image_wrapper">
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          class="hero__floating_image_video"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public"
-                          onmouseenter="event.target.setAttribute('preload','metadata'); event.target.play();"
-                          onmouseleave="event.target.pause(); event.target.currentTime = 0; event.target.load();"
-                        >
-                          <source src="https://r2.suikerspin.studio/VRIENDINNEN_JUMBO.webm">
-                        </video>
-                        <video 
-                          preload="none" 
-                          webkit-playsinline 
-                          playsinline 
-                          muted
-                          loop 
-                          autoplay
-                          class="hero__floating_image_video mobile"
-                          poster="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/e0ca38c0-ad03-403d-153a-09c7dd9ba800/public"
-                        >
-                          <source src="https://r2.suikerspin.studio/VRIENDINNEN_JUMBO.webm">
-                        </video>
-                    </div>
-                </div>
-
-                <div class="hero__inner">
-                    <div class="hero__title_wrapper">
-                        <div class="hero__title_wrapper-top">Full Service</div>
-                        <h1 class="hero__title">TikTok Agency</h1>
-                        <div class="hero__subtitle">
-                            <span class="first-span">Gefocust op merkbeleving die blijft
-                            hangen.</span> <br /> We bouwen formats vanuit <span class="thick-span">merkwaarden</span> om het juiste gevoel over
-                            te brengen, sterke <span class="thick-span">associaties</span> te creëren en zo te zorgen voor <span class="thick-span">herkenning,
-                            activatie en conversie</span>.
-                        </div>
-                        <div class="hero__cta_wrapper">
-                            <!-- <Button variant="white" href="/contact" class="hero__cta">Let's get started!</Button>
-                            <Button variant="outline" href="/cases" class="hero__cta">Bekijk cases</Button> -->
-                            <ButtonAnimated text="Let's get started!" href="/contact" variant="white" />
-                            <ButtonAnimated text="Bekijk cases" href="/cases" variant="secondary" />
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="hero__slider_wrapper">
-                <LogoSlider />
-            </div>
-
-            <!-- <img class="background-gradient" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/1a080bb2-eb2a-4194-69a2-52cda2f3d000/public" alt="Background gradient">
-            <img class="background-gradient mobile" src="https://imagedelivery.net/dK2MXs8e4PBA-0PIIKLecw/84e3aa21-f7eb-449c-9faa-352ef7f4ce00/public" alt="Background gradient"> -->
-            <img class="background-gradient" src="/images/gradient-background1.webp" alt="Background gradient">
-            <img class="background-gradient mobile" src="/images/gradient-background2.webp" alt="Background gradient">
+        <div class="hero__subtext">
+          We bouwen formats vanuit merkwaarden om het juiste gevoel over te
+          brengen, sterke associaties te creëren en zo te zorgen voor
+          herkenning, activatie en conversie.
         </div>
-    <!-- </div> -->
+
+        <div class="hero__cta-wrap">
+          <UIButtonAnimated href="/contact" text="Start een project" />
+        </div>
+      </div>
+
+      <div class="hero__swiper">
+        <Swiper
+          :space-between="16"
+          :initial-slide="1"
+          :loop="true"
+          :modules="[Navigation]"
+          :navigation="{
+            nextEl: '.hero__swiper-button-next',
+            prevEl: '.hero__swiper-button-prev',
+            addIcons: false,
+          }"
+          :breakpoints="{
+            0: {
+              slidesPerView: 1.3,
+              centeredSlides: true,
+              initialSlide: 1,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1200: {
+              slidesPerView: 5,
+            },
+          }"
+        >
+          <SwiperSlide v-for="caseItem in cases" :key="caseItem.id">
+            <div class="hero__swiper-slide">
+              <img
+                class="slide-bg"
+                :src="caseItem.featured_image"
+                :alt="caseItem.title"
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+
+        <div class="hero__swiper-nav">
+          <div class="hero__swiper-button-prev">
+            <i class="bx bx-left-arrow-alt"></i>
+          </div>
+          <div class="hero__swiper-button-next">
+            <i class="bx bx-right-arrow-alt"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__mobile-cta">
+        <UIButtonAnimated href="/contact" text="Start een project" />
+      </div>
+    </div>
+  </section>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 3;
-    overflow-x: hidden; /* voorkomt scrollbars bij mask */
-    padding: 200px 30px 70px;
-}
-
-.hero .background-gradient {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
--webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
-}
-
-.hero .background-gradient.mobile {
-  display: none;
-}
-
-.hero .background-gradient img{
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.hero .text-container {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.hero__floating_image_video.mobile {
-    display: none;
-}
-
-@media(max-width: 767px){
-    .hero {
-        padding: 190px 0;
-    }
-    .hero .background-gradient {
-        display: none;
-    }
-    .hero .background-gradient.mobile {
-        display: block;
-    }
-}
-
-@media(max-width: 992px){
-    .hero__floating_image_video.mobile {
-        display: block;
-    }
-    .hero__floating_image_video {
-        display: none;
-    }
-}
-
-.hero__slider_wrapper{
-    width: 100%;
-    z-index: 2;
-    padding-top: auto;
-}
-
-/* FLOATING IMAGES */
-.hero__floating_image {
+  &__bg {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.hero__floating_image img,
-.hero__floating_image video {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+    z-index: 0;
+  }
 
-/* Desktop hover functionality */
-@media (min-width: 768px) {
-    .hero__floating_image.with-hover .hero__floating_image_wrapper{
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    /* .hero__floating_image.with-hover img {
-        opacity: 1;
-        transition: opacity 0.3s ease;
-    } */
-    .hero__floating_image.with-hover .hero__floating_image_video {
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .hero__floating_image.with-hover:hover img {
-        opacity: 0;
-    }
-    
-    .hero__floating_image.with-hover:hover .hero__floating_image_video {
-        opacity: 1;
-    }
-}
-
-/* Mobile: show only video */
-@media (max-width: 767px) {
-    /* .hero__floating_image .hero__floating_image_video {
-        display: block;
-    } */
-    .hero__floating_image.with-hover.third .hero__floating_image_video,
-    .hero__floating_image.with-hover.fourth .hero__floating_image_video{
-        display: none;
-    }
-    .hero__floating_image.with-hover.first img,
-    .hero__floating_image.with-hover.sixth img{
-        display: none;
-    }
-}
-
-
-.hero__floating_image.first {
-    height: 250px;
-    width: 180px;
-    top: -90px;
-    left: 9%;
-    aspect-ratio: 9/16;
-}
-
-
-.hero__floating_image.third {
-    height: 200px;
-    width: 160px;
-    top: 300px;
-    left: 100px;
-    aspect-ratio: 9/16;
-}
-
-.hero__floating_image.fourth {
-    height: 250px;
-    width: 180px;
-    inset: -40px 9% auto auto;
-    aspect-ratio: 9/16;
-}
-
-.hero__floating_image.sixth {
-    height: 200px;
-    width: 160px;
-    top: 300px;
-    right: 200px;
-    aspect-ratio: 9/16;
-}
-
-
-@media(max-width: 1500px){
-    .hero__floating_image.first {
-        left: 3%;
-    }
-    .hero__floating_image.third {
-        left: 50px;
-    }
-    .hero__floating_image.fourth {
-        inset: -40px 3% auto auto;
-    }
-    .hero__floating_image.sixth {
-        right: 70px;
-    }
-}
-
-@media(max-width: 1300px){
-    .hero__floating_image.third {
-        left: 10px;
-    }
-    .hero__floating_image.fourth {
-        inset: -40px 3% auto auto;
-    }
-    .hero__floating_image.sixth {
-        right: 20px;
-    }
-    .hero__floating_image.sixth {
-        right: 20px;
-    }
-}
-
-@media(max-width: 992px){
-    .hero__floating_image.third {
-        left: 10px;
-        bottom: -120px;
-        top: unset;
-    }
-    .hero__floating_image.fourth {
-        inset: -80px 3% auto auto;
-    }
-    .hero__floating_image.sixth {
-        right: 20px;
-    }
-    .hero__floating_image.sixth {
-        top: unset;
-        bottom: -120px;
-    }
-}
-
-@media(max-width: 767px){
-    .hero__floating_image.first {
-        width: 105px;
-        height: 130px;
-        top: -100px;
-    }
-    .hero__floating_image.third {
-        width: 80px;
-        height: 96px;
-    }
-    .hero__floating_image.fourth {
-        width: 78px;
-        height: 78px;
-    }
-    .hero__floating_image.sixth {
-        width: 105px;
-        height: 155px;
-    }
-}
-
-
-/* HERO INNER */
-.hero__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  &__inner {
     position: relative;
-    max-width: 842px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-@media(max-width: 767px) {
-    .hero__inner {
-        padding: 0;
+    min-height: 100svh;
+    overflow: hidden;
+    padding-block: 6rem;
+    gap: 2rem;
+
+    @media screen and (min-width: 768px) {
+      justify-content: space-between;
+      padding-block: 6rem 0;
     }
-}
-/* END HERO INNER */
+  }
 
-
-/* Title wrap */
-.hero__title_wrapper {
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 1rem;
+
+    @media screen and (min-width: 768px) {
+      flex: 1;
+    }
+  }
+
+  &__headline {
+    font-size: 2.5rem;
+    text-wrap: balance;
+    font-weight: 900;
+    font-style: italic;
     color: var(--off-white);
     text-align: center;
-    z-index: 4;
-}
-
-.hero__title_wrapper-top {
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--off-white_50);
-    text-align: center;
-    font-family: Syne, sans-serif;
+    text-transform: uppercase;
+    max-width: 900px;
     line-height: 100%;
-}
 
-.hero__title {
-    font-size: 150px;
-    font-weight: 900;
+    span {
+      color: var(--accent-blue);
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 4rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 6rem;
+    }
+  }
+
+  &__subtext {
+    font-size: 1rem;
+    color: var(--off-white);
     text-align: center;
-    font-style: italic;
-    letter-spacing: -3px;
-    line-height: 120px;
-}
+    max-width: 700px;
 
-.hero__subtitle {
-    font-size: 16px;
-    font-weight: 400;
-    max-width: 630px;
-}
+    @media screen and (min-width: 768px) {
+      font-size: 1.125rem;
+    }
+  }
 
-.hero__subtitle .first-span {
-    font-size: 20px;
-    font-weight: 700;
-}
+  &__cta-wrap {
+    display: none;
 
-.hero__subtitle .thick-span {
-    font-weight: 700;
-}
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
 
-.hero__cta_wrapper {
+  &__mobile-cta {
     display: flex;
-    gap: 24px;
-    min-width: 220px;
-}
 
-.hero__cta_wrapper .hero__cta{
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  .swiper {
+    overflow: visible;
+
+    @media screen and (min-width: 768px) {
+      overflow: hidden;
+    }
+  }
+
+  &__swiper {
+    position: relative;
     width: 100%;
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+    }
+  }
+
+  .swiper-slide-active {
+    .hero__swiper-slide {
+      transform: scale(1.05);
+      transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    @media screen and (min-width: 768px) {
+      .hero__swiper-slide {
+        transform: unset;
+      }
+    }
+  }
+
+  &__swiper-slide {
+    display: flex;
+    aspect-ratio: 3 / 4;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .slide-bg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__swiper-nav {
+    position: absolute;
+    height: calc(100% + 2rem);
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+
+    @media screen and (min-width: 768px) {
+    }
+  }
+
+  &__swiper-button-prev,
+  &__swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--off-white);
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    pointer-events: all;
+
+    &:hover {
+    }
+  }
 }
-
-@media (max-width: 767px) {
-    .hero__title_wrapper {
-        gap: var(--space-m);
-    }
-    .hero__title {
-        font-size: 72px;
-        line-height: 90%;
-    }
-    .hero__title_wrapper-top {
-        font-size: 18px;
-        line-height: 100%;
-    }
-    .hero__subtitle {
-        font-size: 14px;
-        max-width: 100%;
-    }
-    .hero__subtitle .first-span {
-        font-size: 14px;
-        font-weight: 600;
-    }
-
-    .hero__subtitle .thick-span {
-        font-weight: 600;
-    }
-    .hero__cta_wrapper{
-        flex-direction: column;
-        gap: 16px;
-    }
-}
-
-@media (max-width: 992px) {
-    .hero__slider_wrapper{
-        display: none;
-    }
-}
-
-/* CSS Keyframes Floating Animation */
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(4px);
-    }
-}
-
-/* Desktop only floating animations */
-@media (min-width: 1024px) {
-    .floating-animation-1 {
-        animation: floating 2s ease-in-out infinite;
-    }
-    
-    .floating-animation-2 {
-        animation: floating 2.3s ease-in-out infinite;
-        animation-delay: 0.2s;
-    }
-    
-    .floating-animation-3 {
-        animation: floating 2.6s ease-in-out infinite;
-        animation-delay: 0.4s;
-    }
-    
-    .floating-animation-4 {
-        animation: floating 2.9s ease-in-out infinite;
-        animation-delay: 0.6s;
-    }
-}
-
 </style>
